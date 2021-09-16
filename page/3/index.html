@@ -1,0 +1,585 @@
+<!DOCTYPE html><html lang="CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="https://img10.360buyimg.com/ddimg/jfs/t1/210672/22/780/14721/614304cbE6ed71481/b30794e20af29208.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary"><title>Hexo</title><link ref="canonical" href="http://example.com/page/3/index.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">Categories</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">Tags</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hexo</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/09/10/Java%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7-ArrayList/">List-ArrayList</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2021-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2021-08-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="List接口"   >
+          <a href="#List接口" class="heading-link"><i class="fas fa-link"></i></a><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h3>
+      <p>Collection 接口是最基本的集合接口，<font color="#9400D3">可以存储一组不唯一，无序的对象。</font></p>
+<p>List接口继承自Collection接口，List接口中<font color="#9400D3">存储一组不唯一，有序（插入顺序）的对象。</font>用户可使用索引访问List接口中的元素，类似于数组，List的接口中允许存放重复元素。</p>
+<p>List接口常用的实现类有<font color="#9400D3"> ArrayList </font>和<font color="#9400D3"> LinkedList </font></p>
+
+        <h4 id="1-ArrayList"   >
+          <a href="#1-ArrayList" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-ArrayList" class="headerlink" title="1.ArrayList"></a>1.ArrayList</h4>
+      <p>ArrayList是对数组进行了封装，实现了长度可变的数组，而且和数组采用相同的存储方式，在内存中分配连续的空间如下图所示，那么可以说明<font color="#9400D3"> ArrayList </font>的底层是基于数组实现的。所以，经常称ArrayList为动态数组。<br>但它不等同于数组，<font color="#9400D3"> ArrayList </font>集合中可以添加任何类型的数据，并且添加的数据都将转换成<font color="#9400D3"> Object </font>类型，而在数组中只能添加同一类型的数据。<br><img src="https://img11.360buyimg.com/ddimg/jfs/t1/206276/38/448/6025/6110e489Ea9fc5281/f0410ead98641b7b.png" alt="20210809161637.png"></p>
+<p><strong>ArrayList类提供了很多方法用于操作数据，下方表格是ArrayList类常用方法</strong></p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">boolean add(Object obj)</td>
+<td>在列表的末尾添加元素o，起始索引位置从0开始</td>
+</tr>
+<tr>
+<td align="center">void add(int index,Object o)</td>
+<td>在指定的索引位置添加元素o,索引位置必须介于0和列表中元素个数之间</td>
+</tr>
+<tr>
+<td align="center">int size()</td>
+<td>返回列表中的元素个数</td>
+</tr>
+<tr>
+<td align="center">Object get(int index)</td>
+<td>返回指定索引位置处的元素，取出的元素是Object类型，使用前需要进行强制类型转换</td>
+</tr>
+<tr>
+<td align="center">void set(int index,Object obj)</td>
+<td>将index索引位置的元素替换为obj元素</td>
+</tr>
+<tr>
+<td align="center">boolean contains(Object o)</td>
+<td>判断列表中是否存在指定元素o</td>
+</tr>
+<tr>
+<td align="center">int indexOf(Object obj)</td>
+<td>返回元素在集合中出现的索引位置</td>
+</tr>
+<tr>
+<td align="center">boolean remove(Object o)</td>
+<td>从列表中删除元素o</td>
+</tr>
+<tr>
+<td align="center">Obejct remove(int index)</td>
+<td>从列表中删除指定位置的元素，起始索引位置从0开始</td>
+</tr>
+</tbody></table></div>
+<p><strong>下面示例用ArrayList常用方法动态操作数据：</strong></p>
+<p>问题：<br>（1）判断集合中是否包含某元素<br>（2）移除索引为 0 的元素<br>（3）把索引为1的元素替换为其他元素<br>（4）输出某个元素所在的索引位置<br>（5）清空ArrayList集合中的数据<br>（6）判断ArrayList集合中是否包含数据</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">		/*</span><br><span class="line">		 调用ArrayList的无参构造方法，创建集合对象。</span><br><span class="line">		 常用的ArrayList类的构造方法还有一个带参数的重载版本，即ArrayList (int initialCapacity),</span><br><span class="line">		 它构造一个具有初识容量的空列表。</span><br><span class="line">		*/</span><br><span class="line">		ArrayList list = new ArrayList();</span><br><span class="line">		list.add(&quot;张三丰&quot;);</span><br><span class="line">		list.add(&quot;郭靖&quot;);</span><br><span class="line">		list.add(&quot;杨过&quot;);</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		//(1)判断集合中是否包含&quot;李莫愁&quot;</span><br><span class="line">		System.out.println(list.contains(&quot;李莫愁&quot;));//不包含则输出false</span><br><span class="line">		//(2)把索引为0的数据移除</span><br><span class="line">		System.out.println(&quot;----------移除前----------&quot;);</span><br><span class="line">		for(int i=0;i&lt;=list.size();i++)&#123;</span><br><span class="line">			System.out.println(list);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		list.remove(0);</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;----------移除后----------&quot;);</span><br><span class="line">		for(int i=0;i&lt;=list.size();i++)&#123;</span><br><span class="line">			System.out.println(list);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;#####################################&quot;);</span><br><span class="line">		</span><br><span class="line">		//(3)把索引为1的数据替换为&quot;黄蓉&quot;</span><br><span class="line">		System.out.println(&quot;----------替换前----------&quot;);</span><br><span class="line">		for(int i=0;i&lt;=list.size();i++)&#123;</span><br><span class="line">			System.out.println(list);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		list.set(1,&quot;黄蓉&quot;);</span><br><span class="line"></span><br><span class="line">		System.out.println(&quot;----------替换后----------&quot;);</span><br><span class="line">		for(int i=0;i&lt;=list.size();i++)&#123;</span><br><span class="line">			System.out.println(list);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		//(4)输出某个元素所在的索引位置,有数据输出所在位置的下标，没数据输出-1</span><br><span class="line">		System.out.println(list.indexOf(&quot;杨过&quot;));</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		//(5)清空ArrayList集合中的数据</span><br><span class="line">		System.out.println(&quot;----------清空前----------&quot;);</span><br><span class="line">		for(int i=0;i&lt;=list.size();i++)&#123;</span><br><span class="line">			System.out.println(list);</span><br><span class="line">		&#125;</span><br><span class="line">		for (Object o : list) &#123;</span><br><span class="line">			System.out.println(o);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		list.clear();</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;----------清空后---------&quot;);</span><br><span class="line">		for(int i=0;i&lt;=list.size();i++)&#123;</span><br><span class="line">			System.out.println(list);</span><br><span class="line">		&#125;</span><br><span class="line">		//(6)判断ArrayList集合中是否包含数据,有数据输出 true 没数据输出false</span><br><span class="line">		list.clear();</span><br><span class="line">		for (Object obj : list) &#123;</span><br><span class="line">			System.out.print(obj);</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(list.isEmpty());</span><br></pre></td></tr></table></div></figure>
+
+<p>注意：调用ArrayList类的add(Object obj)方法时，添加到集合当中的数据将被转换为Object类型</p>
+<p>下面使用ArrayList集合实现新闻的存储<br>存储新闻标题信息（包含ID、名称、创建者）<br>获取新闻标题的总数<br>可以逐条打印每条新闻标题的名称</p>
+<p><strong>声明一个新闻对象</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">//新闻标题类：ID 新闻标题 创建者</span><br><span class="line">public class NewsTitle &#123;</span><br><span class="line">	</span><br><span class="line">	private int id;</span><br><span class="line">	private String title;</span><br><span class="line">	private String author;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	public NewsTitle() &#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	public NewsTitle(int id, String title, String author) &#123;</span><br><span class="line"></span><br><span class="line">		this.id = id;</span><br><span class="line">		this.title = title;</span><br><span class="line">		this.author = author;</span><br><span class="line">	&#125;</span><br><span class="line">	public int getId() &#123;</span><br><span class="line">		return id;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setId(int id) &#123;</span><br><span class="line">		this.id = id;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getTitle() &#123;</span><br><span class="line">		return title;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setTitle(String title) &#123;</span><br><span class="line">		this.title = title;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getAuthor() &#123;</span><br><span class="line">		return author;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setAuthor(String author) &#123;</span><br><span class="line">		this.author = author;</span><br><span class="line">	&#125;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p><strong>测试新闻对象</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">public class NewsMgr &#123;</span><br><span class="line">//对新闻标题的存储即操作（ArrayList）</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//创建新闻标题对象</span><br><span class="line">		NewsTitle title1 = new NewsTitle(1,&quot;北京热门景点故宫&quot;,&quot;author&quot;);</span><br><span class="line">		NewsTitle title2 = new NewsTitle(1,&quot;北京热门景点长城&quot;,&quot;author&quot;);</span><br><span class="line">		NewsTitle title3 = new NewsTitle(1,&quot;北京热门景点颐和园&quot;,&quot;author&quot;);</span><br><span class="line">		NewsTitle title4 = new NewsTitle(1,&quot;北京热门景点北海&quot;,&quot;author&quot;);</span><br><span class="line">		NewsTitle title5 = new NewsTitle(1,&quot;北京热门景点天安门&quot;,&quot;author&quot;);</span><br><span class="line">		</span><br><span class="line">		//创建集合对象,并且将新闻标题加入到集合中</span><br><span class="line">		ArrayList  list = new ArrayList();</span><br><span class="line">		//等同于数组中的list[0] = title1;</span><br><span class="line">		list.add(title1);</span><br><span class="line">		list.add(title2);</span><br><span class="line">		list.add(title3);</span><br><span class="line">		list.add(title4);</span><br><span class="line">		list.add(title5);</span><br><span class="line"></span><br><span class="line">		//获取新闻标题的总数</span><br><span class="line">		//ArrayList的size()方法等同于数组的length属性的作用</span><br><span class="line">		System.out.println(&quot;新闻标题一共有&quot;+list.size()+&quot;条。&quot;);</span><br><span class="line">		//逐条打印新闻标题名称</span><br><span class="line">		//方法一：遍历ArrayList元素的位置(下标)</span><br><span class="line">		for(int i=0;i&lt;list.size();i++)&#123;</span><br><span class="line">			NewsTitle title = (NewsTitle)list.get(i);</span><br><span class="line">			System.out.println(title.getTitle());</span><br><span class="line">		&#125;</span><br><span class="line">		//方法二:增强型for</span><br><span class="line">		System.out.println(&quot;#############################&quot;);</span><br><span class="line">		for (Object obj : list) &#123;</span><br><span class="line">			NewsTitle title = (NewsTitle)obj;</span><br><span class="line">			System.out.println(title.getTitle());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>ArrayList优点：ArrayList集合因为可以使用索引来直接获取元素，遍历元素和随机访问元素的效率比较高。但是由于ArrayList集合采用了和数组相同的存储方式，在内存中分配连续的空间，因此在添加和删除非尾部元素时会导致后面所有元素的移动，这就造成在插入、删除操作频繁的应用场景下使用ArrayList会导致性能低下，所以数据操作频繁时，最好用LinkedList存储数据。</p>
+<p>Collection接口常用通用方法有:clear()、isEmpty()、iterator()、toArray()<br>clear()：清空集合<br>isEmpty()：判断一个集合是否为空<br>iterator()：获取遍历集合的迭代器<br>toArray()：把一个集合转变成一个序列</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/09/10/Java-%E6%8E%A5%E5%8F%A3/">接口</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2021-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2021-08-05</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h4 id="接口"   >
+          <a href="#接口" class="heading-link"><i class="fas fa-link"></i></a><a href="#接口" class="headerlink" title="接口"></a>接口</h4>
+      <p>上面了解到了抽象类的局限性，解决这个问题最理想的方式就是使用接口</p>
+
+        <h4 id="1-什么是接口？"   >
+          <a href="#1-什么是接口？" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-什么是接口？" class="headerlink" title="1. 什么是接口？"></a>1. 什么是接口？</h4>
+      <p>Java中接口的作用和生活中的接口类似，它提供一种约定，使得实现接口的类（或结构）在形式上保持一致<br>概念性的接口，指系统对外提供的所有服务<br><font color="blue"> interface </font>定义的是实实在在的接口，即接口类型<br>接口的存在弥补了Java单根继承的缺点</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[访问修饰] interface 接口名称 [extends 其他接口名]&#123;</span><br><span class="line">	//声明变量</span><br><span class="line">	//声明方法</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public interface MyInterface&#123;</span><br><span class="line">	public void foo();</span><br><span class="line">	//其他方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="JDK8之前的接口特性"   >
+          <a href="#JDK8之前的接口特性" class="heading-link"><i class="fas fa-link"></i></a><a href="#JDK8之前的接口特性" class="headerlink" title="JDK8之前的接口特性"></a>JDK8之前的接口特性</h4>
+      <blockquote>
+<p>1.接口中的变量都是静态常量( public static final ) ，必须显式初始化<br>2.接口中所有方法默认都是public abstract<br>3.接口没有构造方法，不可以被实例化，但可以被实现(常作为类型使用)<br>4.实现类必须实现接口的所有方法<br>5.实现类可以实现多个接口 (Java中的多继承)<br>6.implements、多个接口使用逗号隔开</p>
+</blockquote>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public interface MyInterface &#123;</span><br><span class="line">	//静态常量:接口中的变量必须是publication </span><br><span class="line">	public static final double PI=3.14;</span><br><span class="line">	//等同于</span><br><span class="line">	double PI=3.14;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	int m2(); 等同于 public abstract int m2();</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="2-接口初体验"   >
+          <a href="#2-接口初体验" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-接口初体验" class="headerlink" title="2. 接口初体验"></a>2. 接口初体验</h4>
+      <p>用程序描述接口</p>
+<p> 电脑主机有USB接口，鼠标和键盘需要用USB插头插到电脑上来使用<br> USB接口本市没有实现任何功能<br> USB接口规定了数据传输的要求<br> USB接口可以被多种USB设备实现</p>
+<p><strong>根据USB接口可以使用Java接口来实现</strong><br>    1.编写USB接口   根据需求设置方法<br>    2.实现USB接口   实现所有方法<br>    3.使用USB接口   用多态的方式使用</p>
+<p><strong>下面用代码来展示一下具体写法</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//USB接口：描述连接计算机和外部设备的串口总线标准</span><br><span class="line">//        定义一种输入输出接口的技术规范</span><br><span class="line">public interface USB &#123;</span><br><span class="line">	//USB接口并不实现具体功能，通过抽象方法来定义一种数据输入输出规范和标准</span><br><span class="line">	void service();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//满足USB标准的U盘</span><br><span class="line">public class USBDisk implements USB&#123;</span><br><span class="line">	public void service()&#123;</span><br><span class="line">		System.out.println(&quot;U盘：连接USB接口，传输数据&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//满足USB标准的风扇</span><br><span class="line">public class USBFan implements USB&#123;</span><br><span class="line">	public void service()&#123;</span><br><span class="line">		System.out.println(&quot;风扇：连接USB接口，获得电流，风扇转动&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//使用接口</span><br><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//USB风扇</span><br><span class="line">		USB uFan = new USBFan();</span><br><span class="line">		uFan.service();</span><br><span class="line">		//USB U盘</span><br><span class="line">		USB uDisk = new USBDisk();</span><br><span class="line">		uDisk.service();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>从上面例子看到了接口的简单使用可以知道：</p>
+<p>1.接口表示一种能力(体现在接口的方法上)</p>
+<p>2.面向接口编程<br>  <strong>程序设计时：</strong><br>  关心实现类有何能力，而不关心实现细节<br>  面向接口的约而不考虑接口的具体实现</p>
+
+        <h4 id="3-面向接口编程"   >
+          <a href="#3-面向接口编程" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-面向接口编程" class="headerlink" title="3. 面向接口编程"></a>3. 面向接口编程</h4>
+      <p><strong>案例：实现防盗门功能</strong><br>防盗门功能：<strong>开门、关门、开锁、关锁</strong></p>
+<p><strong>类图</strong><br><img src="https://img02.sogoucdn.com/app/a/100540022/2021080515183620645442.png" alt="20210805151759.png"></p>
+<p>定义父类 门 ：Door</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//门 ：抽象方法 开门 关门</span><br><span class="line">public abstract class Door &#123;</span><br><span class="line">	public abstract void open();</span><br><span class="line">	public abstract void close();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+<p>定义子类 防盗门 : TheftproofDoor </p>
+<p><strong>子类既继承门又实现锁的功能</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//防盗门：是门(is-a)，具备锁的能力(has-a)</span><br><span class="line">public class TheftproofDoor extends Door implements Lock &#123;</span><br><span class="line">	//上锁</span><br><span class="line">	public void lockUp() &#123;</span><br><span class="line">		System.out.println(&quot;锁门&quot;);	</span><br><span class="line">	&#125;</span><br><span class="line">	//开锁</span><br><span class="line">	public void openLock() &#123;</span><br><span class="line">		System.out.println(&quot;开锁&quot;);	</span><br><span class="line">	&#125;</span><br><span class="line">	//开门</span><br><span class="line">	public void open() &#123;</span><br><span class="line">		System.out.println(&quot;开门&quot;);	</span><br><span class="line">	&#125;</span><br><span class="line">	//关门</span><br><span class="line">	public void close() &#123;</span><br><span class="line">		System.out.println(&quot;关门&quot;);	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>定义接口 ：锁 ：Lock </p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//锁 ：开锁 上锁</span><br><span class="line">public interface Lock &#123;</span><br><span class="line">	void lockUp();</span><br><span class="line">	void openLock();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+<p>测试类: 测试开门、关门、锁门、开锁等功能</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//测试防盗门功能</span><br><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		TheftproofDoor d= new TheftproofDoor();		</span><br><span class="line">		//开门开锁</span><br><span class="line">		d.openLock();</span><br><span class="line">		d.open();</span><br><span class="line">		//关门上锁</span><br><span class="line">		d.close();</span><br><span class="line">		d.lockUp();	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>还可以加一个门拍照的功能</p>
+<p>接口表示一种能力，一个人可以有多种能力，一个类可以实现多个接口</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/09/10/Java-%E6%8A%BD%E8%B1%A1%E7%B1%BB/">抽象类</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2021-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2021-08-05</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="抽象类"   >
+          <a href="#抽象类" class="heading-link"><i class="fas fa-link"></i></a><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2>
+      
+        <h3 id="1-初识抽象类和抽象方法"   >
+          <a href="#1-初识抽象类和抽象方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-初识抽象类和抽象方法" class="headerlink" title="1.初识抽象类和抽象方法"></a>1.初识抽象类和抽象方法</h3>
+      
+        <h4 id="1-1区分普通方法和抽象方法"   >
+          <a href="#1-1区分普通方法和抽象方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1区分普通方法和抽象方法" class="headerlink" title="1.1区分普通方法和抽象方法"></a>1.1区分普通方法和抽象方法</h4>
+      <p>  在<strong>Java</strong>中，当一个类的方法被<font color="blue"> abstract </font>关键字修饰时，该方法为抽象方法。</p>
+<p>  <strong>抽象方法所在的类必须定义为抽象类</strong></p>
+<p>当一个方法被定义为抽象方法之后，意味着该方法不会有具体实现，而是在抽象类的子类中通过重写进行实现。定义抽象方法的语法格式如下：</p>
+<blockquote>
+<p><strong>[访问修饰符] abstract &lt;返回类型&gt; &lt;方法名&gt; ([参数列表])；</strong></p>
+</blockquote>
+<p><font color="#f56b7f"> abstract 关键字表示该方法被定义为抽象方法。</font><br><font color=""></font><br>  普通方法和抽象方法的区别:</p>
+<blockquote>
+<ol>
+<li>抽象方法需要用修饰符abstract修饰，普通方法不用</li>
+<li> 抽象方法没有方法体，普通方法有方法体</li>
+</ol>
+</blockquote>
+
+        <h4 id="1-2区分普通类和抽象类"   >
+          <a href="#1-2区分普通类和抽象类" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2区分普通类和抽象类" class="headerlink" title="1.2区分普通类和抽象类"></a>1.2区分普通类和抽象类</h4>
+      <p>  在Java中，当一个类被<font color="blue"> abstract </font>关键字修饰时，该类为抽象类。</p>
+<p>  <strong>定义抽象类的语法格式如下：</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abstract class&lt;类名&gt;&#123;</span><br><span class="line">         </span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p><font color="blue"> abstract </font> 关键字表示该类被定义为抽象类。<br>  普通类和抽象类的区别：<br>   1.抽象类需要用<font color="blue"> abstract </font> 修饰符修饰，普通类不用<br>    2.抽象类不能被实例化 ，普通类可以。<br>   Dog dog = new Dog();这就是实例化</p>
+
+        <h4 id="1-3定义一个抽象类"   >
+          <a href="#1-3定义一个抽象类" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-3定义一个抽象类" class="headerlink" title="1.3定义一个抽象类"></a>1.3定义一个抽象类</h4>
+      <p>   当一个类被定义为抽象类时，它可以包含各种类型的成员，包括属性、方法等，其中方法又可以分为普通方法和抽象方法，<strong>也就是说抽象类里可以有非抽象的方法</strong><br>   如抽象类结构图：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public abstract class 类名称&#123;</span><br><span class="line">	修饰符 abstract 返回类型 方法名(); &lt;------ 抽象方法</span><br><span class="line">	修饰符 返回类型 方法名()&#123;</span><br><span class="line">		普通方法</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p><strong>注意：</strong>抽象方法只能定义在抽象类中。但是抽象类中可以包含抽象方法，也可以包含普通方法，还可以包含普通类包含的一切成员</p>
+
+        <h3 id="2-使用抽象类描述抽象事物"   >
+          <a href="#2-使用抽象类描述抽象事物" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-使用抽象类描述抽象事物" class="headerlink" title="2.使用抽象类描述抽象事物"></a>2.使用抽象类描述抽象事物</h3>
+      <p><strong>下面通过一个示例简单的认识抽象类和抽象方法的用法：</strong></p>
+<p>有一个宠物类，宠物具体分为狗狗、企鹅等，实例化一个狗狗类、企鹅类是有意义的，而实例化一个宠物类则是不合理的，这里可以把宠物类定义为抽象类，避免宠物类被实例化</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//宠物抽象类 ，即狗狗和企鹅的父类</span><br><span class="line">public abstract class Pet &#123;</span><br><span class="line">	//属性  ： 昵称 健康度  亲密度</span><br><span class="line">	private String name =&quot;无名氏&quot;;//昵称</span><br><span class="line">	private int health = 100;//健康值</span><br><span class="line">	private int love = 0;//亲密度</span><br><span class="line">	</span><br><span class="line">	//无参构造</span><br><span class="line">	public Pet() &#123;&#125;</span><br><span class="line">	//有参构造</span><br><span class="line">	public Pet(String name, int health, int love) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">		this.health = health;</span><br><span class="line">		this.love = love;</span><br><span class="line">	&#125;</span><br><span class="line">	//输出宠物信息</span><br><span class="line">	public void print()&#123;</span><br><span class="line">		System.out.println(&quot;宠物的自白:\n我的名字叫&quot;+this.name+&quot;,健康值是&quot;+this.health+&quot;,和主人的亲密度是:&quot;+this.love+&quot;。&quot;);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>注意抽象类是不能被实例化的，下面是个错误示例:</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class Test&#123;</span><br><span class="line">	public static viod main(Stirng[] args)&#123;</span><br><span class="line">		Pet pet = new Pet(&quot;贝贝&quot;);</span><br><span class="line">		pet.print();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p><strong>抽象类实例化会报个错：</strong></p>
+<blockquote>
+<p><strong>java.long.Error: Unresolved compilation problem: Cannot instantiate the type Pet</strong> </p>
+</blockquote>
+<p>抽象类不能直接实例化，但它的子类是可以实例化的，如果子类中没有重写print( )方法，子类将继承Pet类的该方法，但无法正确输出子类信息。在Java中可以将print( )方法定义为抽象方法，让子类重写该方法，下面展示此部分代码：</p>
+<p><strong>在抽象的宠物类中定义抽象方法</strong></p>
+<p><strong>具体代码如上面所示，这里只展示部分</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//把上面代码</span><br><span class="line">	public void print()&#123;</span><br><span class="line">		System.out.println(&quot;宠物的自白:\n我的名字叫&quot;+this.name+&quot;,健康值是&quot;+this.health+&quot;,和主人的亲密度是:&quot;+this.love+&quot;。&quot;);</span><br><span class="line">//替换为</span><br><span class="line">public abstract void print();</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>抽象宠物类子类：狗狗类</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//子类 狗狗类</span><br><span class="line">public class Dog extends Pet &#123;</span><br><span class="line">	//狗狗的属性 品种</span><br><span class="line">	private String strain;//品种</span><br><span class="line">	private String name;//姓名</span><br><span class="line">	</span><br><span class="line">	//有参构造</span><br><span class="line">	public Dog(String strain)&#123;</span><br><span class="line">		this.strain=strain;</span><br><span class="line">	&#125;</span><br><span class="line">	//getter方法</span><br><span class="line">	public String getStrain() &#123;</span><br><span class="line">		return strain;</span><br><span class="line">	&#125;</span><br><span class="line">	//重写父类的print()方法</span><br><span class="line">	public void print() &#123;</span><br><span class="line">		System.out.println(&quot;我是一只&quot;+this.strain+&quot;。&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p><strong>测试类</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Pet dog = new Dog(&quot;哈士奇&quot;);</span><br><span class="line">		dog.print();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>抽象类和抽象方法的优势</strong></p>
+<p>抽象类中已经实现的方法可以被其子类使用，使代码可以被复用；同时提供了抽象方法，保证了子类具有自身的独特性</p>
+<p><strong>抽象类的局限性</strong></p>
+<p>子类继承抽象父类之后，写出来的方法可能会出现代码重复，造成代码冗余</p>
+
+        <h3 id="3-总结"   >
+          <a href="#3-总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h3>
+      <p><strong>抽象类与抽象方法的使用</strong><br>1.抽象类中可以没有抽象方法，但包含了抽象方法的类必须被定义为抽象类<br>2.如果子类没有实现父类的所有抽象方法，子类必须被定义为抽象类<br>3.没有抽象构造方法，也没有抽象静态方法<br>4.抽象类中可以有非抽象的构造方法，创建子类的实例时可能调用</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/09/10/Java-%E5%BC%82%E5%B8%B8/">异常</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2021-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2021-08-09</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="Java-异常"   >
+          <a href="#Java-异常" class="heading-link"><i class="fas fa-link"></i></a><a href="#Java-异常" class="headerlink" title="Java-异常"></a>Java-异常</h3>
+      
+        <h4 id="1-什么是异常？"   >
+          <a href="#1-什么是异常？" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-什么是异常？" class="headerlink" title="1.什么是异常？"></a>1.什么是异常？</h4>
+      <p>异常是指在程序运行过程中所发生的不正常事件，如所需文件找不到、网络连接不通或连接中断、算术运算出错（如被零除）、数组下标越界、装载一个不存在的类、对null对象操作、类型转换异常等。异常会中段断正在运行的程序。</p>
+<p><strong>生活中的异常：</strong><br>正常情况下，小王每天开车去上班，耗时大约30钟</p>
+<p><strong>异常情况：</strong><br>上班路上会发生：堵车、车子故障等事故，会影响小王的上班时间</p>
+<p>下面看一个程序中的异常：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Scanner sc = new Scanner(System.in);</span><br><span class="line">System.out.print(&quot;请输入被除数：&quot;);</span><br><span class="line">int num1 = sc.nextInt();</span><br><span class="line">System.out.print(&quot;请输入除数：&quot;);</span><br><span class="line">int num2 = sc.nextInt();</span><br><span class="line">System.out.print(num1+&quot;/&quot;+num2+&quot;=&quot;+(num1/num2));</span><br><span class="line">System.out.print(&quot;感谢使用本程序！&quot;);</span><br></pre></td></tr></table></div></figure>
+<p>这个程序正常来说执行是不会报错的，但是一但出现异常程序将会立刻结束，不仅计算和输出商的语句不会执行，就连输出“感谢本程序！”的语句也不会执行,如下图所示：<br><img src="https://img13.360buyimg.com/ddimg/jfs/t1/196986/12/1936/20605/610cd871E919798c6/827ba5954b9b8427.png" alt="20210806143606.png"></p>
+<p>或者用户输入跟数字无关的字母、下划线等，也会出现异常</p>
+<p>总结下来：异常就是指在程序运行过程中所发生的不正常事件，它会中断正在运行的程序</p>
+<blockquote>
+<p>程序运行——&gt;异常——&gt;程序中断运行</p>
+</blockquote>
+<p><strong>在生活中面对异常会这样处理</strong></p>
+<blockquote>
+<p>开车—&gt;堵车—&gt;绕行或者等待—&gt;到公司<br>开车—&gt;车子故障—&gt;请道路救援维修，或者自己维修—&gt;到公司</p>
+</blockquote>
+<p><strong>生活中 ，根据不同的异常进行相应的处理，而不会就此中断我们的生活</strong></p>
+<p><strong>如何解决异常?</strong></p>
+<blockquote>
+<p>程序中出现异常，如何解决？<br>程序员通过代码堵住程序中可能出现的 “漏洞”</p>
+<p>程序中的异常处理<br>根据不同的异常进行相应的处理，而不会就此中断程序运行</p>
+<p>Java异常处理机制</p>
+</blockquote>
+<p>异常<br>1.在程序的运行过程中所发生的不正常的事件，它会中断中断正在运行的程序<br>异常处理<br>1.根据不同的异常进行相应的处理，而不会就此中断程序运行<br>2.Java使用异常处理机制为程序提供了错误处理的能力</p>
+
+        <h4 id="2-异常处理机制"   >
+          <a href="#2-异常处理机制" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-异常处理机制" class="headerlink" title="2.异常处理机制"></a>2.异常处理机制</h4>
+      <p>Java 编程语言使用异常处理机制为程序提供了错误处理的能力</p>
+<p>程序中预先设置号对付异常的处理办法—&gt;程序运行—&gt;异常<br>对异常进行处理—&gt;处理完毕，程序继续运行</p>
+<p>例：处理除数为0的传统方法<br>在用户录入之前做判断，排除一些用户的非法操作</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner sc = new Scanner(System.in);</span><br><span class="line">        System.out.print(&quot;请输入被除数：&quot;);</span><br><span class="line">        int num1 = sc.nextInt();</span><br><span class="line">        System.out.print(&quot;请输入除数：&quot;);</span><br><span class="line">        int num2 = 0;</span><br><span class="line">        //在接收用户录入之前做判断，排除一些用户的非法操作</span><br><span class="line">        //hasNextInt():用户输入的必须是int类型的数据</span><br><span class="line">        if(sc.hasNextInt())&#123;</span><br><span class="line">            num2=sc.nextInt();</span><br><span class="line">            //用户录入整数</span><br><span class="line">            if(0==num2)&#123;</span><br><span class="line">                //用户录入的是0</span><br><span class="line">                System.out.println(&quot;输入的除数不能为0，程序退出！&quot;);</span><br><span class="line">                //退出JVM，非0代表异常终止</span><br><span class="line">                System.exit(1);</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                System.out.println(num1+&quot;/&quot;+num2+&quot;=&quot;+(num1/num2));</span><br><span class="line">                System.out.print(&quot;感谢使用本程序！&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            //用户录入的是非整数</span><br><span class="line">            System.out.println(&quot;输入的除数不是整数，程序退出！&quot;);</span><br><span class="line">            //退出JVM，非0代表异常终止</span><br><span class="line">            System.exit(1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p><strong>弊端：</strong><br>1.代码臃肿<br>2.程序员要花很大精力 “堵漏洞”<br>3.程序员很难堵住所有 “漏洞”<br>4.异常处理代码和业务代码交织在一起，影响了代码的可读性，加大日后程序的维护难度。</p>
+
+        <h5 id="接下来介绍Java的异常处理机制"   >
+          <a href="#接下来介绍Java的异常处理机制" class="heading-link"><i class="fas fa-link"></i></a><a href="#接下来介绍Java的异常处理机制" class="headerlink" title="接下来介绍Java的异常处理机制"></a>接下来介绍Java的异常处理机制</h5>
+      <p>Java提供了异常处理机制，可以由系统来处理程序在运行过程中可能出现的异常事件，使程序员又更多精力关注于业务代码编写。</p>
+<p>有五个关键字：try、catch、finally、throw、throws</p>
+<blockquote>
+<p>1.try:执行可能产生异常的代码（捕获异常）<br>2.catch：捕获异常<br>3.finally：无论是否发生异常，代码总能执行<br>4.throws：声明方法可能要抛出的各种异常<br>5.throw：手动抛出异常</p>
+</blockquote>
+<p><strong>例：</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class Test1 &#123;</span><br><span class="line">    //简单的try-catch处理异常</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner sc = new Scanner(System.in);</span><br><span class="line">        try&#123;</span><br><span class="line">            System.out.print(&quot;请输入被除数：&quot;);</span><br><span class="line">            int num1 = sc.nextInt();</span><br><span class="line">            System.out.print(&quot;请输入除数：&quot;);</span><br><span class="line">            int num2 = sc.nextInt();</span><br><span class="line">            System.out.print(num1+&quot;/&quot;+num2+&quot;=&quot;+(num1/num2));</span><br><span class="line">            System.out.print(&quot;感谢使用本程序！&quot;);</span><br><span class="line">        &#125;catch (Exception e)&#123;</span><br><span class="line">            //捕获异常，对异常做处理</span><br><span class="line">            System.err.println(&quot;出现错误:被除数和除数必须为整数，且不能为零!&quot;);</span><br><span class="line">            System.exit(1);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>比起传统处理异常，try-catch更节省代码</p>
+
+        <h4 id="3-try-catch"   >
+          <a href="#3-try-catch" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-try-catch" class="headerlink" title="3.try-catch"></a>3.try-catch</h4>
+      <p><strong>掌握使用 try-catch异常处理的三种</strong> </p>
+<p>第一种：正常执行，可能出现异常</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public void method()&#123;</span><br><span class="line">	try&#123;</span><br><span class="line">		//代码段(此处不会产生异常)</span><br><span class="line">	&#125;catch(异常类型 e)&#123;</span><br><span class="line">		//对异常进行处理的代码段</span><br><span class="line">	&#125;</span><br><span class="line">	//代码段</span><br><span class="line">&#125;</span><br><span class="line">//try里面没有异常的话，不会执行carch会继续执行后面的代码段</span><br></pre></td></tr></table></div></figure>
+<p><strong>第二种：出现异常</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public void method()&#123;</span><br><span class="line">	try&#123;</span><br><span class="line">		//代码段1</span><br><span class="line">		//产生异常的代码段2</span><br><span class="line">		//代码段3</span><br><span class="line">	&#125;catch(异常类型 e)&#123;</span><br><span class="line">		//对异常进行处理的代码段4</span><br><span class="line">	&#125;</span><br><span class="line">	//代码段5</span><br><span class="line">	//有异常进入catch之后还会执行代码段5</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>第二种：异常类型不匹配</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public void method()&#123;</span><br><span class="line">	try&#123;</span><br><span class="line">		//代码段1</span><br><span class="line">		//产生异常的代码段2</span><br><span class="line">		//代码段3</span><br><span class="line">	&#125;catch(异常类型 e)&#123;</span><br><span class="line">		//对异常进行处理的代码段4</span><br><span class="line">	&#125;</span><br><span class="line">	//代码段5</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p><strong>异常类型不匹配的话，不会进入到catch里面，也不会继续执行后面的代码</strong></p>
+
+        <h4 id="4-异常对象处理"   >
+          <a href="#4-异常对象处理" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-异常对象处理" class="headerlink" title="4.异常对象处理"></a>4.异常对象处理</h4>
+      <p>在catch块中处理异常<br> 加入用户自定义处理信息</p>
+<blockquote>
+<p>System.err.println(“出现错误:被除数和除数必须是整数”);</p>
+</blockquote>
+<p>调用方法输出异常</p>
+<blockquote>
+<p>e.printStackTrace( );//输出异常的堆栈信息</p>
+</blockquote>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">catch (Exception e)&#123;</span><br><span class="line">  //捕获异常，对异常做处理</span><br><span class="line"> System.err.println(&quot;出现错误:被除数和除数必须为整数，且不能为零!&quot;);</span><br><span class="line">  //System.exit(1);</span><br><span class="line">  //输出异常堆栈信息</span><br><span class="line">  e.printStackTrace();</span><br><span class="line">&#125;;</span><br><span class="line">//printStackTrace()的堆栈跟踪功能显示出程序运行到当前类的执行流程</span><br></pre></td></tr></table></div></figure>
+<p>异常对象常用的方法</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">void printStackTrace()</td>
+<td>输出异常新堆栈信息</td>
+</tr>
+<tr>
+<td align="center">String getMessage()</td>
+<td>是printStackTrace()输出信息的一部分</td>
+</tr>
+</tbody></table></div>
+<p>getMessage( )：返回报错信息的字符串</p>
+<p><strong>常见的异常类型</strong></p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">异常类型</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Exception</td>
+<td align="center">异常层次结构的父类</td>
+</tr>
+<tr>
+<td align="center">ArithmeticException</td>
+<td align="center">算术错误情形，如以零作除数</td>
+</tr>
+<tr>
+<td align="center">ArraylndexOutOfBoundsException</td>
+<td align="center">数组下标越界</td>
+</tr>
+<tr>
+<td align="center">NullPointerException</td>
+<td align="center">尝试访问null对象成员</td>
+</tr>
+<tr>
+<td align="center">ClassNotFoundException</td>
+<td align="center">不能加载所需的类</td>
+</tr>
+<tr>
+<td align="center">lllegalArgumentException</td>
+<td align="center">方法接收到非法参数</td>
+</tr>
+<tr>
+<td align="center">ClassCastException</td>
+<td align="center">对象强制类型转换出错</td>
+</tr>
+<tr>
+<td align="center">NumberFormatException</td>
+<td align="center">算术错误情形，如以零作除数</td>
+</tr>
+<tr>
+<td align="center">ArithmeticException</td>
+<td align="center">数字格式转换异常，如把”abc”转换成数字</td>
+</tr>
+</tbody></table></div>
+
+        <h4 id="5-try-catch-finally"   >
+          <a href="#5-try-catch-finally" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-try-catch-finally" class="headerlink" title="5.try-catch-finally"></a>5.try-catch-finally</h4>
+      <p><strong>在try-catch块后加入finally ，finally不管前面是否发生异常都会被执行</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">public class Test1 &#123;</span><br><span class="line">    //简单的try-catch处理异常</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner sc = new Scanner(System.in);</span><br><span class="line">        try&#123;</span><br><span class="line">            System.out.print(&quot;请输入被除数：&quot;);</span><br><span class="line">            int num1 = sc.nextInt();</span><br><span class="line">            System.out.print(&quot;请输入除数：&quot;);</span><br><span class="line">            int num2 = sc.nextInt();</span><br><span class="line">            System.out.print(num1+&quot;/&quot;+num2+&quot;=&quot;+(num1/num2));</span><br><span class="line"></span><br><span class="line">        &#125;catch (Exception e)&#123;</span><br><span class="line">            //捕获异常，对异常做处理</span><br><span class="line">            System.err.println(&quot;出现错误:被除数和除数必须为整数，且不能为零!&quot;);</span><br><span class="line">           </span><br><span class="line">            //System.exit(1);</span><br><span class="line">            //输出异常堆栈信息</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;finally &#123;</span><br><span class="line">            System.out.print(&quot;感谢使用本程序！&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//唯一不执行的情况是写了</span><br><span class="line">//System.exit(1);</span><br><span class="line">如果catch里面有return的话，是先执行finally，再执行return</span><br></pre></td></tr></table></div></figure>
+<p><strong>面试题：</strong><br>1.try-catch块中存在return语句，是否还执行finally块？如果执行，说出执行循序</p>
+<p>答：执行finally，不管有没有异常，finally始终是执行的，finally的执行循序在 return 之前</p>
+<p>2.try-catch- finally块中，finally块唯一不执行的情况是什么?</p>
+<p>答：在catch里面加入了System.exit(1);此时进入到catch里面会终止JVM的进程</p>
+
+        <h4 id="6-多重catch"   >
+          <a href="#6-多重catch" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-多重catch" class="headerlink" title="6. 多重catch"></a>6. 多重catch</h4>
+      <p><strong>引发多种类型的异常</strong></p>
+<p>1.排列catch语句的顺序∶先子类后父类<br>2.发生异常时按顺序逐个匹配<br>3.只执行第一个与异常类型匹配的catch语句</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">public class Test1 &#123;</span><br><span class="line">    //简单的try-catch处理异常</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner sc = new Scanner(System.in);</span><br><span class="line">        try&#123;</span><br><span class="line">            System.out.print(&quot;请输入被除数：&quot;);</span><br><span class="line">            int num1 = sc.nextInt();</span><br><span class="line">            System.out.print(&quot;请输入除数：&quot;);</span><br><span class="line">            int num2 = sc.nextInt();</span><br><span class="line">            System.out.print(num1+&quot;/&quot;+num2+&quot;=&quot;+(num1/num2));</span><br><span class="line"></span><br><span class="line">        &#125;catch (InputMismatchException e)&#123;</span><br><span class="line">            //捕获异常，对异常做处理</span><br><span class="line">            System.err.println(&quot;出现错误:被除数和除数必须为整数!&quot;);</span><br><span class="line">//            e.printStackTrace();</span><br><span class="line">        &#125;catch (ArithmeticException e)&#123;</span><br><span class="line">            //捕获异常，对异常做处理</span><br><span class="line">            System.err.println(&quot;出现错误:除数不能为零!&quot;);</span><br><span class="line">//            e.printStackTrace();</span><br><span class="line">        &#125;catch (Exception e)&#123;</span><br><span class="line">            //捕获异常，对异常做处理</span><br><span class="line">            System.err.println(&quot;出现错误:非法操作!&quot;);</span><br><span class="line">            //System.exit(1);</span><br><span class="line">            //输出异常堆栈信息</span><br><span class="line">//            e.printStackTrace();</span><br><span class="line">        &#125;finally &#123;</span><br><span class="line">            System.out.println(&quot;感谢使用本程序！&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p><strong>多重catch的执行顺序：先执行小的异常，把大的异常放到最后</strong></p>
+
+        <h4 id="7-throws声明异常"   >
+          <a href="#7-throws声明异常" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-throws声明异常" class="headerlink" title="7. throws声明异常"></a>7. throws声明异常</h4>
+      <p>thriws声明某个方法可能抛出的各种异常，多个异常用逗号隔开</p>
+<p>方法1：调用者处理异常<br>方法2：调用者继续声明异常   ，main()方法声明的异常有Java虚拟机处理</p>
+<p>示例：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">	public static void main(String[] args) throws Exception&#123;</span><br><span class="line">		Scanner sc = new Scanner(System.in);</span><br><span class="line">		System.out.println(&quot;请输入被除数&quot;);</span><br><span class="line">		int bei=sc.nextInt();</span><br><span class="line">		System.out.println(&quot;请输入除数&quot;);</span><br><span class="line">		int chuShu = sc.nextInt();</span><br><span class="line">		</span><br><span class="line">		int sum=bei/chuShu;</span><br><span class="line">		System.out.println(bei+&quot;/&quot;+chuShu+&quot;=&quot;+sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">```				</span><br><span class="line"></span><br><span class="line">除了系统自动抛出异常外，有些问题需要程序员自行抛出和异常</span><br><span class="line">如：我声明了一个人类，但是男女在意义上只能是男或者是女，在OOP阶段可以使用异常来进行处理</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+<p>public class Person {<br>    private String name;<br>    private String sex;<br>    private String age;<br>    public String getName() {<br>        return name;<br>    }<br>    public void setName(String name) {<br>        this.name = name;<br>    }<br>    public String getSex() {<br>        return sex;<br>    }<br>    //性别只能是男和女，其他字符串报异常<br>    public void setSex(String sex) throws Exception {<br>        if(“男”.equals(sex) ||”女”.equals(sex)){<br>            this.sex=sex;<br>        }else{<br>            //当使用 throw显式抛出异常，必须对异常处理，或throws声明异常<br>            throw new Exception(“性别只能为男女”);<br>        }<br>    }<br>    public String getAge() {<br>        return age;<br>    }</p>
+<pre><code>public void setAge(String age) &#123;
+    this.age = age;
+&#125;
+
+//个人信息介绍
+public void print()&#123;
+    System.out.println(this.getName()+&quot;--&quot;+this.getSex()+&quot;--&quot;+this.getAge());
+&#125;
+//main方法
+public static void main(String[] args)&#123;
+    Person p = new Person();
+    try &#123;
+        p.setSex(&quot;sc &quot;);
+    &#125; catch (Exception e) &#123;
+        e.printStackTrace();
+    &#125;
+    p.print();
+&#125;
+</code></pre>
+<p>}</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">| throw | throws | </span><br><span class="line">| :-----: | :----: |</span><br><span class="line">| 生成并抛出异常| 声明方法内抛出了异常 | </span><br><span class="line">| 位于方法体内部，可作为单独语句使用 | 必须跟在方法参数列表后面，不能单独使用 | </span><br><span class="line">| 抛出一个异常对象，且只能是一个 | 声明抛出异常类型，可以跟多个异常 | </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### 8. throws自定义异常</span><br><span class="line">定义一个自定义异常：创建一个普通类，继承Exception使用super调用父类的方法</span><br></pre></td></tr></table></div></figure>
+<p>//自定义异常类（Person类性别赋值异常）<br>public class SexException extends Exception{</p>
+<pre><code>public SexException()&#123;&#125;
+//由特定异常信息构建异常对象
+public SexException(String message)&#123;
+    super(message);
+&#125;
+</code></pre>
+<p>}</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在setSex里面修改抛出的异常为SexException</span><br></pre></td></tr></table></div></figure>
+<p>//性别只能是男和女，其他字符串报异常<br>    public void setSex(String sex) throws SexException {<br>        if(“男”.equals(sex) ||”女”.equals(sex)){<br>            this.sex=sex;<br>        }else{<br>            //当使用 throw显式抛出异常，必须对异常处理，或throws声明异常<br>            throw new SexException(“性别只能为男女”);<br>        }<br>    }</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">最后调用setSex方法来try-catch自定义异常</span><br></pre></td></tr></table></div></figure>
+<p>public static void main(String[] args){<br>        Person p = new Person();<br>        try {<br>            p.setSex(“sc”);<br>        } catch (SexException e) {<br>            e.printStackTrace();<br>        }<br>        p.print();<br>    }</p>
+<p>```</p>
+
+        <h4 id="9-异常链和异常处理原则"   >
+          <a href="#9-异常链和异常处理原则" class="heading-link"><i class="fas fa-link"></i></a><a href="#9-异常链和异常处理原则" class="headerlink" title="9. 异常链和异常处理原则"></a>9. 异常链和异常处理原则</h4>
+      <p>问题：<br>A方法调用B方法时，B方法却抛出了异常。那A方法继续抛出原有的异常还是抛出一个新的异常呢？</p>
+<p>1.抛出原有的异常 ：A方法与B方法进行了关联 ，不便于代码的修改和扩展<br>2.抛出新的异常：会丢失原有的异常信息</p>
+<p>异常链是JDK1.4推出的创建了新的异常但却保留了原有异常的信息</p>
+
+        <h4 id="10-异常处理原则"   >
+          <a href="#10-异常处理原则" class="heading-link"><i class="fas fa-link"></i></a><a href="#10-异常处理原则" class="headerlink" title="10.异常处理原则"></a>10.异常处理原则</h4>
+      <blockquote>
+<p>异常处理与性能<br>异常只能用于非正常情况<br>需要对捕获的异常做处理<br>不要将过于庞大的代码块放在try中<br>在catch中指定具体的异常类型</p>
+</blockquote>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/09/10/Java-%E5%A4%9A%E6%80%81(2)/">Java-多态性(2)</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2021-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2021-08-05</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h4 id="Java-多态-2"   >
+          <a href="#Java-多态-2" class="heading-link"><i class="fas fa-link"></i></a><a href="#Java-多态-2" class="headerlink" title="Java-多态(2)"></a>Java-多态(2)</h4>
+      <p>多态的应用<br>Java-多态(1)里面使用的向上转型大家都已经了解了，接下来介绍多态第二种 Java中实现和使用多态的主要方式</p>
+
+        <h5 id="使用父类作为方法的返回值"   >
+          <a href="#使用父类作为方法的返回值" class="heading-link"><i class="fas fa-link"></i></a><a href="#使用父类作为方法的返回值" class="headerlink" title="使用父类作为方法的返回值"></a>使用父类作为方法的返回值</h5>
+      <p><strong>下面通过一个例子来演示</strong></p>
+<p>假如有三种动物被一个主人领养，这个主人可以根据其他人要求任意送出一只宠物。送出的动物会发出相应的叫声</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//主人类</span><br><span class="line">public class Host()&#123;</span><br><span class="line">	//赠送动物</span><br><span class="line">	public Animal donateAnimal(Stringt ype)&#123;</span><br><span class="line">		Animal animal;</span><br><span class="line">		if(type==&quot;dog&quot;)&#123;</span><br><span class="line">			animal = new Dog();</span><br><span class="line">		&#125;else if(type==cat)&#123;</span><br><span class="line">			animal = new Cat();</span><br><span class="line">		&#125;else if(type==Duck)&#123;</span><br><span class="line">			animal = new Duck();</span><br><span class="line">		&#125;</span><br><span class="line">		return animal;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p><strong>以上为主人类代码，以下为测试类代码</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class Test()&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		Host host = new Host();</span><br><span class="line">		Animal animal;</span><br><span class="line">		animal = host.donateAnimal(&quot;dog&quot;);</span><br><span class="line">		animal.cry();//狗叫</span><br><span class="line">		animal = host.donateAnimal(&quot;cat&quot;);</span><br><span class="line">		animal.cry();//猫叫</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>从上述代码中将父类Animal作为赠送动物方法的返回类型，而不是具体的子类，调用者仍然可以控制动物叫，动物叫的行为则由具体的动物类型决定</strong></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/09/10/Java-%E5%A4%9A%E6%80%81(1)/">Java-多态性(1)</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2021-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2021-08-09</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="Java-多态性"   >
+          <a href="#Java-多态性" class="heading-link"><i class="fas fa-link"></i></a><a href="#Java-多态性" class="headerlink" title="Java-多态性"></a>Java-多态性</h3>
+      <p>多态是Java面向对象的一个重要的特性</p>
+
+        <h4 id="1-认识多态"   >
+          <a href="#1-认识多态" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-认识多态" class="headerlink" title="1.认识多态"></a>1.认识多态</h4>
+      <p>多态一词通常含义是指能够呈现出多种不同的形式或形态，而在程序设计的术语中，它意味着一个特定类型的变量可以引用不同类型的对象，并且能自动地调用引用的对象的方法，也就是根据作用到的不同对象类型，响应不同的操作。方法重写是实现多态的基础<br><img src="https://img03.sogoucdn.com/app/a/100540022/2021080311010588619450.png" alt="20210803105806.png"></p>
+
+        <h4 id="2-为什么使用多态"   >
+          <a href="#2-为什么使用多态" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-为什么使用多态" class="headerlink" title="2.为什么使用多态"></a>2.为什么使用多态</h4>
+      <p>不使用多态会频繁修改代码,代码可扩展性、可维护性差</p>
+
+        <h4 id="3-多态初体验"   >
+          <a href="#3-多态初体验" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-多态初体验" class="headerlink" title="3.多态初体验"></a>3.多态初体验</h4>
+      <p>通过下面的例子理解什么是多态</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//父类 宠物类</span><br><span class="line">public class Pet &#123;</span><br><span class="line">	public void toHospital()&#123;</span><br><span class="line">		System.out.println(&quot;宠物看病 ! ! !&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//子类 小狗类</span><br><span class="line">public class Dog extends Pet&#123;</span><br><span class="line">	public void toHospital()&#123;</span><br><span class="line">		System.out.println(&quot;小狗看病&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//子类 鸟</span><br><span class="line">public class Bird extends Pet&#123;</span><br><span class="line">	public void toHospital()&#123;</span><br><span class="line">		System.out.println(&quot;小鸟看病&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//看病测试类</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//示例一</span><br><span class="line">		Dog dog = new Dog();</span><br><span class="line">		dog.toHospital();//小狗看病</span><br><span class="line">		Bird bird = new Bird();</span><br><span class="line">		bird.toHospital();//小鸟看病</span><br><span class="line">		</span><br><span class="line">		//示例二</span><br><span class="line">		Pet pet= new Pet();</span><br><span class="line">		pet = new Dog();</span><br><span class="line">		pet.toHospital();//小狗看病</span><br><span class="line">		pet = new Bird();</span><br><span class="line">		pet.toHospital();//小鸟看病		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>前后两段代码运行效果完全一样 示例二虽然定义的是Pet类但实际执行调用的都是Pet子类的方法</p>
+<p>这就体现了多态性</p>
+<p>多态意味着在一次方法调用中根据包含的对象的实际类型(即实际的子类对象)来决定应该调用哪个方法，而不是用来储存对象引用的变量的类型来决定的。</p>
+<p>当调用一个方法时，为了实现多态操作，这个方法即是在父类中声明过，也必须是在子类中重写过的方法。</p>
+<p>从上面的代码可以得出:<font color="red">实现多态必须要在继承(extends)和重写(override)的基础上实现</font></p>
+
+        <h3 id="向上-向下-转型"   >
+          <a href="#向上-向下-转型" class="heading-link"><i class="fas fa-link"></i></a><a href="#向上-向下-转型" class="headerlink" title="向上(向下)转型"></a>向上(向下)转型</h3>
+      
+        <h4 id="1-向上转型"   >
+          <a href="#1-向上转型" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-向上转型" class="headerlink" title="1.向上转型"></a>1.向上转型</h4>
+      <p>子类向父类的转换称为向上转型</p>
+<p>向上转型的语法格式如下</p>
+<blockquote>
+<p>&lt;父类型&gt;&lt;引用变量名&gt; = new &lt;子类型&gt;( );</p>
+</blockquote>
+<p>例：</p>
+<blockquote>
+<p>Pet  dog= new Dog( ); </p>
+</blockquote>
+<p>基本数据类型之间的转换和向上(向下)转型相似，举例如下:<br>( 1 ) 把<font color="blue"> int </font>型常量或变量的值赋值给<font color="blue"> double </font>型变量，可以自动进行类型转换</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int i= 5;</span><br><span class="line">double d1= i;</span><br></pre></td></tr></table></div></figure>
+<p>( 2 )  把double型常量或变量的值赋给int型变量，必须进行强制类型转换。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">double d2= 3.14;</span><br><span class="line">int a=(int)d2;</span><br></pre></td></tr></table></div></figure>
+<p>上面是数据类型之间的类型转换</p>
+<p>在引用数据类型的子类和父类之间也存在着类型转换的问题</p>
+<p><font color="blue"> Pet </font>为抽象父类,<font color="blue"> Dog </font>为抽象子类,<font color="blue"> Pet </font>父类中包含抽象方法<font color="blue"> toHospital( )</font></p>
+<blockquote>
+<p>Pet pet = new Dog( ); //子类到父类的转换<br>pet.toHospital( );</p>
+</blockquote>
+<p>会调用<font color="blue"> Dog </font>类的<font color="blue"> toHospital( ) </font>方法，而不是<font color="blue"> Pet </font>类的<font color="blue"> toHospital( ) </font>方法,体现了多态</p>
+<p>但是<font color="blue"> Pet </font>对象无法调用子类特有的方法</p>
+<p><strong>总结：</strong></p>
+<blockquote>
+<p>1.将一个父类的引用指向一个子类对象称为向上转型，系统会自动进行类型转换<br>2.此时通过父类引用变量调用的方法是子类覆盖或继承了父类的方法，不是父类的方法<br>3.此时通过父类引用变量无法调用子类特有的方法</p>
+</blockquote>
+
+        <h4 id="2-向下转型"   >
+          <a href="#2-向下转型" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-向下转型" class="headerlink" title="2.向下转型"></a>2.向下转型</h4>
+      <p>向上转型后，父类无法调用子类特有的方法，但是如果需要调用子类特有的方法，可以通过把父类转换为子类来实现</p>
+<p>将一个指向子类对象的父类引用赋给一个子类引用，即将父类类型转换为子类类型，称为向下转型，此时必须进行强制类型转换。</p>
+<p>在<font color="blue"> Dog </font>中声明一个特有的<strong>接飞盘</strong>方法 <strong><font color="blue">catchingFlyDisc( )</font></strong>,这个方法是子类特有的，下面的代码就会出现问题</p>
+<blockquote>
+<p>// <font color="blue"> Pet </font>为父类 ，<font color="blue"> Dog </font>为子类，<br>// Pet中包含方法<font color="blue"> toHospital()</font>,不包含<font color="blue"> catchingFlyDisc()</font>方法<br><font color="red">Pet pet = new Dog() </font> //子类到父类的转换<br>//会调用Dog类的 toHospital()方法，而不是Pet类的toHospital()方法，体现了多态<br><font color="red"> pet.toHospital(); </font>//可以调用父类和子类共有的方法<br><font color="red"> pet.catchingFlyDisc( ); </font>//无法调用子类特有的方法</p>
+</blockquote>
+<p>可以这样理解，主人可以为任何宠物看病，但只能和狗狗玩接飞盘游戏。在没有确实宠物是狗狗的情况下，主人不能与宠物玩接飞盘游戏。因为他需要的是一个宠物，但是没有明确要求是一只狗狗，所以很有可能他的宠物是一只鸟，因此就不能确实是否能玩接飞盘游戏。那么这里需要做的就是强制类型转换，将父类转换为子类，然后才能调用子类特有的方法。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Pet pet = new Pet();//声明一个父类</span><br><span class="line">Dog dog = (Dog)pet; //将父类 pet 转换为子类 Dog 类型</span><br><span class="line">dog.catchingFlyDisc();//执行子类 Dog 特有的方法</span><br></pre></td></tr></table></div></figure>
+
+<p>上述这种向下转型的操作对接口和抽象（普通）父类同样适用。</p>
+<p>向下转型的语法: <font color="#4169E1">&lt;子类型&gt;&lt;引用变量名&gt;=（&lt;子类型&gt;）&lt;父类的引用变量&gt;</font>；</p>
+
+        <h4 id="3-instanceof-运算符"   >
+          <a href="#3-instanceof-运算符" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-instanceof-运算符" class="headerlink" title="3.instanceof 运算符"></a>3.instanceof 运算符</h4>
+      <p>在向下转型的过程中没如果不是转换为真实的子类类型，会出现类型转换异常：<font color="#FF0000">ClassCastException</font></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//Pet 为父类 ，Dog为子类，Bird为子类</span><br><span class="line">Pet pet = new Dog(); //子类到父类的转换</span><br><span class="line">pet.toHospital();//会调用Dog的 toHospital() 方法</span><br><span class="line">Bird bird = (Bird)pet; // 将pet转换为Bird类会出错</span><br></pre></td></tr></table></div></figure>
+<p>Java中提供了<font color="    #EEB422"> instanceof </font>运算符来进行类型的判断</p>
+<p><strong>示例如下：</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class Test&#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Pet pet = new Dog;</span><br><span class="line">		//Pet pet = new Bird;</span><br><span class="line">		pet.toHospital();</span><br><span class="line">		if(pet instanceof Dog)&#123;</span><br><span class="line">			Dog dog = (Dog)pet;</span><br><span class="line">			d.carchingFlyDisc(); //执行狗狗的特有方法，接飞盘</span><br><span class="line">		&#125;else if(pet instanceof Bird)&#123;</span><br><span class="line">			Bird bird = (Bird)pet;</span><br><span class="line">			bird.fly(); //执行小鸟的特有方法，飞翔</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>使用<font color="    #EEB422"> instanceof </font>时，对象的类型必须和<font color="    #EEB422"> instanceof </font>后面的参数所指定的类有继承关系，否则会出现编译错误。</p>
+<p>例如：代码 “ pet instanceof String “ ，会出现编译错误。</p>
+<p><font color="    #EEB422"> instanceof </font> 通常和强制类型转换结合使用。</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/09/10/Java-Error%E5%92%8CException%E7%9A%84%E5%8C%BA%E5%88%AB/">Error和Exception的区别</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2021-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2021-08-09</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="Error和Exception的区别"   >
+          <a href="#Error和Exception的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#Error和Exception的区别" class="headerlink" title="Error和Exception的区别"></a>Error和Exception的区别</h3>
+      <p>首先介绍一下Java异常体系结构</p>
+<p>Java中的异常有很多类型，异常在Java中被封装成了各种异常类</p>
+<p>所有异常类型都是Throwable类的子类，它派生了两个子类：Error类和Exception类</p>
+
+        <h4 id="1-Error类"   >
+          <a href="#1-Error类" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-Error类" class="headerlink" title="1.Error类"></a>1.Error类</h4>
+      <p>Error类：表示仅靠程序本身无法恢复的严重错误，一般是与虚拟机相关的问题，如内存溢出、动态链接失败、虚拟机错误。应用程序不应该抛出这种类型的错误（一般由虚拟机抛出）。假如出现这种错误，应尽力使程序安全退出。</p>
+
+        <h4 id="2-Exception类"   >
+          <a href="#2-Exception类" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-Exception类" class="headerlink" title="2.Exception类"></a>2.Exception类</h4>
+      <p>Exception类：由Java应用程序抛出和处理的非严重错误，如所需文件找不到、网络连接不通或连接中断、算术运算出错（如被零除）、数组下标越界、装载一个不存在的类、对null对象操作、类型转换异常等。它的各种不同的子类分别对应不同类型的异常。Exception又可分为两大类异常：运行时异常和Checked异常。</p>
+
+        <h5 id="运行时异常"   >
+          <a href="#运行时异常" class="heading-link"><i class="fas fa-link"></i></a><a href="#运行时异常" class="headerlink" title="运行时异常"></a>运行时异常</h5>
+      <p>包括RuntimeException及其所有子类。不要求程序必须对他们进行处理。如算数异常（ArithmeticException）。运行时异常在编译阶段不会出错，在运行阶段才会报错</p>
+
+        <h5 id="Checked异常（非运行时异常）"   >
+          <a href="#Checked异常（非运行时异常）" class="heading-link"><i class="fas fa-link"></i></a><a href="#Checked异常（非运行时异常）" class="headerlink" title="Checked异常（非运行时异常）"></a>Checked异常（非运行时异常）</h5>
+      <p>除了运行时异常外的其他从Exception类继承来的异常类<br>当Checked异常出现时，程序必须处理该类异常，不处理编译就会报错</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/09/10/Java%20Object%E7%B1%BB/">Java Object类</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2021-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2021-09-14</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="Java-Object类"   >
+          <a href="#Java-Object类" class="heading-link"><i class="fas fa-link"></i></a><a href="#Java-Object类" class="headerlink" title="Java Object类"></a>Java Object类</h3>
+      
+        <h4 id="Object类介绍"   >
+          <a href="#Object类介绍" class="heading-link"><i class="fas fa-link"></i></a><a href="#Object类介绍" class="headerlink" title="Object类介绍"></a>Object类介绍</h4>
+      <p>Object 是所有的类的直接或间接父类<br><strong>如:Cat后面的 extends Object 不写也默认继承</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public class Cat (extends Object)&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h4 id="Object类被子类经常重写的方法"   >
+          <a href="#Object类被子类经常重写的方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#Object类被子类经常重写的方法" class="headerlink" title="Object类被子类经常重写的方法"></a>Object类被子类经常重写的方法</h4>
+      <div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">toString()</td>
+<td align="center">比较两个对象是否是同一个对象，是则返回true</td>
+</tr>
+<tr>
+<td align="center">equals()</td>
+<td align="center">单元格</td>
+</tr>
+<tr>
+<td align="center">hashCode()</td>
+<td align="center">返回该对象的哈希代码值</td>
+</tr>
+<tr>
+<td align="center">getClass()</td>
+<td align="center">获取当前对象所属的类信息，返回Class对象</td>
+</tr>
+</tbody></table></div>
+
+        <h4 id="equals-方法介绍"   >
+          <a href="#equals-方法介绍" class="heading-link"><i class="fas fa-link"></i></a><a href="#equals-方法介绍" class="headerlink" title="equals( )方法介绍"></a>equals( )方法介绍</h4>
+      <p> 作用：比较两个对象是否是同一个对象，是则返回 <font color="blue">true</font>，不是则返回 <font color="blue">false</font></p>
+<p>  下面用一个例子来演示</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">//学生类</span><br><span class="line">public class Student extends Object&#123;</span><br><span class="line">	//这里加上了 extends Object; 不加 extends Object 也默认会有</span><br><span class="line">	//属性：学号 姓名 年龄 体重</span><br><span class="line">	private int sid;</span><br><span class="line">	private String name;</span><br><span class="line">	private int age;</span><br><span class="line">	private int weight;</span><br><span class="line">	</span><br><span class="line">	//无参构造</span><br><span class="line">	public Student()&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	//有参构造</span><br><span class="line">	public Student(int sid,String name,int age,int weight)&#123;</span><br><span class="line">		this.sid=sid;</span><br><span class="line">		this.name=name;</span><br><span class="line">		this.age=age;</span><br><span class="line">		this.weight=weight;</span><br><span class="line">	&#125;</span><br><span class="line">	//getter、setter方法</span><br><span class="line">	public int getSid() &#123;</span><br><span class="line">		return sid;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setSid(int sid) &#123;</span><br><span class="line">		this.sid = sid;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	public int getAge() &#123;</span><br><span class="line">		return age;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setAge(int age) &#123;</span><br><span class="line">		this.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	public int getWeight() &#123;</span><br><span class="line">		return weight;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setWeight(int weight) &#123;</span><br><span class="line">		this.weight = weight;</span><br><span class="line">	&#125;	</span><br><span class="line">	//main方法</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//例1</span><br><span class="line">	 	Student s1= new Student(1,&quot;张三&quot;,18,50);</span><br><span class="line">		Student s2= new Student(1,&quot;张三&quot;,18,50);</span><br><span class="line">		s1和s2指向的不是同一个地址值,所以为false</span><br><span class="line">		//判断两个对象是否为同一对象</span><br><span class="line">		System.out.println(s1 == s2);</span><br><span class="line">		System.out.println(s1.equals(s2));</span><br><span class="line">		</span><br><span class="line">		//例2</span><br><span class="line">		Student s1= new Student(1,&quot;张三&quot;,18,50);</span><br><span class="line">		Student s2= s1;</span><br><span class="line">		//判断两个对象是否为同一对象</span><br><span class="line">		System.out.println(s1 == s2);</span><br><span class="line">		System.out.println(s1.equals(s2));</span><br><span class="line">		//s1和s2指向的是同一个地址值 所以为true		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>从上面代码可以得出：<font color="blue">equals( )</font>和<font color="blue">==</font>没有太大的区别<br>不同的是<font color="blue">equals( )</font>个方法 而<font color="blue">==</font>是一个操作符</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/09/10/ArrayList%E5%92%8CLinkedList%E7%9A%84%E5%8C%BA%E5%88%AB/">ArrayList与LinkedList的区别</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2021-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2021-08-10</span></span></div></header><div class="post-body"><div class="post-excerpt"><p><strong>ArrayList与LinkedList 相同点∶</strong><br>同为List实现类，元素有序、不唯一、长度可变共有Collection及List的通用方法</p>
+<p><strong>ArrayList与LinkedList 不同点∶</strong><br>ArrayList实现了长度可变的数组，在内存中分配连续的空间，遍历元素和随机访问元素的效率比较高<br>LinkedList采用链表存储方式，插入、删除元素时效率比较高</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/09/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2021-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2021-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt"></div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://img10.360buyimg.com/ddimg/jfs/t1/210672/22/780/14721/614304cbE6ed71481/b30794e20af29208.png" alt="avatar"></div><p class="sidebar-ov-author__text">生活如此美好</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">31</div><div class="sidebar-ov-state-item__name">Archives</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">3</div><div class="sidebar-ov-state-item__name">Categories</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">29</div><div class="sidebar-ov-state-item__name">Tags</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>John Doe</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v5.4.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

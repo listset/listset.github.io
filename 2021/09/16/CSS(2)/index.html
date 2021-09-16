@@ -1,0 +1,513 @@
+<!DOCTYPE html><html lang="CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="https://img10.360buyimg.com/ddimg/jfs/t1/210672/22/780/14721/614304cbE6ed71481/b30794e20af29208.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="CSS                           1.超连接伪类       语法  标签名:伪类名{声明;}  示例 1234567891011121314151617181920212223242526272829303132333435363738394041424344&lt;html&gt;    &lt;head&gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS笔记(2)">
+<meta property="og:url" content="http://example.com/2021/09/16/CSS(2)/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="CSS                           1.超连接伪类       语法  标签名:伪类名{声明;}  示例 1234567891011121314151617181920212223242526272829303132333435363738394041424344&lt;html&gt;    &lt;head&gt;">
+<meta property="og:locale">
+<meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/59364/40/17518/58351/61415b44E3a888988/37f94bf05efcbe10.png">
+<meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/89641/7/18719/100685/614165b7Ec6492cd2/934e8312c50fc04f.png">
+<meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/199788/40/8475/17759/61416eadEc21bbf92/3cbbd96260920e22.png">
+<meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/89805/12/17334/8159/61416fd8E1830e4a2/8bfb4a9f953f2ccf.png">
+<meta property="og:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/70814/38/17057/8163/6141928aE630ddaaf/42b719ff7c517326.png">
+<meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/92874/16/19316/9004/6141930dEdc9d55ac/84fc1bc48e4c9ef3.png">
+<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/109177/16/16529/78460/6142b00eE87a2d335/5ca36c0af7b1d12e.png">
+<meta property="article:published_time" content="2021-09-16T07:37:19.776Z">
+<meta property="article:modified_time" content="2021-09-16T07:38:19.869Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="CSS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/59364/40/17518/58351/61415b44E3a888988/37f94bf05efcbe10.png"><title>CSS笔记(2) | Hexo</title><link ref="canonical" href="http://example.com/2021/09/16/CSS(2)/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">Categories</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">Tags</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hexo</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">CSS笔记(2)</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2021-09-16</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2021-09-16</span></span></div></header><div class="post-body">
+        <h2 id="CSS"   >
+          <a href="#CSS" class="heading-link"><i class="fas fa-link"></i></a><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2>
+      
+        <h3 id="1-超连接伪类"   >
+          <a href="#1-超连接伪类" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-超连接伪类" class="headerlink" title="1.超连接伪类"></a>1.超连接伪类</h3>
+      <p>语法</p>
+<blockquote>
+<p>标签名:伪类名{声明;}</p>
+</blockquote>
+<p>示例</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;超连接伪类&lt;/title&gt;</span><br><span class="line">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=utf-8&quot;/&gt;</span><br><span class="line">        &lt;link href=&quot;5.style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        /*访问时为橙色，访问后为紫色*/</span><br><span class="line">        p,a&#123;</span><br><span class="line">            font-size:50px;</span><br><span class="line">        &#125;</span><br><span class="line">        .ha&#123;</span><br><span class="line">	        color:violet;</span><br><span class="line">        &#125;   </span><br><span class="line">        .ha:hover&#123;</span><br><span class="line">            color:orange;</span><br><span class="line">        &#125;</span><br><span class="line">        .h2&#123;</span><br><span class="line">            color:palegoldenrod;</span><br><span class="line">        &#125;</span><br><span class="line">        /* 未单击访问时超链接样式 */</span><br><span class="line">        .h2:link&#123;</span><br><span class="line">            color: royalblue;</span><br><span class="line">        &#125; </span><br><span class="line">        /* 单击访问后超链接样式  */</span><br><span class="line">        .h2:visited&#123;</span><br><span class="line">            color:violet;</span><br><span class="line">        &#125;</span><br><span class="line">        /* 鼠标悬浮其上的超链接样式 */</span><br><span class="line">        .h2:hover&#123;</span><br><span class="line">            color:violet;</span><br><span class="line">        &#125;</span><br><span class="line">        /* 鼠标单击未释放的超链接样式  */</span><br><span class="line">        .h2:active&#123;</span><br><span class="line">            color: salmon;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;p class=&quot;ha&quot;&gt;这是字体演示&lt;/p&gt;</span><br><span class="line">        &lt;a href=&quot;#&quot; class=&quot;h2&quot;&gt;</span><br><span class="line">            字体演示二</span><br><span class="line">        &lt;/a&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></div></figure>
+
+<p>伪类的所有属性</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">伪类名称</th>
+<th align="center">含义</th>
+<th align="center">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">a:link</td>
+<td align="center">未单击访问时超链接样式</td>
+<td align="center">a:link{color:#9EF5F9;}</td>
+</tr>
+<tr>
+<td align="center">a:visited</td>
+<td align="center">单击访问后超链接样式</td>
+<td align="center">a:visited{color:#333;}</td>
+</tr>
+<tr>
+<td align="center">a:hover</td>
+<td align="center">鼠标悬浮其上的超链接样式</td>
+<td align="center">a:hover{color:#FF7300;}</td>
+</tr>
+<tr>
+<td align="center">a:active</td>
+<td align="center">鼠标单击未释放的超链接样式</td>
+<td align="center">a:active{color:#999;}</td>
+</tr>
+</tbody></table></div>
+<p><strong>设置伪类的顺序 ：a:link -&gt; a:visited -&gt; a:hover -&gt; a:active</strong></p>
+
+        <h3 id="2-列表样式"   >
+          <a href="#2-列表样式" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-列表样式" class="headerlink" title="2.列表样式"></a>2.列表样式</h3>
+      <p>掌握如何通过CSS设置列表样式</p>
+<ul>
+<li>list-style-type</li>
+<li>list-style-image</li>
+<li>list-style-position</li>
+<li>list-style</li>
+</ul>
+
+        <h4 id="2-1-list-style-type-重点"   >
+          <a href="#2-1-list-style-type-重点" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-list-style-type-重点" class="headerlink" title="2.1 list-style-type 重点"></a>2.1 list-style-type 重点</h4>
+      <div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">值</th>
+<th align="center">说明</th>
+<th align="center">语法示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">none</td>
+<td align="center">无标记符号</td>
+<td align="center">list-style-type:none;</td>
+</tr>
+<tr>
+<td align="center">disc</td>
+<td align="center">实心圆，默认类型</td>
+<td align="center">list-style-type:disc;</td>
+</tr>
+<tr>
+<td align="center">circle</td>
+<td align="center">空心圆</td>
+<td align="center">list-style-type:circle;</td>
+</tr>
+<tr>
+<td align="center">square</td>
+<td align="center">实行正方形</td>
+<td align="center">list-style-type:square;</td>
+</tr>
+<tr>
+<td align="center">decimal</td>
+<td align="center">数字</td>
+<td align="center">list-style-type:decimal;</td>
+</tr>
+</tbody></table></div>
+
+        <h4 id="2-2-list-style-image"   >
+          <a href="#2-2-list-style-image" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-list-style-image" class="headerlink" title="2.2 list-style-image"></a>2.2 list-style-image</h4>
+      <p>设置图片</p>
+<p>语法</p>
+<blockquote>
+<p>list-style-image:url(图片地址);</p>
+</blockquote>
+
+        <h4 id="2-3-list-style-position"   >
+          <a href="#2-3-list-style-position" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-list-style-position" class="headerlink" title="2.3 list-style-position"></a>2.3 list-style-position</h4>
+      <p>有两个属性</p>
+<blockquote>
+<p>list-style-positiopn:inside：位于列表项的内侧<br>list-style-position:outside：位于列表项的外侧</p>
+</blockquote>
+
+        <h4 id="2-4-list-style"   >
+          <a href="#2-4-list-style" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-4-list-style" class="headerlink" title="2.4 list-style"></a>2.4 list-style</h4>
+      <p>list-style-type可以简写为 list-style</p>
+<p>示例：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li&#123;</span><br><span class="line">	list-style:none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+
+        <h3 id="3-背景样式"   >
+          <a href="#3-背景样式" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-背景样式" class="headerlink" title="3.背景样式"></a>3.背景样式</h3>
+      <ul>
+<li>background-color</li>
+<li>background-image</li>
+<li>background-repeat</li>
+<li>background-position</li>
+<li>background</li>
+</ul>
+<p> background-color 设置背景颜色</p>
+<p> background-image:url(图片路径);  设置背景图片</p>
+<ul>
+<li>背景重复方式<ul>
+<li>background-repeat属性<ul>
+<li>repeat ：沿水平线和垂直两个方向平铺</li>
+<li>no-repeat ：bupingpu，只显示一次</li>
+<li>repeat-x ：只沿水平方向平铺</li>
+<li>repeat-y ：只沿垂直方向平铺</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>背景定位<br>background-position属性</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">值</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Xpos Ypos</td>
+<td align="center">单位:px;Xpos表示水平位置，Ypos表示垂直位置</td>
+</tr>
+<tr>
+<td align="center">X% Y%</td>
+<td align="center">使用百分比表示背景的位置</td>
+</tr>
+<tr>
+<td align="center">X、Y方向关键字</td>
+<td align="center">水平方向的关键词：left、center、right ; 垂直方向的关键词 : top、center、bottom</td>
+</tr>
+</tbody></table></div>
+<p><strong>综合案例</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;超连接伪类&lt;/title&gt;</span><br><span class="line">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=utf-8&quot;/&gt;</span><br><span class="line">        &lt;link href=&quot;5.style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        #nav&#123;</span><br><span class="line">            width: 230px;</span><br><span class="line">            background-color: #D7D7D7;</span><br><span class="line">          </span><br><span class="line">        &#125;</span><br><span class="line">        .title&#123;</span><br><span class="line">            font-size: 18px;</span><br><span class="line">            font-weight: bold;</span><br><span class="line">            text-indent: 1em;</span><br><span class="line">            line-height: 35px;</span><br><span class="line">          </span><br><span class="line">            color: #FFF;</span><br><span class="line">            /* </span><br><span class="line">            两种写法</span><br><span class="line">            background-color: #C00;</span><br><span class="line">            background-image: url(image/arrow-down.gif);</span><br><span class="line">            background-repeat: no-repeat;</span><br><span class="line">            background-position: right,center; </span><br><span class="line">            */</span><br><span class="line">            background: #C00 url(image/arrow-down.gif) right center no-repeat;</span><br><span class="line">        &#125;</span><br><span class="line">        ul li&#123;</span><br><span class="line">            height: 30px;</span><br><span class="line">            line-height: 25px;</span><br><span class="line">            text-indent: 1em;</span><br><span class="line">            list-style: none;</span><br><span class="line">            background: url(image/arrow-right.gif) right center no-repeat;</span><br><span class="line">        &#125;</span><br><span class="line">        a&#123;</span><br><span class="line">        font-size: 14px;</span><br><span class="line">        text-decoration: none;</span><br><span class="line">        color: #000;</span><br><span class="line">        &#125;</span><br><span class="line">        a:hover&#123;</span><br><span class="line">        font-size: 14px;</span><br><span class="line">        color: darkcyan;</span><br><span class="line">        text-decoration: none;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div id=&quot;nav&quot;&gt;</span><br><span class="line">            &lt;h2 class=&quot;title&quot;&gt;全部商品分类&lt;/h2&gt;</span><br><span class="line">            &lt;ul&gt;</span><br><span class="line">                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;图书&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#&quot;&gt;音响&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#&quot;&gt;数字商品&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;家用电器&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#&quot;&gt;手机&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#&quot;&gt;数码&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;电脑&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#&quot;&gt;办公&lt;/a&gt;</span><br><span class="line">                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;家具&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#&quot;&gt;家装&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#&quot;&gt;厨具&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;服饰鞋帽&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#&quot;&gt;个护化妆&lt;/a&gt;</span><br><span class="line">                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;礼品箱包&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#&quot;&gt;钟表&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#&quot;&gt;珠宝&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;彩票&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#&quot;&gt;旅行&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#&quot;&gt;充值&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">            &lt;/ul&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        </span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></div></figure>
+
+
+
+        <h3 id="4-盒子模型"   >
+          <a href="#4-盒子模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-盒子模型" class="headerlink" title="4.盒子模型"></a>4.盒子模型</h3>
+      <p>盒模型本质上是一个盒子，封装周围的HTML元素</p>
+<p>它包括：外边距，边框，填充，和实际内容</p>
+<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/59364/40/17518/58351/61415b44E3a888988/37f94bf05efcbe10.png" alt="20210915103220.png"></p>
+
+        <h4 id="4-1-边框颜色-—-border-color"   >
+          <a href="#4-1-边框颜色-—-border-color" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-1-边框颜色-—-border-color" class="headerlink" title="4.1 边框颜色 — border-color"></a>4.1 边框颜色 — border-color</h4>
+      <p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/89641/7/18719/100685/614165b7Ec6492cd2/934e8312c50fc04f.png" alt="QQ浏览器截图20210915111655.png"></p>
+
+        <h4 id="4-2-边框粗细-—-border-with"   >
+          <a href="#4-2-边框粗细-—-border-with" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-2-边框粗细-—-border-with" class="headerlink" title="4.2 边框粗细 — border-with"></a>4.2 边框粗细 — border-with</h4>
+      <p>border-width：取值</p>
+<ul>
+<li>thin</li>
+<li>medium</li>
+<li>thick</li>
+<li><font color="red">像素值</font></li>
+</ul>
+<p>示例：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">border-top-width:5px;</span><br><span class="line">border-right-width:10px;</span><br><span class="line">border-bottom-width:8px;</span><br><span class="line">border-left-width:22px;</span><br><span class="line">border-width:22px;</span><br><span class="line">border-width:22px 2px;</span><br><span class="line">border-width:22px 6px 23px;</span><br><span class="line">border-width:2px 2px 4px 5px;</span><br></pre></td></tr></table></div></figure>
+
+<p>同时设置边框的颜色、粗细和样式</p>
+<blockquote>
+<p>border:1px solid #3A6587;</p>
+</blockquote>
+
+        <h4 id="4-3-边框样式-—-border-style"   >
+          <a href="#4-3-边框样式-—-border-style" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-3-边框样式-—-border-style" class="headerlink" title="4.3 边框样式 — border-style"></a>4.3 边框样式 — border-style</h4>
+      <ul>
+<li>none</li>
+<li>dotted 点线</li>
+<li><font color="red">dashed 虚线</font></li>
+<li><font color="red">solid 实线</font></li>
+<li>double 两个边框</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#name&#123;</span><br><span class="line">    border:3px solid black;</span><br><span class="line"> &#125;</span><br><span class="line">#email&#123;</span><br><span class="line">    border:1px dashed red;</span><br><span class="line">&#125;</span><br><span class="line">#tel&#123;</span><br><span class="line">    border:1px dotted blue; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="4-3-外边距—-margin"   >
+          <a href="#4-3-外边距—-margin" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-3-外边距—-margin" class="headerlink" title="4.3 外边距— margin"></a>4.3 外边距— margin</h4>
+      <p>margin</p>
+<ul>
+<li>margin-top</li>
+<li>margin-right</li>
+<li>margin-bottom</li>
+<li>margin-left</li>
+<li>margin</li>
+</ul>
+<p>示例</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">margin-top:1px;</span><br><span class="line">margin-right:2px;</span><br><span class="line">margin-bottom:2px</span><br><span class="line">margin-left:1px</span><br><span class="line">margin:3px 5px 5px 7px;</span><br><span class="line">margin:3px 5px;</span><br><span class="line">margin:3px 4px 7px;</span><br><span class="line">margin:9px;</span><br></pre></td></tr></table></div></figure>
+
+
+
+        <h4 id="4-4-内边距—-pading"   >
+          <a href="#4-4-内边距—-pading" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-4-内边距—-pading" class="headerlink" title="4.4 内边距— pading"></a>4.4 内边距— pading</h4>
+      <p>pading</p>
+<ul>
+<li>pading-top</li>
+<li>pading-right</li>
+<li>pading-bottom</li>
+<li>pading-left</li>
+<li>pading</li>
+</ul>
+<p>示例</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">pading-top:1px;</span><br><span class="line">pading-right:2px;</span><br><span class="line">pading-bottom:2px</span><br><span class="line">pading-left:1px</span><br><span class="line">pading:3px 5px 5px 7px;</span><br><span class="line">pading:3px 5px;</span><br><span class="line">pading:3px 4px 7px;</span><br><span class="line">pading:9px;</span><br></pre></td></tr></table></div></figure>
+
+
+
+        <h4 id="4-5-网页布局结构"   >
+          <a href="#4-5-网页布局结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-5-网页布局结构" class="headerlink" title="4.5 网页布局结构"></a>4.5 网页布局结构</h4>
+      <ul>
+<li>上下结构</li>
+<li>上中下结构</li>
+<li>上左右下结构：1-2-1结构</li>
+<li>上左中右下结构：1-3-1结构</li>
+</ul>
+<p><strong>上下结构示意图</strong></p>
+<p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/199788/40/8475/17759/61416eadEc21bbf92/3cbbd96260920e22.png" alt="20210915115508.png"></p>
+<p><strong>上中下结构示意图</strong></p>
+<p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/89805/12/17334/8159/61416fd8E1830e4a2/8bfb4a9f953f2ccf.png" alt="20210915120012.png"></p>
+<p><strong>上左右下结构：1-2-1结构</strong></p>
+<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/70814/38/17057/8163/6141928aE630ddaaf/42b719ff7c517326.png" alt="20210915142522.png"></p>
+<p><strong>上左中右下结构：1-3-1结构</strong></p>
+<p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/92874/16/19316/9004/6141930dEdc9d55ac/84fc1bc48e4c9ef3.png" alt="20210915142950.png"></p>
+
+        <h3 id="5-浮动"   >
+          <a href="#5-浮动" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-浮动" class="headerlink" title="5. 浮动"></a>5. 浮动</h3>
+      <p><code>&lt;div&gt;</code>为块级元素，独占一行，那怎么实现上中下（1-2-1）结构和（1-3-1）结构</p>
+<p>这时就用到了浮动</p>
+<p>float- 浮动可以理解为让某个div元素脱离标准流，漂浮在标准流之上，和标准流不是一个层次</p>
+<p>一个浮动元素会尽量想做或向右动，直到它的边缘碰到包含框或了另一个浮动框的边框为止</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">left</td>
+<td align="center">元素向左浮动</td>
+</tr>
+<tr>
+<td align="center">right</td>
+<td align="center">元素向右浮动</td>
+</tr>
+<tr>
+<td align="center">none</td>
+<td align="center">默认值，元素不浮动</td>
+</tr>
+</tbody></table></div>
+<p>添加浮动元素后，浮动元素周围的元素重新排列，如何避免？</p>
+<ul>
+<li>浮动元素之后的元素将围绕它(文本围绕div)</li>
+<li>使用clear ：clear属性可以清除浮动对其元素造成的影响</li>
+</ul>
+<p>clear属性</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">left</td>
+<td align="center">在左侧不允许浮动元素</td>
+</tr>
+<tr>
+<td align="center">right</td>
+<td align="center">在右侧不允许浮动元素</td>
+</tr>
+<tr>
+<td align="center">both</td>
+<td align="center">在左、右侧不允许浮动元素</td>
+</tr>
+<tr>
+<td align="center">none</td>
+<td align="center">默认值，允许浮动元素出现在两侧</td>
+</tr>
+</tbody></table></div>
+
+        <h3 id="6-父级边框塌陷解决"   >
+          <a href="#6-父级边框塌陷解决" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-父级边框塌陷解决" class="headerlink" title="6. 父级边框塌陷解决"></a>6. 父级边框塌陷解决</h3>
+      <ul>
+<li>解决父元素的高度</li>
+<li>浮动元素后添加空白 div ,给div设置clear属性</li>
+<li>父级添加位列after</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.clear:after&#123;</span><br><span class="line">	content:&quot;&quot;; /*在clear类后面添加内容为空*/</span><br><span class="line">	display:block; /*把添加的内容转化为块元素*/</span><br><span class="line">	clear:both; /*清除这个元素两边的浮动*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>父级添加 overflow 属性 hidden</li>
+</ul>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">visible</td>
+<td align="center">默认值。内容不会被修剪，会呈现在盒子之外</td>
+</tr>
+<tr>
+<td align="center">hidden</td>
+<td align="center">内容会被修剪，并且其余内容是不可见的</td>
+</tr>
+<tr>
+<td align="center">scroll</td>
+<td align="center">内容会被修剪，但是浏览器会显示滚动条以便查看其余内容</td>
+</tr>
+<tr>
+<td align="center">auto</td>
+<td align="center">如果内容被修改，则浏览器会显示滚动条以便查看其余的内容</td>
+</tr>
+</tbody></table></div>
+
+        <h3 id="7-定位"   >
+          <a href="#7-定位" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-定位" class="headerlink" title="7. 定位"></a>7. 定位</h3>
+      <p>position属性</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">static</td>
+<td align="center">默认值，没有定位</td>
+</tr>
+<tr>
+<td align="center">relative</td>
+<td align="center">相对定位</td>
+</tr>
+<tr>
+<td align="center">absolute</td>
+<td align="center">绝对定位</td>
+</tr>
+<tr>
+<td align="center">fixed</td>
+<td align="center">固定定位</td>
+</tr>
+</tbody></table></div>
+
+        <h4 id="7-1-默认定位—-position-static"   >
+          <a href="#7-1-默认定位—-position-static" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-1-默认定位—-position-static" class="headerlink" title="7.1 默认定位—-position:static"></a>7.1 默认定位—-position:static</h4>
+      <p>默认定位不会对元素进行改变</p>
+
+        <h4 id="7-2-相对定位—-position-relative"   >
+          <a href="#7-2-相对定位—-position-relative" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-2-相对定位—-position-relative" class="headerlink" title="7.2 相对定位—-position:relative"></a>7.2 相对定位—-position:relative</h4>
+      <p>相对于自身原来的位置进行偏移<br>偏移设置：top、left、right、bottom</p>
+<p>示例</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#third&#123;</span><br><span class="line">	background-color:#C5DECC;</span><br><span class="line">	border:1px dashed #395E4F;</span><br><span class="line">	position:relative;</span><br><span class="line">	left:20px;</span><br><span class="line">	top:30px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>left和top取值</strong></p>
+<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/109177/16/16529/78460/6142b00eE87a2d335/5ca36c0af7b1d12e.png" alt="20210916104622.png"></p>
+<p>相对定位特性</p>
+<ul>
+<li>相对于自己的初始位置来定位</li>
+<li>元素位置发生偏移后，他原来的位置会别保留下来</li>
+<li>层级提高，可以把标准文档流中的元素及浮动元素盖在下边</li>
+</ul>
+<p>相对定位使用场景</p>
+<ul>
+<li>相对定位一般情况下很少自己单独使用，都是配合绝对定位使用，为绝对定位创建造定位父级而又不设置偏移量</li>
+</ul>
+
+        <h4 id="7-3-绝对定位—-position-absolute"   >
+          <a href="#7-3-绝对定位—-position-absolute" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-3-绝对定位—-position-absolute" class="headerlink" title="7.3 绝对定位—-position:absolute"></a>7.3 绝对定位—-position:absolute</h4>
+      <p>设置了绝对定位但没有设置为偏移量的元素将保持在原来的位置<br>在网页制作中可以用于需要使某个有元素脱离标准流，而仍然希望它保持在原来的位置的情况</p>
+<p><strong>示例</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#third&#123;</span><br><span class="line">	background-color:#C5DECC;</span><br><span class="line">	border:1px dashed #395E4F;</span><br><span class="line">	position:absolute;</span><br><span class="line">	left:20px;</span><br><span class="line">	top:30px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>absolute和relative的偏移量设置一样</strong></p>
+<p>绝对定位是相对于绝对定位元素的定位父级的位置来定位，如果没有定义父级，那么绝对定位会浏览器窗口为父类 </p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#father&#123;</span><br><span class="line">    border: 1px solid #666;</span><br><span class="line">    padding: 0;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line">#first&#123;</span><br><span class="line">    background-color: #F2BB6F;</span><br><span class="line">    border: 1px dashed #4CB8E7;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 50px;</span><br><span class="line">    top:30px;          </span><br></pre></td></tr></table></div></figure>
+
+<p><strong>绝对定位特性</strong></p>
+<ul>
+<li>绝对定位是相对于它的定位父级的位置来定位，如果没有设置定位父级，则相对浏览器窗口来定位</li>
+<li>元素位置发生偏移后，原来的位置不会被保留</li>
+<li>层次提高，可以把标准文档流中的元素及浮动元素盖在下边</li>
+<li>设置绝对定位的元素脱离文档流</li>
+</ul>
+<p><strong>绝对定位的使用场景</strong></p>
+<ul>
+<li>一般情况下，绝对定位用在下拉菜单、焦点图轮播、弹出数据气泡、特别花边等场景</li>
+</ul>
+
+        <h4 id="7-4-固定定位—-position-fixed"   >
+          <a href="#7-4-固定定位—-position-fixed" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-4-固定定位—-position-fixed" class="headerlink" title="7.4 固定定位—-position:fixed"></a>7.4 固定定位—-position:fixed</h4>
+      <p><strong>fixed和relative的偏移量设置一样</strong>，类似绝对定位，不过区别在于定位的基准不是祖先元素，而是浏览器窗口</p>
+<p>固定定位特性</p>
+<ul>
+<li>相对浏览器窗口来定位</li>
+<li>偏移量不会随滚动条的移动而移动</li>
+</ul>
+<p>固定定位的使用场景</p>
+<ul>
+<li>一般在网页中被用在窗口左右两边的固定广告、返回顶部图标、吸顶导航栏等</li>
+</ul>
+
+        <h3 id="8-z-index属性"   >
+          <a href="#8-z-index属性" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-z-index属性" class="headerlink" title="8. z-index属性"></a>8. z-index属性</h3>
+      <ul>
+<li>调整元素定位时重叠层的上下位置<ul>
+<li>设置了position属性时，z-index属性可以设置个元素之间的重叠高低关系</li>
+<li>z-index 属性值：增整数，默认值为 0 </li>
+<li>z-index 值大的层位于其值小的层上方</li>
+</ul>
+</li>
+</ul>
+
+        <h3 id="9-制作带按钮的轮播广告"   >
+          <a href="#9-制作带按钮的轮播广告" class="heading-link"><i class="fas fa-link"></i></a><a href="#9-制作带按钮的轮播广告" class="headerlink" title="9. 制作带按钮的轮播广告"></a>9. 制作带按钮的轮播广告</h3>
+      <p>需求说明：综合使用CSS字体、文本、列表、背景、浮动、定位等样式实现有图带按钮的轮播广告效果</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;title&gt;轮播广告&lt;/title&gt;</span><br><span class="line">  &lt;link href=&quot;css/style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    #content&#123;</span><br><span class="line">        width: 400px;</span><br><span class="line">        height: 200px;</span><br><span class="line">        border: 1px solid orange;</span><br><span class="line">        margin: auto;</span><br><span class="line">        background-image: url(image/scenery.jpg) ;</span><br><span class="line">        background-size: 100% 100%;</span><br><span class="line">        background-repeat: no-repeat;</span><br><span class="line">    &#125;</span><br><span class="line">    ul&#123;</span><br><span class="line">        list-style: none;      </span><br><span class="line">        margin-left:190px;</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">    li&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        width: 20px;</span><br><span class="line">        height: 20px;</span><br><span class="line">        border: 1px solid black;</span><br><span class="line">        margin-top: 150px;</span><br><span class="line">        margin-left: 10px;</span><br><span class="line">        float: left;</span><br><span class="line">        text-align: center;</span><br><span class="line">        border: 1px solid rgba(207, 47, 47, 0.5);</span><br><span class="line">        background-color: rgba(207, 47, 47, 0.5);</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;content&quot;&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;1&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;2&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;3&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;4&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;5&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></div></figure></div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="http://example.com">John Doe</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="http://example.com/2021/09/16/CSS(2)/">http://example.com/2021/09/16/CSS(2)/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/CSS/">CSS</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2021/09/14/CSS(1)/"><span class="paginator-prev__text">CSS(1)</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS"><span class="toc-number">1.</span> <span class="toc-text">
+          CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%B6%85%E8%BF%9E%E6%8E%A5%E4%BC%AA%E7%B1%BB"><span class="toc-number">1.1.</span> <span class="toc-text">
+          1.超连接伪类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%97%E8%A1%A8%E6%A0%B7%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text">
+          2.列表样式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-list-style-type-%E9%87%8D%E7%82%B9"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+          2.1 list-style-type 重点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-list-style-image"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+          2.2 list-style-image</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-list-style-position"><span class="toc-number">1.2.3.</span> <span class="toc-text">
+          2.3 list-style-position</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-list-style"><span class="toc-number">1.2.4.</span> <span class="toc-text">
+          2.4 list-style</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%83%8C%E6%99%AF%E6%A0%B7%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">
+          3.背景样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.4.</span> <span class="toc-text">
+          4.盒子模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E8%BE%B9%E6%A1%86%E9%A2%9C%E8%89%B2-%E2%80%94-border-color"><span class="toc-number">1.4.1.</span> <span class="toc-text">
+          4.1 边框颜色 — border-color</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E8%BE%B9%E6%A1%86%E7%B2%97%E7%BB%86-%E2%80%94-border-with"><span class="toc-number">1.4.2.</span> <span class="toc-text">
+          4.2 边框粗细 — border-with</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-%E8%BE%B9%E6%A1%86%E6%A0%B7%E5%BC%8F-%E2%80%94-border-style"><span class="toc-number">1.4.3.</span> <span class="toc-text">
+          4.3 边框样式 — border-style</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-%E5%A4%96%E8%BE%B9%E8%B7%9D%E2%80%94-margin"><span class="toc-number">1.4.4.</span> <span class="toc-text">
+          4.3 外边距— margin</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-%E5%86%85%E8%BE%B9%E8%B7%9D%E2%80%94-pading"><span class="toc-number">1.4.5.</span> <span class="toc-text">
+          4.4 内边距— pading</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.6.</span> <span class="toc-text">
+          4.5 网页布局结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%B5%AE%E5%8A%A8"><span class="toc-number">1.5.</span> <span class="toc-text">
+          5. 浮动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E7%88%B6%E7%BA%A7%E8%BE%B9%E6%A1%86%E5%A1%8C%E9%99%B7%E8%A7%A3%E5%86%B3"><span class="toc-number">1.6.</span> <span class="toc-text">
+          6. 父级边框塌陷解决</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%AE%9A%E4%BD%8D"><span class="toc-number">1.7.</span> <span class="toc-text">
+          7. 定位</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-%E9%BB%98%E8%AE%A4%E5%AE%9A%E4%BD%8D%E2%80%94-position-static"><span class="toc-number">1.7.1.</span> <span class="toc-text">
+          7.1 默认定位—-position:static</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D%E2%80%94-position-relative"><span class="toc-number">1.7.2.</span> <span class="toc-text">
+          7.2 相对定位—-position:relative</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D%E2%80%94-position-absolute"><span class="toc-number">1.7.3.</span> <span class="toc-text">
+          7.3 绝对定位—-position:absolute</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4-%E5%9B%BA%E5%AE%9A%E5%AE%9A%E4%BD%8D%E2%80%94-position-fixed"><span class="toc-number">1.7.4.</span> <span class="toc-text">
+          7.4 固定定位—-position:fixed</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-z-index%E5%B1%9E%E6%80%A7"><span class="toc-number">1.8.</span> <span class="toc-text">
+          8. z-index属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E5%88%B6%E4%BD%9C%E5%B8%A6%E6%8C%89%E9%92%AE%E7%9A%84%E8%BD%AE%E6%92%AD%E5%B9%BF%E5%91%8A"><span class="toc-number">1.9.</span> <span class="toc-text">
+          9. 制作带按钮的轮播广告</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://img10.360buyimg.com/ddimg/jfs/t1/210672/22/780/14721/614304cbE6ed71481/b30794e20af29208.png" alt="avatar"></div><p class="sidebar-ov-author__text">生活如此美好</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">31</div><div class="sidebar-ov-state-item__name">Archives</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">3</div><div class="sidebar-ov-state-item__name">Categories</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">29</div><div class="sidebar-ov-state-item__name">Tags</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>John Doe</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v5.4.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
