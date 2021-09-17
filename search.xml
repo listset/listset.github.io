@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ArrayList与LinkedList的区别</title>
+    <url>/2021/09/10/ArrayList%E5%92%8CLinkedList%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<p><strong>ArrayList与LinkedList 相同点∶</strong><br>同为List实现类，元素有序、不唯一、长度可变共有Collection及List的通用方法</p>
+<p><strong>ArrayList与LinkedList 不同点∶</strong><br>ArrayList实现了长度可变的数组，在内存中分配连续的空间，遍历元素和随机访问元素的效率比较高<br>LinkedList采用链表存储方式，插入、删除元素时效率比较高</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java高级特性</tag>
+        <tag>ArrayList</tag>
+        <tag>LinkedList</tag>
+        <tag>List</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS(1)</title>
     <url>/2021/09/14/CSS(1)/</url>
     <content><![CDATA[
@@ -421,22 +437,6 @@
       </categories>
       <tags>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ArrayList与LinkedList的区别</title>
-    <url>/2021/09/10/ArrayList%E5%92%8CLinkedList%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<p><strong>ArrayList与LinkedList 相同点∶</strong><br>同为List实现类，元素有序、不唯一、长度可变共有Collection及List的通用方法</p>
-<p><strong>ArrayList与LinkedList 不同点∶</strong><br>ArrayList实现了长度可变的数组，在内存中分配连续的空间，遍历元素和随机访问元素的效率比较高<br>LinkedList采用链表存储方式，插入、删除元素时效率比较高</p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java高级特性</tag>
-        <tag>ArrayList</tag>
-        <tag>LinkedList</tag>
-        <tag>List</tag>
       </tags>
   </entry>
   <entry>
@@ -1142,6 +1142,59 @@
       </tags>
   </entry>
   <entry>
+    <title>Java Object类</title>
+    <url>/2021/09/10/Java%20Object%E7%B1%BB/</url>
+    <content><![CDATA[
+        <h3 id="Java-Object类"   >
+          <a href="#Java-Object类" class="heading-link"><i class="fas fa-link"></i></a><a href="#Java-Object类" class="headerlink" title="Java Object类"></a>Java Object类</h3>
+      
+        <h4 id="Object类介绍"   >
+          <a href="#Object类介绍" class="heading-link"><i class="fas fa-link"></i></a><a href="#Object类介绍" class="headerlink" title="Object类介绍"></a>Object类介绍</h4>
+      <p>Object 是所有的类的直接或间接父类<br><strong>如:Cat后面的 extends Object 不写也默认继承</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">public class Cat (extends Object)&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h4 id="Object类被子类经常重写的方法"   >
+          <a href="#Object类被子类经常重写的方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#Object类被子类经常重写的方法" class="headerlink" title="Object类被子类经常重写的方法"></a>Object类被子类经常重写的方法</h4>
+      <div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">toString()</td>
+<td align="center">比较两个对象是否是同一个对象，是则返回true</td>
+</tr>
+<tr>
+<td align="center">equals()</td>
+<td align="center">单元格</td>
+</tr>
+<tr>
+<td align="center">hashCode()</td>
+<td align="center">返回该对象的哈希代码值</td>
+</tr>
+<tr>
+<td align="center">getClass()</td>
+<td align="center">获取当前对象所属的类信息，返回Class对象</td>
+</tr>
+</tbody></table></div>
+
+        <h4 id="equals-方法介绍"   >
+          <a href="#equals-方法介绍" class="heading-link"><i class="fas fa-link"></i></a><a href="#equals-方法介绍" class="headerlink" title="equals( )方法介绍"></a>equals( )方法介绍</h4>
+      <p> 作用：比较两个对象是否是同一个对象，是则返回 <font color="blue">true</font>，不是则返回 <font color="blue">false</font></p>
+<p>  下面用一个例子来演示</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//学生类</span><br><span class="line">public class Student extends Object&#123;</span><br><span class="line">	//这里加上了 extends Object; 不加 extends Object 也默认会有</span><br><span class="line">	//属性：学号 姓名 年龄 体重</span><br><span class="line">	private int sid;</span><br><span class="line">	private String name;</span><br><span class="line">	private int age;</span><br><span class="line">	private int weight;</span><br><span class="line">	</span><br><span class="line">	//无参构造</span><br><span class="line">	public Student()&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	//有参构造</span><br><span class="line">	public Student(int sid,String name,int age,int weight)&#123;</span><br><span class="line">		this.sid=sid;</span><br><span class="line">		this.name=name;</span><br><span class="line">		this.age=age;</span><br><span class="line">		this.weight=weight;</span><br><span class="line">	&#125;</span><br><span class="line">	//getter、setter方法</span><br><span class="line">	public int getSid() &#123;</span><br><span class="line">		return sid;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setSid(int sid) &#123;</span><br><span class="line">		this.sid = sid;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	public int getAge() &#123;</span><br><span class="line">		return age;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setAge(int age) &#123;</span><br><span class="line">		this.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	public int getWeight() &#123;</span><br><span class="line">		return weight;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setWeight(int weight) &#123;</span><br><span class="line">		this.weight = weight;</span><br><span class="line">	&#125;	</span><br><span class="line">	//main方法</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//例1</span><br><span class="line">	 	Student s1= new Student(1,&quot;张三&quot;,18,50);</span><br><span class="line">		Student s2= new Student(1,&quot;张三&quot;,18,50);</span><br><span class="line">		s1和s2指向的不是同一个地址值,所以为false</span><br><span class="line">		//判断两个对象是否为同一对象</span><br><span class="line">		System.out.println(s1 == s2);</span><br><span class="line">		System.out.println(s1.equals(s2));</span><br><span class="line">		</span><br><span class="line">		//例2</span><br><span class="line">		Student s1= new Student(1,&quot;张三&quot;,18,50);</span><br><span class="line">		Student s2= s1;</span><br><span class="line">		//判断两个对象是否为同一对象</span><br><span class="line">		System.out.println(s1 == s2);</span><br><span class="line">		System.out.println(s1.equals(s2));</span><br><span class="line">		//s1和s2指向的是同一个地址值 所以为true		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>从上面代码可以得出：<font color="blue">equals( )</font>和<font color="blue">==</font>没有太大的区别<br>不同的是<font color="blue">equals( )</font>个方法 而<font color="blue">==</font>是一个操作符</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HTML笔记(2)</title>
     <url>/2021/09/13/HTML(2)/</url>
     <content><![CDATA[
@@ -1335,6 +1388,41 @@
       </tags>
   </entry>
   <entry>
+    <title>Error和Exception的区别</title>
+    <url>/2021/09/10/Java-Error%E5%92%8CException%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[
+        <h3 id="Error和Exception的区别"   >
+          <a href="#Error和Exception的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#Error和Exception的区别" class="headerlink" title="Error和Exception的区别"></a>Error和Exception的区别</h3>
+      <p>首先介绍一下Java异常体系结构</p>
+<p>Java中的异常有很多类型，异常在Java中被封装成了各种异常类</p>
+<p>所有异常类型都是Throwable类的子类，它派生了两个子类：Error类和Exception类</p>
+
+        <h4 id="1-Error类"   >
+          <a href="#1-Error类" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-Error类" class="headerlink" title="1.Error类"></a>1.Error类</h4>
+      <p>Error类：表示仅靠程序本身无法恢复的严重错误，一般是与虚拟机相关的问题，如内存溢出、动态链接失败、虚拟机错误。应用程序不应该抛出这种类型的错误（一般由虚拟机抛出）。假如出现这种错误，应尽力使程序安全退出。</p>
+
+        <h4 id="2-Exception类"   >
+          <a href="#2-Exception类" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-Exception类" class="headerlink" title="2.Exception类"></a>2.Exception类</h4>
+      <p>Exception类：由Java应用程序抛出和处理的非严重错误，如所需文件找不到、网络连接不通或连接中断、算术运算出错（如被零除）、数组下标越界、装载一个不存在的类、对null对象操作、类型转换异常等。它的各种不同的子类分别对应不同类型的异常。Exception又可分为两大类异常：运行时异常和Checked异常。</p>
+
+        <h5 id="运行时异常"   >
+          <a href="#运行时异常" class="heading-link"><i class="fas fa-link"></i></a><a href="#运行时异常" class="headerlink" title="运行时异常"></a>运行时异常</h5>
+      <p>包括RuntimeException及其所有子类。不要求程序必须对他们进行处理。如算数异常（ArithmeticException）。运行时异常在编译阶段不会出错，在运行阶段才会报错</p>
+
+        <h5 id="Checked异常（非运行时异常）"   >
+          <a href="#Checked异常（非运行时异常）" class="heading-link"><i class="fas fa-link"></i></a><a href="#Checked异常（非运行时异常）" class="headerlink" title="Checked异常（非运行时异常）"></a>Checked异常（非运行时异常）</h5>
+      <p>除了运行时异常外的其他从Exception类继承来的异常类<br>当Checked异常出现时，程序必须处理该类异常，不处理编译就会报错</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java基础</tag>
+        <tag>异常</tag>
+        <tag>Error和Exception的区别</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java-多态性(1)</title>
     <url>/2021/09/10/Java-%E5%A4%9A%E6%80%81(1)/</url>
     <content><![CDATA[
@@ -1426,94 +1514,6 @@
       <tags>
         <tag>Java基础</tag>
         <tag>多态</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java Object类</title>
-    <url>/2021/09/10/Java%20Object%E7%B1%BB/</url>
-    <content><![CDATA[
-        <h3 id="Java-Object类"   >
-          <a href="#Java-Object类" class="heading-link"><i class="fas fa-link"></i></a><a href="#Java-Object类" class="headerlink" title="Java Object类"></a>Java Object类</h3>
-      
-        <h4 id="Object类介绍"   >
-          <a href="#Object类介绍" class="heading-link"><i class="fas fa-link"></i></a><a href="#Object类介绍" class="headerlink" title="Object类介绍"></a>Object类介绍</h4>
-      <p>Object 是所有的类的直接或间接父类<br><strong>如:Cat后面的 extends Object 不写也默认继承</strong></p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">public class Cat (extends Object)&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-        <h4 id="Object类被子类经常重写的方法"   >
-          <a href="#Object类被子类经常重写的方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#Object类被子类经常重写的方法" class="headerlink" title="Object类被子类经常重写的方法"></a>Object类被子类经常重写的方法</h4>
-      <div class="table-container"><table>
-<thead>
-<tr>
-<th align="center">方法</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">toString()</td>
-<td align="center">比较两个对象是否是同一个对象，是则返回true</td>
-</tr>
-<tr>
-<td align="center">equals()</td>
-<td align="center">单元格</td>
-</tr>
-<tr>
-<td align="center">hashCode()</td>
-<td align="center">返回该对象的哈希代码值</td>
-</tr>
-<tr>
-<td align="center">getClass()</td>
-<td align="center">获取当前对象所属的类信息，返回Class对象</td>
-</tr>
-</tbody></table></div>
-
-        <h4 id="equals-方法介绍"   >
-          <a href="#equals-方法介绍" class="heading-link"><i class="fas fa-link"></i></a><a href="#equals-方法介绍" class="headerlink" title="equals( )方法介绍"></a>equals( )方法介绍</h4>
-      <p> 作用：比较两个对象是否是同一个对象，是则返回 <font color="blue">true</font>，不是则返回 <font color="blue">false</font></p>
-<p>  下面用一个例子来演示</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//学生类</span><br><span class="line">public class Student extends Object&#123;</span><br><span class="line">	//这里加上了 extends Object; 不加 extends Object 也默认会有</span><br><span class="line">	//属性：学号 姓名 年龄 体重</span><br><span class="line">	private int sid;</span><br><span class="line">	private String name;</span><br><span class="line">	private int age;</span><br><span class="line">	private int weight;</span><br><span class="line">	</span><br><span class="line">	//无参构造</span><br><span class="line">	public Student()&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	//有参构造</span><br><span class="line">	public Student(int sid,String name,int age,int weight)&#123;</span><br><span class="line">		this.sid=sid;</span><br><span class="line">		this.name=name;</span><br><span class="line">		this.age=age;</span><br><span class="line">		this.weight=weight;</span><br><span class="line">	&#125;</span><br><span class="line">	//getter、setter方法</span><br><span class="line">	public int getSid() &#123;</span><br><span class="line">		return sid;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setSid(int sid) &#123;</span><br><span class="line">		this.sid = sid;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	public int getAge() &#123;</span><br><span class="line">		return age;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setAge(int age) &#123;</span><br><span class="line">		this.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	public int getWeight() &#123;</span><br><span class="line">		return weight;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setWeight(int weight) &#123;</span><br><span class="line">		this.weight = weight;</span><br><span class="line">	&#125;	</span><br><span class="line">	//main方法</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//例1</span><br><span class="line">	 	Student s1= new Student(1,&quot;张三&quot;,18,50);</span><br><span class="line">		Student s2= new Student(1,&quot;张三&quot;,18,50);</span><br><span class="line">		s1和s2指向的不是同一个地址值,所以为false</span><br><span class="line">		//判断两个对象是否为同一对象</span><br><span class="line">		System.out.println(s1 == s2);</span><br><span class="line">		System.out.println(s1.equals(s2));</span><br><span class="line">		</span><br><span class="line">		//例2</span><br><span class="line">		Student s1= new Student(1,&quot;张三&quot;,18,50);</span><br><span class="line">		Student s2= s1;</span><br><span class="line">		//判断两个对象是否为同一对象</span><br><span class="line">		System.out.println(s1 == s2);</span><br><span class="line">		System.out.println(s1.equals(s2));</span><br><span class="line">		//s1和s2指向的是同一个地址值 所以为true		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-<p>从上面代码可以得出：<font color="blue">equals( )</font>和<font color="blue">==</font>没有太大的区别<br>不同的是<font color="blue">equals( )</font>个方法 而<font color="blue">==</font>是一个操作符</p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java基础</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Error和Exception的区别</title>
-    <url>/2021/09/10/Java-Error%E5%92%8CException%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[
-        <h3 id="Error和Exception的区别"   >
-          <a href="#Error和Exception的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#Error和Exception的区别" class="headerlink" title="Error和Exception的区别"></a>Error和Exception的区别</h3>
-      <p>首先介绍一下Java异常体系结构</p>
-<p>Java中的异常有很多类型，异常在Java中被封装成了各种异常类</p>
-<p>所有异常类型都是Throwable类的子类，它派生了两个子类：Error类和Exception类</p>
-
-        <h4 id="1-Error类"   >
-          <a href="#1-Error类" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-Error类" class="headerlink" title="1.Error类"></a>1.Error类</h4>
-      <p>Error类：表示仅靠程序本身无法恢复的严重错误，一般是与虚拟机相关的问题，如内存溢出、动态链接失败、虚拟机错误。应用程序不应该抛出这种类型的错误（一般由虚拟机抛出）。假如出现这种错误，应尽力使程序安全退出。</p>
-
-        <h4 id="2-Exception类"   >
-          <a href="#2-Exception类" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-Exception类" class="headerlink" title="2.Exception类"></a>2.Exception类</h4>
-      <p>Exception类：由Java应用程序抛出和处理的非严重错误，如所需文件找不到、网络连接不通或连接中断、算术运算出错（如被零除）、数组下标越界、装载一个不存在的类、对null对象操作、类型转换异常等。它的各种不同的子类分别对应不同类型的异常。Exception又可分为两大类异常：运行时异常和Checked异常。</p>
-
-        <h5 id="运行时异常"   >
-          <a href="#运行时异常" class="heading-link"><i class="fas fa-link"></i></a><a href="#运行时异常" class="headerlink" title="运行时异常"></a>运行时异常</h5>
-      <p>包括RuntimeException及其所有子类。不要求程序必须对他们进行处理。如算数异常（ArithmeticException）。运行时异常在编译阶段不会出错，在运行阶段才会报错</p>
-
-        <h5 id="Checked异常（非运行时异常）"   >
-          <a href="#Checked异常（非运行时异常）" class="heading-link"><i class="fas fa-link"></i></a><a href="#Checked异常（非运行时异常）" class="headerlink" title="Checked异常（非运行时异常）"></a>Checked异常（非运行时异常）</h5>
-      <p>除了运行时异常外的其他从Exception类继承来的异常类<br>当Checked异常出现时，程序必须处理该类异常，不处理编译就会报错</p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java基础</tag>
-        <tag>异常</tag>
-        <tag>Error和Exception的区别</tag>
       </tags>
   </entry>
   <entry>
@@ -1761,6 +1761,70 @@ public SexException(String message)&#123;
       </tags>
   </entry>
   <entry>
+    <title>接口</title>
+    <url>/2021/09/10/Java-%E6%8E%A5%E5%8F%A3/</url>
+    <content><![CDATA[
+        <h4 id="接口"   >
+          <a href="#接口" class="heading-link"><i class="fas fa-link"></i></a><a href="#接口" class="headerlink" title="接口"></a>接口</h4>
+      <p>上面了解到了抽象类的局限性，解决这个问题最理想的方式就是使用接口</p>
+
+        <h4 id="1-什么是接口？"   >
+          <a href="#1-什么是接口？" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-什么是接口？" class="headerlink" title="1. 什么是接口？"></a>1. 什么是接口？</h4>
+      <p>Java中接口的作用和生活中的接口类似，它提供一种约定，使得实现接口的类（或结构）在形式上保持一致<br>概念性的接口，指系统对外提供的所有服务<br><font color="blue"> interface </font>定义的是实实在在的接口，即接口类型<br>接口的存在弥补了Java单根继承的缺点</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">[访问修饰] interface 接口名称 [extends 其他接口名]&#123;</span><br><span class="line">	//声明变量</span><br><span class="line">	//声明方法</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public interface MyInterface&#123;</span><br><span class="line">	public void foo();</span><br><span class="line">	//其他方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="JDK8之前的接口特性"   >
+          <a href="#JDK8之前的接口特性" class="heading-link"><i class="fas fa-link"></i></a><a href="#JDK8之前的接口特性" class="headerlink" title="JDK8之前的接口特性"></a>JDK8之前的接口特性</h4>
+      <blockquote>
+<p>1.接口中的变量都是静态常量( public static final ) ，必须显式初始化<br>2.接口中所有方法默认都是public abstract<br>3.接口没有构造方法，不可以被实例化，但可以被实现(常作为类型使用)<br>4.实现类必须实现接口的所有方法<br>5.实现类可以实现多个接口 (Java中的多继承)<br>6.implements、多个接口使用逗号隔开</p>
+</blockquote>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">public interface MyInterface &#123;</span><br><span class="line">	//静态常量:接口中的变量必须是publication </span><br><span class="line">	public static final double PI=3.14;</span><br><span class="line">	//等同于</span><br><span class="line">	double PI=3.14;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	int m2(); 等同于 public abstract int m2();</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="2-接口初体验"   >
+          <a href="#2-接口初体验" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-接口初体验" class="headerlink" title="2. 接口初体验"></a>2. 接口初体验</h4>
+      <p>用程序描述接口</p>
+<p> 电脑主机有USB接口，鼠标和键盘需要用USB插头插到电脑上来使用<br> USB接口本市没有实现任何功能<br> USB接口规定了数据传输的要求<br> USB接口可以被多种USB设备实现</p>
+<p><strong>根据USB接口可以使用Java接口来实现</strong><br>    1.编写USB接口   根据需求设置方法<br>    2.实现USB接口   实现所有方法<br>    3.使用USB接口   用多态的方式使用</p>
+<p><strong>下面用代码来展示一下具体写法</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//USB接口：描述连接计算机和外部设备的串口总线标准</span><br><span class="line">//        定义一种输入输出接口的技术规范</span><br><span class="line">public interface USB &#123;</span><br><span class="line">	//USB接口并不实现具体功能，通过抽象方法来定义一种数据输入输出规范和标准</span><br><span class="line">	void service();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//满足USB标准的U盘</span><br><span class="line">public class USBDisk implements USB&#123;</span><br><span class="line">	public void service()&#123;</span><br><span class="line">		System.out.println(&quot;U盘：连接USB接口，传输数据&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//满足USB标准的风扇</span><br><span class="line">public class USBFan implements USB&#123;</span><br><span class="line">	public void service()&#123;</span><br><span class="line">		System.out.println(&quot;风扇：连接USB接口，获得电流，风扇转动&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//使用接口</span><br><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//USB风扇</span><br><span class="line">		USB uFan = new USBFan();</span><br><span class="line">		uFan.service();</span><br><span class="line">		//USB U盘</span><br><span class="line">		USB uDisk = new USBDisk();</span><br><span class="line">		uDisk.service();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>从上面例子看到了接口的简单使用可以知道：</p>
+<p>1.接口表示一种能力(体现在接口的方法上)</p>
+<p>2.面向接口编程<br>  <strong>程序设计时：</strong><br>  关心实现类有何能力，而不关心实现细节<br>  面向接口的约而不考虑接口的具体实现</p>
+
+        <h4 id="3-面向接口编程"   >
+          <a href="#3-面向接口编程" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-面向接口编程" class="headerlink" title="3. 面向接口编程"></a>3. 面向接口编程</h4>
+      <p><strong>案例：实现防盗门功能</strong><br>防盗门功能：<strong>开门、关门、开锁、关锁</strong></p>
+<p><strong>类图</strong><br><img src="https://img02.sogoucdn.com/app/a/100540022/2021080515183620645442.png" alt="20210805151759.png"></p>
+<p>定义父类 门 ：Door</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//门 ：抽象方法 开门 关门</span><br><span class="line">public abstract class Door &#123;</span><br><span class="line">	public abstract void open();</span><br><span class="line">	public abstract void close();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+<p>定义子类 防盗门 : TheftproofDoor </p>
+<p><strong>子类既继承门又实现锁的功能</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//防盗门：是门(is-a)，具备锁的能力(has-a)</span><br><span class="line">public class TheftproofDoor extends Door implements Lock &#123;</span><br><span class="line">	//上锁</span><br><span class="line">	public void lockUp() &#123;</span><br><span class="line">		System.out.println(&quot;锁门&quot;);	</span><br><span class="line">	&#125;</span><br><span class="line">	//开锁</span><br><span class="line">	public void openLock() &#123;</span><br><span class="line">		System.out.println(&quot;开锁&quot;);	</span><br><span class="line">	&#125;</span><br><span class="line">	//开门</span><br><span class="line">	public void open() &#123;</span><br><span class="line">		System.out.println(&quot;开门&quot;);	</span><br><span class="line">	&#125;</span><br><span class="line">	//关门</span><br><span class="line">	public void close() &#123;</span><br><span class="line">		System.out.println(&quot;关门&quot;);	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>定义接口 ：锁 ：Lock </p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//锁 ：开锁 上锁</span><br><span class="line">public interface Lock &#123;</span><br><span class="line">	void lockUp();</span><br><span class="line">	void openLock();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+<p>测试类: 测试开门、关门、锁门、开锁等功能</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//测试防盗门功能</span><br><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		TheftproofDoor d= new TheftproofDoor();		</span><br><span class="line">		//开门开锁</span><br><span class="line">		d.openLock();</span><br><span class="line">		d.open();</span><br><span class="line">		//关门上锁</span><br><span class="line">		d.close();</span><br><span class="line">		d.lockUp();	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>还可以加一个门拍照的功能</p>
+<p>接口表示一种能力，一个人可以有多种能力，一个类可以实现多个接口</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java基础</tag>
+        <tag>Java-接口</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>抽象类</title>
     <url>/2021/09/10/Java-%E6%8A%BD%E8%B1%A1%E7%B1%BB/</url>
     <content><![CDATA[
@@ -1839,67 +1903,69 @@ public SexException(String message)&#123;
       </tags>
   </entry>
   <entry>
-    <title>接口</title>
-    <url>/2021/09/10/Java-%E6%8E%A5%E5%8F%A3/</url>
+    <title>Collections类及常用方法</title>
+    <url>/2021/09/10/Java%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7-Collections%E7%B1%BB/</url>
     <content><![CDATA[
-        <h4 id="接口"   >
-          <a href="#接口" class="heading-link"><i class="fas fa-link"></i></a><a href="#接口" class="headerlink" title="接口"></a>接口</h4>
-      <p>上面了解到了抽象类的局限性，解决这个问题最理想的方式就是使用接口</p>
+        <h3 id="Collections类及常用方法"   >
+          <a href="#Collections类及常用方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#Collections类及常用方法" class="headerlink" title="Collections类及常用方法"></a>Collections类及常用方法</h3>
+      <p>Collections类是Java提供的一个集合操作工具类，它包含了大量的静态方法们用于实现对集合元素的排序、查找和替换等操作</p>
+<p>Collections 和 Collection不同，前者是集合的操作类，后者是集合的接口</p>
+<p>Collections提供的常用的静态方法</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">sort()</td>
+<td align="center">排序</td>
+</tr>
+<tr>
+<td align="center">binarySearch()</td>
+<td align="center">查找</td>
+</tr>
+<tr>
+<td align="center">max()\min()</td>
+<td align="center">查找最大\最小值</td>
+</tr>
+<tr>
+<td align="center">reverse()</td>
+<td align="center">反转元素顺序</td>
+</tr>
+</tbody></table></div>
 
-        <h4 id="1-什么是接口？"   >
-          <a href="#1-什么是接口？" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-什么是接口？" class="headerlink" title="1. 什么是接口？"></a>1. 什么是接口？</h4>
-      <p>Java中接口的作用和生活中的接口类似，它提供一种约定，使得实现接口的类（或结构）在形式上保持一致<br>概念性的接口，指系统对外提供的所有服务<br><font color="blue"> interface </font>定义的是实实在在的接口，即接口类型<br>接口的存在弥补了Java单根继承的缺点</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">[访问修饰] interface 接口名称 [extends 其他接口名]&#123;</span><br><span class="line">	//声明变量</span><br><span class="line">	//声明方法</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public interface MyInterface&#123;</span><br><span class="line">	public void foo();</span><br><span class="line">	//其他方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+        <h4 id="Collections类的用方法示例："   >
+          <a href="#Collections类的用方法示例：" class="heading-link"><i class="fas fa-link"></i></a><a href="#Collections类的用方法示例：" class="headerlink" title="Collections类的用方法示例："></a>Collections类的用方法示例：</h4>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">import java.util.Collections;</span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.ArrayList;</span><br><span class="line"></span><br><span class="line">public class TestCollections &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//Collections常用方法</span><br><span class="line">		List&lt;String&gt; list = new ArrayList&lt;String&gt;();</span><br><span class="line">		list.add(&quot;zhc&quot;);</span><br><span class="line">		list.add(&quot;ykp&quot;);</span><br><span class="line">		list.add(&quot;hwz&quot;);</span><br><span class="line">		list.add(&quot;hs&quot;);</span><br><span class="line">		list.add(&quot;dadada&quot;);</span><br><span class="line">		list.add(&quot;zoo&quot;);</span><br><span class="line">		list.add(&quot;sda&quot;);</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;-----------------------&quot;);</span><br><span class="line">		for (String s : list) &#123;</span><br><span class="line">			System.out.println(s);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;-----------------------&quot;);</span><br><span class="line">		//使用Collections对集合进行升序排列</span><br><span class="line">		Collections.sort(list);</span><br><span class="line">		for (String s : list) &#123;</span><br><span class="line">			System.out.println(s);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;-----------------------&quot;);</span><br><span class="line">		//查找集合元素的最大、最小值</span><br><span class="line">		System.out.println(&quot;集合中的最大值:&quot;+Collections.max(list));</span><br><span class="line">		//查找集合元素的最大、最小值</span><br><span class="line">		System.out.println(&quot;集合中的最小值:&quot;+Collections.min(list));</span><br><span class="line">		//查找集合中特定的元素</span><br><span class="line">		System.out.println(Collections.binarySearch(list,&quot;zoo&quot;));</span><br><span class="line">		//反转排列顺序</span><br><span class="line">		Collections.reverse(list);</span><br><span class="line">		for (String s : list) &#123;</span><br><span class="line">			System.out.println(s);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
 
 
-        <h4 id="JDK8之前的接口特性"   >
-          <a href="#JDK8之前的接口特性" class="heading-link"><i class="fas fa-link"></i></a><a href="#JDK8之前的接口特性" class="headerlink" title="JDK8之前的接口特性"></a>JDK8之前的接口特性</h4>
-      <blockquote>
-<p>1.接口中的变量都是静态常量( public static final ) ，必须显式初始化<br>2.接口中所有方法默认都是public abstract<br>3.接口没有构造方法，不可以被实例化，但可以被实现(常作为类型使用)<br>4.实现类必须实现接口的所有方法<br>5.实现类可以实现多个接口 (Java中的多继承)<br>6.implements、多个接口使用逗号隔开</p>
+        <h4 id="对集合元素排序查找"   >
+          <a href="#对集合元素排序查找" class="heading-link"><i class="fas fa-link"></i></a><a href="#对集合元素排序查找" class="headerlink" title="对集合元素排序查找"></a>对集合元素排序查找</h4>
+      <p>排序是针对集合的一个常见需求。要排序就要知道两个元素哪个大哪个小。在Java中，如果要实现一个类的对象之间比较大小，那么这个类就要实现Comparable接口。</p>
+<p>此接口强行对实现它的每个类的对象进行整体排序。</p>
+<p>这种排序被称为类的自然排序，类的compareTo( )方法被称为它的自然比较方法。此方法用于比较此对象与指定对象的顺序，如果小于、等于或大于指定对象，则分别返回负整数、零或正整数。</p>
+<p><strong>compareTo方法的定义语法格式如下:</strong></p>
+<blockquote>
+<p>int  compareTo(Object obj);</p>
 </blockquote>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">public interface MyInterface &#123;</span><br><span class="line">	//静态常量:接口中的变量必须是publication </span><br><span class="line">	public static final double PI=3.14;</span><br><span class="line">	//等同于</span><br><span class="line">	double PI=3.14;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	int m2(); 等同于 public abstract int m2();</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="2-接口初体验"   >
-          <a href="#2-接口初体验" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-接口初体验" class="headerlink" title="2. 接口初体验"></a>2. 接口初体验</h4>
-      <p>用程序描述接口</p>
-<p> 电脑主机有USB接口，鼠标和键盘需要用USB插头插到电脑上来使用<br> USB接口本市没有实现任何功能<br> USB接口规定了数据传输的要求<br> USB接口可以被多种USB设备实现</p>
-<p><strong>根据USB接口可以使用Java接口来实现</strong><br>    1.编写USB接口   根据需求设置方法<br>    2.实现USB接口   实现所有方法<br>    3.使用USB接口   用多态的方式使用</p>
-<p><strong>下面用代码来展示一下具体写法</strong></p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//USB接口：描述连接计算机和外部设备的串口总线标准</span><br><span class="line">//        定义一种输入输出接口的技术规范</span><br><span class="line">public interface USB &#123;</span><br><span class="line">	//USB接口并不实现具体功能，通过抽象方法来定义一种数据输入输出规范和标准</span><br><span class="line">	void service();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
-
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//满足USB标准的U盘</span><br><span class="line">public class USBDisk implements USB&#123;</span><br><span class="line">	public void service()&#123;</span><br><span class="line">		System.out.println(&quot;U盘：连接USB接口，传输数据&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
-
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//满足USB标准的风扇</span><br><span class="line">public class USBFan implements USB&#123;</span><br><span class="line">	public void service()&#123;</span><br><span class="line">		System.out.println(&quot;风扇：连接USB接口，获得电流，风扇转动&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
-
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//使用接口</span><br><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//USB风扇</span><br><span class="line">		USB uFan = new USBFan();</span><br><span class="line">		uFan.service();</span><br><span class="line">		//USB U盘</span><br><span class="line">		USB uDisk = new USBDisk();</span><br><span class="line">		uDisk.service();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-<p>从上面例子看到了接口的简单使用可以知道：</p>
-<p>1.接口表示一种能力(体现在接口的方法上)</p>
-<p>2.面向接口编程<br>  <strong>程序设计时：</strong><br>  关心实现类有何能力，而不关心实现细节<br>  面向接口的约而不考虑接口的具体实现</p>
-
-        <h4 id="3-面向接口编程"   >
-          <a href="#3-面向接口编程" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-面向接口编程" class="headerlink" title="3. 面向接口编程"></a>3. 面向接口编程</h4>
-      <p><strong>案例：实现防盗门功能</strong><br>防盗门功能：<strong>开门、关门、开锁、关锁</strong></p>
-<p><strong>类图</strong><br><img src="https://img02.sogoucdn.com/app/a/100540022/2021080515183620645442.png" alt="20210805151759.png"></p>
-<p>定义父类 门 ：Door</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//门 ：抽象方法 开门 关门</span><br><span class="line">public abstract class Door &#123;</span><br><span class="line">	public abstract void open();</span><br><span class="line">	public abstract void close();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
-<p>定义子类 防盗门 : TheftproofDoor </p>
-<p><strong>子类既继承门又实现锁的功能</strong></p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//防盗门：是门(is-a)，具备锁的能力(has-a)</span><br><span class="line">public class TheftproofDoor extends Door implements Lock &#123;</span><br><span class="line">	//上锁</span><br><span class="line">	public void lockUp() &#123;</span><br><span class="line">		System.out.println(&quot;锁门&quot;);	</span><br><span class="line">	&#125;</span><br><span class="line">	//开锁</span><br><span class="line">	public void openLock() &#123;</span><br><span class="line">		System.out.println(&quot;开锁&quot;);	</span><br><span class="line">	&#125;</span><br><span class="line">	//开门</span><br><span class="line">	public void open() &#123;</span><br><span class="line">		System.out.println(&quot;开门&quot;);	</span><br><span class="line">	&#125;</span><br><span class="line">	//关门</span><br><span class="line">	public void close() &#123;</span><br><span class="line">		System.out.println(&quot;关门&quot;);	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-<p>定义接口 ：锁 ：Lock </p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//锁 ：开锁 上锁</span><br><span class="line">public interface Lock &#123;</span><br><span class="line">	void lockUp();</span><br><span class="line">	void openLock();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
-<p>测试类: 测试开门、关门、锁门、开锁等功能</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//测试防盗门功能</span><br><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		TheftproofDoor d= new TheftproofDoor();		</span><br><span class="line">		//开门开锁</span><br><span class="line">		d.openLock();</span><br><span class="line">		d.open();</span><br><span class="line">		//关门上锁</span><br><span class="line">		d.close();</span><br><span class="line">		d.lockUp();	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-<p>还可以加一个门拍照的功能</p>
-<p>接口表示一种能力，一个人可以有多种能力，一个类可以实现多个接口</p>
-]]></content>
+<p>其中有参数和返回值</p>
+<p>参数：obj即要比较的对象<br>返回值：负整数、零或正整数，根据此对象是小于、等于还是大于指定返回对象返回不同的值。</p>
+<p>实现此接口的对象列表（和数组）可以通过Collections.sort( )方法（和Arrays.sort( )方法）进行自动排序。下面通过示例来体验</p>
+<p>学生实体类，compareTo( )在此段代码的最后</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//实现Comparable接口</span><br><span class="line">public class Student implements Comparable&#123;</span><br><span class="line">	private int no;</span><br><span class="line">	private String name;</span><br><span class="line">	private String sex;</span><br><span class="line">	</span><br><span class="line">	public Student() &#123;&#125;</span><br><span class="line">	</span><br><span class="line">	public Student(int no, String name, String sex) &#123;</span><br><span class="line">	</span><br><span class="line">		this.no = no;</span><br><span class="line">		this.name = name;</span><br><span class="line">		this.sex = sex;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	@Override</span><br><span class="line">	public String toString() &#123;</span><br><span class="line">		return &quot;Student [no=&quot; + no + &quot;, name=&quot; + name + &quot;, sex=&quot; + sex + &quot;]&quot;;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public int getNo() &#123;</span><br><span class="line">		return no;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setNo(int no) &#123;</span><br><span class="line">		this.no = no;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getSex() &#123;</span><br><span class="line">		return sex;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setSex(String sex) &#123;</span><br><span class="line">		this.sex = sex;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//重写方法：定义学生对象的比较规则</span><br><span class="line">	//比较规则：按学号升序排列</span><br><span class="line">	//比较对象：当前学生对象（this） 和Object o</span><br><span class="line">	public int compareTo(Object o) &#123;</span><br><span class="line">		Student student = (Student)o;</span><br><span class="line">		if(this.no==student.no)&#123;</span><br><span class="line">			return 0;//学号相同个，两个对象一般大</span><br><span class="line">		&#125;else if(this.no&gt; student.no)&#123;</span><br><span class="line">			return 1;//当前学生对象学号大于比较的学生对象学号</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			return -1;//当前学生对象学号小于比较的学生对象学号</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>元素之间可以比较大小之后，就可以使用Collections类的sort( )方法对元素进行排序操作了。</p>
+<p>前面介绍过List接口和Map接口，Map接口本身是无序的，所以不能对Map接口做排序操作。但是List是有序的，所以可以对List接口进行排序。</p>
+<p>注意：List接口中存放的元素，必须是实现了Comparable接口的元素才可以</p>
+<p>下面示例是使用Collections类的静态方法sort( ) 和binarySearch( )对List集合进行排序                                                                                             </p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//Collections常用方法</span><br><span class="line">		List&lt;Student&gt; list = new ArrayList&lt;Student&gt;();</span><br><span class="line">		Student s1= new Student(1,&quot;张三&quot;,&quot;男&quot;);</span><br><span class="line">		Student s2= new Student(2,&quot;李四&quot;,&quot;男&quot;);</span><br><span class="line">		Student s3= new Student(3,&quot;李丽丽&quot;,&quot;女&quot;);</span><br><span class="line">		Student s4= new Student(4,&quot;刘立春&quot;,&quot;女&quot;);</span><br><span class="line">		list.add(s1);</span><br><span class="line">		list.add(s2);</span><br><span class="line">		list.add(s3);</span><br><span class="line">		list.add(s4);</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;-----------排序前-----------&quot;);</span><br><span class="line">		for (Student stu : list) &#123;</span><br><span class="line">			System.out.println(stu);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;-----------排序后-升序排序-----------&quot;);</span><br><span class="line">		//使用Collections类的sort()对集合进行升序排列</span><br><span class="line">		Collections.sort(list);</span><br><span class="line">		for (Student stu : list) &#123;</span><br><span class="line">			System.out.println(stu);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;-----------排序后-降序排序-----------&quot;);</span><br><span class="line">		//使用Collections类的reverse()反转排列顺序</span><br><span class="line">		Collections.reverse(list);</span><br><span class="line">		for (Student stu  : list) &#123;</span><br><span class="line">			System.out.println(stu);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>]]></content>
       <categories>
         <category>Java</category>
       </categories>
       <tags>
-        <tag>Java基础</tag>
-        <tag>Java-接口</tag>
+        <tag>Java高级特性</tag>
+        <tag>Collections</tag>
       </tags>
   </entry>
   <entry>
@@ -1981,72 +2047,6 @@ public SexException(String message)&#123;
         <tag>Java高级特性</tag>
         <tag>ArrayList</tag>
         <tag>List</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Collections类及常用方法</title>
-    <url>/2021/09/10/Java%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7-Collections%E7%B1%BB/</url>
-    <content><![CDATA[
-        <h3 id="Collections类及常用方法"   >
-          <a href="#Collections类及常用方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#Collections类及常用方法" class="headerlink" title="Collections类及常用方法"></a>Collections类及常用方法</h3>
-      <p>Collections类是Java提供的一个集合操作工具类，它包含了大量的静态方法们用于实现对集合元素的排序、查找和替换等操作</p>
-<p>Collections 和 Collection不同，前者是集合的操作类，后者是集合的接口</p>
-<p>Collections提供的常用的静态方法</p>
-<div class="table-container"><table>
-<thead>
-<tr>
-<th align="center">方法</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">sort()</td>
-<td align="center">排序</td>
-</tr>
-<tr>
-<td align="center">binarySearch()</td>
-<td align="center">查找</td>
-</tr>
-<tr>
-<td align="center">max()\min()</td>
-<td align="center">查找最大\最小值</td>
-</tr>
-<tr>
-<td align="center">reverse()</td>
-<td align="center">反转元素顺序</td>
-</tr>
-</tbody></table></div>
-
-        <h4 id="Collections类的用方法示例："   >
-          <a href="#Collections类的用方法示例：" class="heading-link"><i class="fas fa-link"></i></a><a href="#Collections类的用方法示例：" class="headerlink" title="Collections类的用方法示例："></a>Collections类的用方法示例：</h4>
-      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">import java.util.Collections;</span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.ArrayList;</span><br><span class="line"></span><br><span class="line">public class TestCollections &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//Collections常用方法</span><br><span class="line">		List&lt;String&gt; list = new ArrayList&lt;String&gt;();</span><br><span class="line">		list.add(&quot;zhc&quot;);</span><br><span class="line">		list.add(&quot;ykp&quot;);</span><br><span class="line">		list.add(&quot;hwz&quot;);</span><br><span class="line">		list.add(&quot;hs&quot;);</span><br><span class="line">		list.add(&quot;dadada&quot;);</span><br><span class="line">		list.add(&quot;zoo&quot;);</span><br><span class="line">		list.add(&quot;sda&quot;);</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;-----------------------&quot;);</span><br><span class="line">		for (String s : list) &#123;</span><br><span class="line">			System.out.println(s);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;-----------------------&quot;);</span><br><span class="line">		//使用Collections对集合进行升序排列</span><br><span class="line">		Collections.sort(list);</span><br><span class="line">		for (String s : list) &#123;</span><br><span class="line">			System.out.println(s);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;-----------------------&quot;);</span><br><span class="line">		//查找集合元素的最大、最小值</span><br><span class="line">		System.out.println(&quot;集合中的最大值:&quot;+Collections.max(list));</span><br><span class="line">		//查找集合元素的最大、最小值</span><br><span class="line">		System.out.println(&quot;集合中的最小值:&quot;+Collections.min(list));</span><br><span class="line">		//查找集合中特定的元素</span><br><span class="line">		System.out.println(Collections.binarySearch(list,&quot;zoo&quot;));</span><br><span class="line">		//反转排列顺序</span><br><span class="line">		Collections.reverse(list);</span><br><span class="line">		for (String s : list) &#123;</span><br><span class="line">			System.out.println(s);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="对集合元素排序查找"   >
-          <a href="#对集合元素排序查找" class="heading-link"><i class="fas fa-link"></i></a><a href="#对集合元素排序查找" class="headerlink" title="对集合元素排序查找"></a>对集合元素排序查找</h4>
-      <p>排序是针对集合的一个常见需求。要排序就要知道两个元素哪个大哪个小。在Java中，如果要实现一个类的对象之间比较大小，那么这个类就要实现Comparable接口。</p>
-<p>此接口强行对实现它的每个类的对象进行整体排序。</p>
-<p>这种排序被称为类的自然排序，类的compareTo( )方法被称为它的自然比较方法。此方法用于比较此对象与指定对象的顺序，如果小于、等于或大于指定对象，则分别返回负整数、零或正整数。</p>
-<p><strong>compareTo方法的定义语法格式如下:</strong></p>
-<blockquote>
-<p>int  compareTo(Object obj);</p>
-</blockquote>
-<p>其中有参数和返回值</p>
-<p>参数：obj即要比较的对象<br>返回值：负整数、零或正整数，根据此对象是小于、等于还是大于指定返回对象返回不同的值。</p>
-<p>实现此接口的对象列表（和数组）可以通过Collections.sort( )方法（和Arrays.sort( )方法）进行自动排序。下面通过示例来体验</p>
-<p>学生实体类，compareTo( )在此段代码的最后</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//实现Comparable接口</span><br><span class="line">public class Student implements Comparable&#123;</span><br><span class="line">	private int no;</span><br><span class="line">	private String name;</span><br><span class="line">	private String sex;</span><br><span class="line">	</span><br><span class="line">	public Student() &#123;&#125;</span><br><span class="line">	</span><br><span class="line">	public Student(int no, String name, String sex) &#123;</span><br><span class="line">	</span><br><span class="line">		this.no = no;</span><br><span class="line">		this.name = name;</span><br><span class="line">		this.sex = sex;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	@Override</span><br><span class="line">	public String toString() &#123;</span><br><span class="line">		return &quot;Student [no=&quot; + no + &quot;, name=&quot; + name + &quot;, sex=&quot; + sex + &quot;]&quot;;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public int getNo() &#123;</span><br><span class="line">		return no;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setNo(int no) &#123;</span><br><span class="line">		this.no = no;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getSex() &#123;</span><br><span class="line">		return sex;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setSex(String sex) &#123;</span><br><span class="line">		this.sex = sex;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//重写方法：定义学生对象的比较规则</span><br><span class="line">	//比较规则：按学号升序排列</span><br><span class="line">	//比较对象：当前学生对象（this） 和Object o</span><br><span class="line">	public int compareTo(Object o) &#123;</span><br><span class="line">		Student student = (Student)o;</span><br><span class="line">		if(this.no==student.no)&#123;</span><br><span class="line">			return 0;//学号相同个，两个对象一般大</span><br><span class="line">		&#125;else if(this.no&gt; student.no)&#123;</span><br><span class="line">			return 1;//当前学生对象学号大于比较的学生对象学号</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			return -1;//当前学生对象学号小于比较的学生对象学号</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-<p>元素之间可以比较大小之后，就可以使用Collections类的sort( )方法对元素进行排序操作了。</p>
-<p>前面介绍过List接口和Map接口，Map接口本身是无序的，所以不能对Map接口做排序操作。但是List是有序的，所以可以对List接口进行排序。</p>
-<p>注意：List接口中存放的元素，必须是实现了Comparable接口的元素才可以</p>
-<p>下面示例是使用Collections类的静态方法sort( ) 和binarySearch( )对List集合进行排序                                                                                             </p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//Collections常用方法</span><br><span class="line">		List&lt;Student&gt; list = new ArrayList&lt;Student&gt;();</span><br><span class="line">		Student s1= new Student(1,&quot;张三&quot;,&quot;男&quot;);</span><br><span class="line">		Student s2= new Student(2,&quot;李四&quot;,&quot;男&quot;);</span><br><span class="line">		Student s3= new Student(3,&quot;李丽丽&quot;,&quot;女&quot;);</span><br><span class="line">		Student s4= new Student(4,&quot;刘立春&quot;,&quot;女&quot;);</span><br><span class="line">		list.add(s1);</span><br><span class="line">		list.add(s2);</span><br><span class="line">		list.add(s3);</span><br><span class="line">		list.add(s4);</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;-----------排序前-----------&quot;);</span><br><span class="line">		for (Student stu : list) &#123;</span><br><span class="line">			System.out.println(stu);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;-----------排序后-升序排序-----------&quot;);</span><br><span class="line">		//使用Collections类的sort()对集合进行升序排列</span><br><span class="line">		Collections.sort(list);</span><br><span class="line">		for (Student stu : list) &#123;</span><br><span class="line">			System.out.println(stu);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;-----------排序后-降序排序-----------&quot;);</span><br><span class="line">		//使用Collections类的reverse()反转排列顺序</span><br><span class="line">		Collections.reverse(list);</span><br><span class="line">		for (Student stu  : list) &#123;</span><br><span class="line">			System.out.println(stu);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java高级特性</tag>
-        <tag>Collections</tag>
       </tags>
   </entry>
   <entry>
@@ -2432,6 +2432,64 @@ public SexException(String message)&#123;
       </tags>
   </entry>
   <entry>
+    <title>List-LinkedList</title>
+    <url>/2021/09/10/Java%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7-LinkedList/</url>
+    <content><![CDATA[
+        <h3 id="LinkedList类"   >
+          <a href="#LinkedList类" class="heading-link"><i class="fas fa-link"></i></a><a href="#LinkedList类" class="headerlink" title="LinkedList类"></a>LinkedList类</h3>
+      <p><strong>LinkedList介绍：</strong><br>LinkedList类是List接口的链接列表实现类。它支持实现所有List接口可选的列表的操作，并且允许元素值是任何数据，包括null。</p>
+<p>linkedList类采用链表存储方式存储数据，如下图，优点在于插入、删除元素时效率比较高，但是LinkedList类的查找效率很低。<br><img src="https://img14.360buyimg.com/ddimg/jfs/t1/179941/23/18544/12071/6112184bE8e0cb9e5/d7f047248135a7d5.png" alt="LinkedListImage.png"></p>
+<p>它除了包含ArrayList类所包含的方法外，还提拱了下面表格中所示的一些方法，可以在LinkedList类的首部或尾部进行插入、删除操作。</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">void addFirst(Object obj)</td>
+<td>将指定元素插入到当前集合的首部</td>
+</tr>
+<tr>
+<td align="center">void addLast(Object obj)</td>
+<td>将指定元素插入到当前集合的尾部</td>
+</tr>
+<tr>
+<td align="center">Object getFirst()</td>
+<td>获得当前集合的第一个元素</td>
+</tr>
+<tr>
+<td align="center">Object getLast()</td>
+<td>获得当前集合的最后一个元素</td>
+</tr>
+<tr>
+<td align="center">Object removeirst()</td>
+<td>移除并返回当前集合的第一个元素</td>
+</tr>
+<tr>
+<td align="center">Object removeLast()</td>
+<td>移除并返回当前集合的最后一个元素</td>
+</tr>
+</tbody></table></div>
+<p>例：使用LinkedList集合存储新闻标题（包含ID、名称、创建者），实现获取、添加以及删除头条和末尾新闻标题信息功能，并遍历集合</p>
+<p>新闻对象</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//新闻标题类：ID 新闻标题 创建者</span><br><span class="line">public class NewsTitle &#123;</span><br><span class="line">	</span><br><span class="line">	private int id;</span><br><span class="line">	private String title;</span><br><span class="line">	private String author;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	public NewsTitle() &#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	public NewsTitle(int id, String title, String author) &#123;</span><br><span class="line"></span><br><span class="line">		this.id = id;</span><br><span class="line">		this.title = title;</span><br><span class="line">		this.author = author;</span><br><span class="line">	&#125;</span><br><span class="line">	public int getId() &#123;</span><br><span class="line">		return id;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setId(int id) &#123;</span><br><span class="line">		this.id = id;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getTitle() &#123;</span><br><span class="line">		return title;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setTitle(String title) &#123;</span><br><span class="line">		this.title = title;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getAuthor() &#123;</span><br><span class="line">		return author;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setAuthor(String author) &#123;</span><br><span class="line">		this.author = author;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p><strong>测试类</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">import java.util.LinkedList;</span><br><span class="line"></span><br><span class="line">public class NewsMgr &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//创建新闻标题对象</span><br><span class="line">		NewsTitle car = new NewsTitle(1,&quot;汽车&quot;,&quot;author&quot;);</span><br><span class="line">		NewsTitle medical = new NewsTitle(1,&quot;医学&quot;,&quot;author&quot;);</span><br><span class="line">		NewsTitle fun = new NewsTitle(1,&quot;娱乐&quot;,&quot;author&quot;);</span><br><span class="line">		NewsTitle gym = new NewsTitle(1,&quot;体育&quot;,&quot;author&quot;);</span><br><span class="line">		</span><br><span class="line">		//创建集合对象,并且将新闻标题加入到集合中</span><br><span class="line">		LinkedList  list = new LinkedList();</span><br><span class="line">		//等同于数组中的list[0] = title1;</span><br><span class="line">		list.add(car);</span><br><span class="line">		list.add(medical);</span><br><span class="line">		//添加头条新闻标题和末条新闻标题</span><br><span class="line">		list.addFirst(fun);</span><br><span class="line">		list.addLast(gym);</span><br><span class="line">		System.out.println(&quot;头条和末条新闻已添加&quot;);</span><br><span class="line">		//获取头条以及末条新闻标题</span><br><span class="line">		NewsTitle first = (NewsTitle)list.getFirst();</span><br><span class="line">		System.out.println(&quot;头条新闻标题为：&quot;+first.getTitle());</span><br><span class="line">		NewsTitle last = (NewsTitle)list.getLast();</span><br><span class="line">		System.out.println(&quot;末条新闻标题为：&quot;+last.getTitle());</span><br><span class="line">		//删除头条新闻和末条新闻</span><br><span class="line">		list.removeFirst();</span><br><span class="line">		list.removeLast();</span><br><span class="line">		System.out.println(&quot;头条新闻和末条新闻已删除！&quot;);</span><br><span class="line">		System.out.println(&quot;遍历所有新闻标题&quot;);</span><br><span class="line">		for (Object obj : list) &#123;</span><br><span class="line">			NewsTitle title = (NewsTitle)obj;</span><br><span class="line">			System.out.println(title.getTitle());</span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>除了表格中列出的LinkedList类提供的方法外，LinkedList类和ArrayList类所包含的大部分方法是完全一样的，这主要是因为他们都是List接口的实现类。<br>由于ArrayLIst采用和数组一样的连续的顺序存储方式，当对数据频繁检索时效率高，而LinkedList类采用链表存储方式，当对数据添加、删除或修改比较多时，建议选择LinkedList类存储数据。</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java高级特性</tag>
+        <tag>LinkedList</tag>
+        <tag>List</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Map之HashMap</title>
     <url>/2021/09/10/Java%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7-Map%E4%B9%8BHashMap/</url>
     <content><![CDATA[
@@ -2524,64 +2582,6 @@ public SexException(String message)&#123;
         <tag>Java高级特性</tag>
         <tag>HashMap</tag>
         <tag>Map</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>List-LinkedList</title>
-    <url>/2021/09/10/Java%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7-LinkedList/</url>
-    <content><![CDATA[
-        <h3 id="LinkedList类"   >
-          <a href="#LinkedList类" class="heading-link"><i class="fas fa-link"></i></a><a href="#LinkedList类" class="headerlink" title="LinkedList类"></a>LinkedList类</h3>
-      <p><strong>LinkedList介绍：</strong><br>LinkedList类是List接口的链接列表实现类。它支持实现所有List接口可选的列表的操作，并且允许元素值是任何数据，包括null。</p>
-<p>linkedList类采用链表存储方式存储数据，如下图，优点在于插入、删除元素时效率比较高，但是LinkedList类的查找效率很低。<br><img src="https://img14.360buyimg.com/ddimg/jfs/t1/179941/23/18544/12071/6112184bE8e0cb9e5/d7f047248135a7d5.png" alt="LinkedListImage.png"></p>
-<p>它除了包含ArrayList类所包含的方法外，还提拱了下面表格中所示的一些方法，可以在LinkedList类的首部或尾部进行插入、删除操作。</p>
-<div class="table-container"><table>
-<thead>
-<tr>
-<th align="center">方法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">void addFirst(Object obj)</td>
-<td>将指定元素插入到当前集合的首部</td>
-</tr>
-<tr>
-<td align="center">void addLast(Object obj)</td>
-<td>将指定元素插入到当前集合的尾部</td>
-</tr>
-<tr>
-<td align="center">Object getFirst()</td>
-<td>获得当前集合的第一个元素</td>
-</tr>
-<tr>
-<td align="center">Object getLast()</td>
-<td>获得当前集合的最后一个元素</td>
-</tr>
-<tr>
-<td align="center">Object removeirst()</td>
-<td>移除并返回当前集合的第一个元素</td>
-</tr>
-<tr>
-<td align="center">Object removeLast()</td>
-<td>移除并返回当前集合的最后一个元素</td>
-</tr>
-</tbody></table></div>
-<p>例：使用LinkedList集合存储新闻标题（包含ID、名称、创建者），实现获取、添加以及删除头条和末尾新闻标题信息功能，并遍历集合</p>
-<p>新闻对象</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">//新闻标题类：ID 新闻标题 创建者</span><br><span class="line">public class NewsTitle &#123;</span><br><span class="line">	</span><br><span class="line">	private int id;</span><br><span class="line">	private String title;</span><br><span class="line">	private String author;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	public NewsTitle() &#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	public NewsTitle(int id, String title, String author) &#123;</span><br><span class="line"></span><br><span class="line">		this.id = id;</span><br><span class="line">		this.title = title;</span><br><span class="line">		this.author = author;</span><br><span class="line">	&#125;</span><br><span class="line">	public int getId() &#123;</span><br><span class="line">		return id;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setId(int id) &#123;</span><br><span class="line">		this.id = id;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getTitle() &#123;</span><br><span class="line">		return title;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setTitle(String title) &#123;</span><br><span class="line">		this.title = title;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getAuthor() &#123;</span><br><span class="line">		return author;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setAuthor(String author) &#123;</span><br><span class="line">		this.author = author;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-<p><strong>测试类</strong></p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">import java.util.LinkedList;</span><br><span class="line"></span><br><span class="line">public class NewsMgr &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//创建新闻标题对象</span><br><span class="line">		NewsTitle car = new NewsTitle(1,&quot;汽车&quot;,&quot;author&quot;);</span><br><span class="line">		NewsTitle medical = new NewsTitle(1,&quot;医学&quot;,&quot;author&quot;);</span><br><span class="line">		NewsTitle fun = new NewsTitle(1,&quot;娱乐&quot;,&quot;author&quot;);</span><br><span class="line">		NewsTitle gym = new NewsTitle(1,&quot;体育&quot;,&quot;author&quot;);</span><br><span class="line">		</span><br><span class="line">		//创建集合对象,并且将新闻标题加入到集合中</span><br><span class="line">		LinkedList  list = new LinkedList();</span><br><span class="line">		//等同于数组中的list[0] = title1;</span><br><span class="line">		list.add(car);</span><br><span class="line">		list.add(medical);</span><br><span class="line">		//添加头条新闻标题和末条新闻标题</span><br><span class="line">		list.addFirst(fun);</span><br><span class="line">		list.addLast(gym);</span><br><span class="line">		System.out.println(&quot;头条和末条新闻已添加&quot;);</span><br><span class="line">		//获取头条以及末条新闻标题</span><br><span class="line">		NewsTitle first = (NewsTitle)list.getFirst();</span><br><span class="line">		System.out.println(&quot;头条新闻标题为：&quot;+first.getTitle());</span><br><span class="line">		NewsTitle last = (NewsTitle)list.getLast();</span><br><span class="line">		System.out.println(&quot;末条新闻标题为：&quot;+last.getTitle());</span><br><span class="line">		//删除头条新闻和末条新闻</span><br><span class="line">		list.removeFirst();</span><br><span class="line">		list.removeLast();</span><br><span class="line">		System.out.println(&quot;头条新闻和末条新闻已删除！&quot;);</span><br><span class="line">		System.out.println(&quot;遍历所有新闻标题&quot;);</span><br><span class="line">		for (Object obj : list) &#123;</span><br><span class="line">			NewsTitle title = (NewsTitle)obj;</span><br><span class="line">			System.out.println(title.getTitle());</span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-<p>除了表格中列出的LinkedList类提供的方法外，LinkedList类和ArrayList类所包含的大部分方法是完全一样的，这主要是因为他们都是List接口的实现类。<br>由于ArrayLIst采用和数组一样的连续的顺序存储方式，当对数据频繁检索时效率高，而LinkedList类采用链表存储方式，当对数据添加、删除或修改比较多时，建议选择LinkedList类存储数据。</p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java高级特性</tag>
-        <tag>LinkedList</tag>
-        <tag>List</tag>
       </tags>
   </entry>
   <entry>
@@ -2743,87 +2743,6 @@ public SexException(String message)&#123;
         <tag>Java高级特性</tag>
         <tag>Set</tag>
         <tag>HashSet</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java高级特性—String类、StringBuffer类和StringBuilder类的区别</title>
-    <url>/2021/09/10/Java%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7-String%E3%80%81StringBuffer%E5%92%8CStringBuilder/</url>
-    <content><![CDATA[
-        <h3 id="String类、StringBuffer类和StringBuilder类"   >
-          <a href="#String类、StringBuffer类和StringBuilder类" class="heading-link"><i class="fas fa-link"></i></a><a href="#String类、StringBuffer类和StringBuilder类" class="headerlink" title="String类、StringBuffer类和StringBuilder类"></a>String类、StringBuffer类和StringBuilder类</h3>
-      
-        <h4 id="使用StringBuffer类处理字符串"   >
-          <a href="#使用StringBuffer类处理字符串" class="heading-link"><i class="fas fa-link"></i></a><a href="#使用StringBuffer类处理字符串" class="headerlink" title="使用StringBuffer类处理字符串"></a>使用StringBuffer类处理字符串</h4>
-      <p>除了使用StingBuffer类处理字符串之外，还可以使用StringBuffer类来存储字符串。</p>
-<p>StringBuffer类也是Java提供的用于处理字符串的一个类，而且它是比String类更高效地存储字符串的一种引用数据类型。特别是针对字符串进行连接操作时，使用StringBuffer类可以大大提交程序的执行效率。</p>
-
-        <h5 id="如何使用StringBuffer类"   >
-          <a href="#如何使用StringBuffer类" class="heading-link"><i class="fas fa-link"></i></a><a href="#如何使用StringBuffer类" class="headerlink" title="如何使用StringBuffer类"></a>如何使用StringBuffer类</h5>
-      <p>StringBuffer 类位于java.util包中 ，是String的增强类。StringBuffer类提供了很多方法可供使用</p>
-<p>声明对象并初始化<br>StringBuffer sb = new StringBuffer(123);</p>
-<p>常用的StringBuffer方法</p>
-<p> 方法  作用  </p>
-<hr>
-<p> toString() 转换成String类型的语法格式<br> append()  追加字符串<br> insert()  将参数插入到字符串指定位置后并返回 </p>
-
-        <h5 id="toString-方法"   >
-          <a href="#toString-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#toString-方法" class="headerlink" title="toString()方法"></a>toString()方法</h5>
-      <p>语法格式：<br>字符串.toString();</p>
-<p>将StringBuffer类型的字符串1转换为String类型的对象并返回。</p>
-<p>例：</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">StringBuffer sb2 = new StringBuffer(12asda);</span><br><span class="line">String sb1  =sb2.toString();转换为String类</span><br></pre></td></tr></table></div></figure>
-
-        <h5 id="toString-方法-1"   >
-          <a href="#toString-方法-1" class="heading-link"><i class="fas fa-link"></i></a><a href="#toString-方法-1" class="headerlink" title="toString()方法"></a>toString()方法</h5>
-      <p>语法格式：<br>字符串.append(参数)；</p>
-<p>将参数连接到字符串后并返回</p>
-<p>该方法和String类的concat( ) 方法一样，都是把一个字符串追加到另一个字符串后面，所不同的是String类中只能将String的字符串追加到一个字符串后面，而StringBuffer类可以将font color=red任何类型font的值追加到字符串之后。</p>
-<p>例：</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">       StringBuffer sb = new StringBuffer(世界上);</span><br><span class="line">       System.out.println(sb);</span><br><span class="line">       int num = 100;</span><br><span class="line">       在字符串后面追加字符串</span><br><span class="line">       StringBuffer sb1 = sb.append(有多少人);</span><br><span class="line">       System.out.println(sb1);</span><br><span class="line">       在字符串后面追加字符</span><br><span class="line">       StringBuffer sb2 = sb1.append(1232451);</span><br><span class="line">       System.out.println(sb2);</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h5 id="insert-方法"   >
-          <a href="#insert-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#insert-方法" class="headerlink" title="insert()方法"></a>insert()方法</h5>
-      <p>语法格式：<br>字符串.insert(位置，参数);</p>
-<p>将参数插入到字符串指定位置后斌返回。参数值可以是包括String的任何类型</p>
-<p>示例：编写一个方法，实现将一个数字字符串转换成以逗号分割的数字串，即从右边开始，每3个数字用逗号分隔。</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">利用StringBuffer类的length方法，获取数字串的长度，使用for循环从后往前隔三位插入逗号</span><br><span class="line"> Scanner sc = new Scanner(System.in);</span><br><span class="line"> 接收数字串，存放于StringBuffer类型的对象中</span><br><span class="line"> System.out.println(请输入一串数字：);</span><br><span class="line"> String nums  = sc.next();</span><br><span class="line"> StringBuffer sb = new StringBuffer(nums);</span><br><span class="line"> 从后往前每隔三位添加一个字符</span><br><span class="line"> for (int i=sb.length()-3;i0;i=i-3)&#123;</span><br><span class="line">     sb.insert(i,,);</span><br><span class="line"> &#125;</span><br><span class="line"> System.out.println(sb);</span><br></pre></td></tr></table></div></figure>
-
-
-
-        <h4 id="使用StringBuilder类处理字符串"   >
-          <a href="#使用StringBuilder类处理字符串" class="heading-link"><i class="fas fa-link"></i></a><a href="#使用StringBuilder类处理字符串" class="headerlink" title="使用StringBuilder类处理字符串"></a>使用StringBuilder类处理字符串</h4>
-      <p>java.long.Stringbuilder是JDK 5.0版本新增的类，它是一个可变的字符序列。</p>
-<p>此类提供了一个与StringBuffer兼容的API，被设计用作StringBuffer的一个简易替换，在大多数实现中，它比StringBuffer执行要快。使用StringBuilder类处理字符串的方法与StringBUffer类基本一样，不再举例</p>
-
-        <h4 id="使用String类、StringBuffer类和StringBuilder类的对比"   >
-          <a href="#使用String类、StringBuffer类和StringBuilder类的对比" class="heading-link"><i class="fas fa-link"></i></a><a href="#使用String类、StringBuffer类和StringBuilder类的对比" class="headerlink" title="使用String类、StringBuffer类和StringBuilder类的对比"></a>使用String类、StringBuffer类和StringBuilder类的对比</h4>
-      <p>String、StringBuffer和Builder这三个类在处理字符串时各有各自的特点和适用场景</p>
-
-        <h5 id="String"   >
-          <a href="#String" class="heading-link"><i class="fas fa-link"></i></a><a href="#String" class="headerlink" title="String"></a>String</h5>
-      <p>String：字符串常量</p>
-<p>String是不可变的对象，在每次对String类型进行改变时其实都是等同于生成了一个新的String对象，然后指向新的String对象，所以经常改变内容的字符串最好不要用String类型，因为每次生成对象都会对系统性能产生影响。</p>
-
-        <h5 id="StringBuffer"   >
-          <a href="#StringBuffer" class="heading-link"><i class="fas fa-link"></i></a><a href="#StringBuffer" class="headerlink" title="StringBuffer"></a>StringBuffer</h5>
-      <p>字符串变量</p>
-<p>StringBuffer 是可变的字符串，在每次对StringBuffer对象进行改变时，会对StringBuffer对象本身进行操作，而不是生成新的对象，再改变对象引用。<br>所以，在字符串对象经常改变的情况下他推荐使用StringBuffer类。</p>
-<p>字符串连接操作中，StringBuffer类的执行效率要比String类高，例如：</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">String str  = new String(wlelcome to);</span><br><span class="line">str+= here;</span><br></pre></td></tr></table></div></figure>
-<p> 以上这两句代码是使用String类型来操作字符串，但其处理步骤实际上是通过建立一个StringBuffer 对象，让它调用append( ) 方法，最后再转换为String,这样的话，String的连接操作就比StringBuffer多出了一些附加操作，当然效率要低。并且由于String对象的不可变性也会影响性能</p>
-
-        <h5 id="StringBuilder"   >
-          <a href="#StringBuilder" class="heading-link"><i class="fas fa-link"></i></a><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h5>
-      <p>字符串变量</p>
-<p>JDK 5.0版本以后提供了StringBuilder类，它和StringBuffer类等价，区别在于StringBuffer类是线程安全的，StringBuilder类是单线程的，不提供同步，理论上效率更高。关于线程相关的知识在后面更新线程会讲到。<br>未完待续。。。</p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java高级特性</tag>
-        <tag>String类、StringBuffer类和StringBuilder类的区别</tag>
       </tags>
   </entry>
   <entry>
@@ -3162,6 +3081,87 @@ public SexException(String message)&#123;
       <tags>
         <tag>Java高级特性</tag>
         <tag>包装类</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java高级特性—String类、StringBuffer类和StringBuilder类的区别</title>
+    <url>/2021/09/10/Java%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7-String%E3%80%81StringBuffer%E5%92%8CStringBuilder/</url>
+    <content><![CDATA[
+        <h3 id="String类、StringBuffer类和StringBuilder类"   >
+          <a href="#String类、StringBuffer类和StringBuilder类" class="heading-link"><i class="fas fa-link"></i></a><a href="#String类、StringBuffer类和StringBuilder类" class="headerlink" title="String类、StringBuffer类和StringBuilder类"></a>String类、StringBuffer类和StringBuilder类</h3>
+      
+        <h4 id="使用StringBuffer类处理字符串"   >
+          <a href="#使用StringBuffer类处理字符串" class="heading-link"><i class="fas fa-link"></i></a><a href="#使用StringBuffer类处理字符串" class="headerlink" title="使用StringBuffer类处理字符串"></a>使用StringBuffer类处理字符串</h4>
+      <p>除了使用StingBuffer类处理字符串之外，还可以使用StringBuffer类来存储字符串。</p>
+<p>StringBuffer类也是Java提供的用于处理字符串的一个类，而且它是比String类更高效地存储字符串的一种引用数据类型。特别是针对字符串进行连接操作时，使用StringBuffer类可以大大提交程序的执行效率。</p>
+
+        <h5 id="如何使用StringBuffer类"   >
+          <a href="#如何使用StringBuffer类" class="heading-link"><i class="fas fa-link"></i></a><a href="#如何使用StringBuffer类" class="headerlink" title="如何使用StringBuffer类"></a>如何使用StringBuffer类</h5>
+      <p>StringBuffer 类位于java.util包中 ，是String的增强类。StringBuffer类提供了很多方法可供使用</p>
+<p>声明对象并初始化<br>StringBuffer sb = new StringBuffer(123);</p>
+<p>常用的StringBuffer方法</p>
+<p> 方法  作用  </p>
+<hr>
+<p> toString() 转换成String类型的语法格式<br> append()  追加字符串<br> insert()  将参数插入到字符串指定位置后并返回 </p>
+
+        <h5 id="toString-方法"   >
+          <a href="#toString-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#toString-方法" class="headerlink" title="toString()方法"></a>toString()方法</h5>
+      <p>语法格式：<br>字符串.toString();</p>
+<p>将StringBuffer类型的字符串1转换为String类型的对象并返回。</p>
+<p>例：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">StringBuffer sb2 = new StringBuffer(12asda);</span><br><span class="line">String sb1  =sb2.toString();转换为String类</span><br></pre></td></tr></table></div></figure>
+
+        <h5 id="toString-方法-1"   >
+          <a href="#toString-方法-1" class="heading-link"><i class="fas fa-link"></i></a><a href="#toString-方法-1" class="headerlink" title="toString()方法"></a>toString()方法</h5>
+      <p>语法格式：<br>字符串.append(参数)；</p>
+<p>将参数连接到字符串后并返回</p>
+<p>该方法和String类的concat( ) 方法一样，都是把一个字符串追加到另一个字符串后面，所不同的是String类中只能将String的字符串追加到一个字符串后面，而StringBuffer类可以将font color=red任何类型font的值追加到字符串之后。</p>
+<p>例：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">       StringBuffer sb = new StringBuffer(世界上);</span><br><span class="line">       System.out.println(sb);</span><br><span class="line">       int num = 100;</span><br><span class="line">       在字符串后面追加字符串</span><br><span class="line">       StringBuffer sb1 = sb.append(有多少人);</span><br><span class="line">       System.out.println(sb1);</span><br><span class="line">       在字符串后面追加字符</span><br><span class="line">       StringBuffer sb2 = sb1.append(1232451);</span><br><span class="line">       System.out.println(sb2);</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="insert-方法"   >
+          <a href="#insert-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#insert-方法" class="headerlink" title="insert()方法"></a>insert()方法</h5>
+      <p>语法格式：<br>字符串.insert(位置，参数);</p>
+<p>将参数插入到字符串指定位置后斌返回。参数值可以是包括String的任何类型</p>
+<p>示例：编写一个方法，实现将一个数字字符串转换成以逗号分割的数字串，即从右边开始，每3个数字用逗号分隔。</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">利用StringBuffer类的length方法，获取数字串的长度，使用for循环从后往前隔三位插入逗号</span><br><span class="line"> Scanner sc = new Scanner(System.in);</span><br><span class="line"> 接收数字串，存放于StringBuffer类型的对象中</span><br><span class="line"> System.out.println(请输入一串数字：);</span><br><span class="line"> String nums  = sc.next();</span><br><span class="line"> StringBuffer sb = new StringBuffer(nums);</span><br><span class="line"> 从后往前每隔三位添加一个字符</span><br><span class="line"> for (int i=sb.length()-3;i0;i=i-3)&#123;</span><br><span class="line">     sb.insert(i,,);</span><br><span class="line"> &#125;</span><br><span class="line"> System.out.println(sb);</span><br></pre></td></tr></table></div></figure>
+
+
+
+        <h4 id="使用StringBuilder类处理字符串"   >
+          <a href="#使用StringBuilder类处理字符串" class="heading-link"><i class="fas fa-link"></i></a><a href="#使用StringBuilder类处理字符串" class="headerlink" title="使用StringBuilder类处理字符串"></a>使用StringBuilder类处理字符串</h4>
+      <p>java.long.Stringbuilder是JDK 5.0版本新增的类，它是一个可变的字符序列。</p>
+<p>此类提供了一个与StringBuffer兼容的API，被设计用作StringBuffer的一个简易替换，在大多数实现中，它比StringBuffer执行要快。使用StringBuilder类处理字符串的方法与StringBUffer类基本一样，不再举例</p>
+
+        <h4 id="使用String类、StringBuffer类和StringBuilder类的对比"   >
+          <a href="#使用String类、StringBuffer类和StringBuilder类的对比" class="heading-link"><i class="fas fa-link"></i></a><a href="#使用String类、StringBuffer类和StringBuilder类的对比" class="headerlink" title="使用String类、StringBuffer类和StringBuilder类的对比"></a>使用String类、StringBuffer类和StringBuilder类的对比</h4>
+      <p>String、StringBuffer和Builder这三个类在处理字符串时各有各自的特点和适用场景</p>
+
+        <h5 id="String"   >
+          <a href="#String" class="heading-link"><i class="fas fa-link"></i></a><a href="#String" class="headerlink" title="String"></a>String</h5>
+      <p>String：字符串常量</p>
+<p>String是不可变的对象，在每次对String类型进行改变时其实都是等同于生成了一个新的String对象，然后指向新的String对象，所以经常改变内容的字符串最好不要用String类型，因为每次生成对象都会对系统性能产生影响。</p>
+
+        <h5 id="StringBuffer"   >
+          <a href="#StringBuffer" class="heading-link"><i class="fas fa-link"></i></a><a href="#StringBuffer" class="headerlink" title="StringBuffer"></a>StringBuffer</h5>
+      <p>字符串变量</p>
+<p>StringBuffer 是可变的字符串，在每次对StringBuffer对象进行改变时，会对StringBuffer对象本身进行操作，而不是生成新的对象，再改变对象引用。<br>所以，在字符串对象经常改变的情况下他推荐使用StringBuffer类。</p>
+<p>字符串连接操作中，StringBuffer类的执行效率要比String类高，例如：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">String str  = new String(wlelcome to);</span><br><span class="line">str+= here;</span><br></pre></td></tr></table></div></figure>
+<p> 以上这两句代码是使用String类型来操作字符串，但其处理步骤实际上是通过建立一个StringBuffer 对象，让它调用append( ) 方法，最后再转换为String,这样的话，String的连接操作就比StringBuffer多出了一些附加操作，当然效率要低。并且由于String对象的不可变性也会影响性能</p>
+
+        <h5 id="StringBuilder"   >
+          <a href="#StringBuilder" class="heading-link"><i class="fas fa-link"></i></a><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h5>
+      <p>字符串变量</p>
+<p>JDK 5.0版本以后提供了StringBuilder类，它和StringBuffer类等价，区别在于StringBuffer类是线程安全的，StringBuilder类是单线程的，不提供同步，理论上效率更高。关于线程相关的知识在后面更新线程会讲到。<br>未完待续。。。</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java高级特性</tag>
+        <tag>String类、StringBuffer类和StringBuilder类的区别</tag>
       </tags>
   </entry>
   <entry>
@@ -3734,11 +3734,6 @@ public SexException(String message)&#123;
       </tags>
   </entry>
   <entry>
-    <title>我的第一篇博客文章</title>
-    <url>/2021/09/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>你好博客</title>
     <url>/2021/08/01/hello-world/</url>
     <content><![CDATA[<p>欢迎来到<span class="exturl"><a class="exturl__link"   href="https://hexo.io/" >Hexo</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>！这是你的第一篇文章。查看<span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/" >文档</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>以获得更多信息。如果在使用Hexo时遇到任何问题，您可以在<span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/troubleshooting.html" >故障排除</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>中找到答案，或者可以在<span class="exturl"><a class="exturl__link"   href="https://github.com/hexojs/hexo/issues" >GitHub</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>上询问我。</p>
@@ -3776,6 +3771,11 @@ public SexException(String message)&#123;
       <tags>
         <tag>初入Hexo</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>我的第一篇博客文章</title>
+    <url>/2021/09/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>接口和抽象类的区别</title>
