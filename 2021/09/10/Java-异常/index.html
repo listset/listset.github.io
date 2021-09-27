@@ -1,9 +1,27 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="https://img10.360buyimg.com/ddimg/jfs/t1/210672/22/780/14721/614304cbE6ed71481/b30794e20af29208.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="Java-异常                           1.什么是异常？       异常是指在程序运行过程中所发生的不正常事件，如所需文件找不到、网络连接不通或连接中断、算术运算出错（如被零除）、数组下标越界、装载一个不存在的类、对null对象操作、类型转换异常等。异常会中段断正在运行的程序。 生活中的异常：正常情况下，小王每天开车去上班，耗时">
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <meta name="description" content="Java-异常1.什么是异常？异常是指在程序运行过程中所发生的不正常事件，如所需文件找不到、网络连接不通或连接中断、算术运算出错（如被零除）、数组下标越界、装载一个不存在的类、对null对象操作、类型转换异常等。异常会中段断正在运行的程序。 生活中的异常：正常情况下，小王每天开车去上班，耗时大约30钟 异常情况：上班路上会发生：堵车、车子故障等事故，会影响小王的上班时间 下面看一个程序中的异常：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="异常">
 <meta property="og:url" content="http://example.com/2021/09/10/Java-%E5%BC%82%E5%B8%B8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Java-异常                           1.什么是异常？       异常是指在程序运行过程中所发生的不正常事件，如所需文件找不到、网络连接不通或连接中断、算术运算出错（如被零除）、数组下标越界、装载一个不存在的类、对null对象操作、类型转换异常等。异常会中段断正在运行的程序。 生活中的异常：正常情况下，小王每天开车去上班，耗时">
+<meta property="og:description" content="Java-异常1.什么是异常？异常是指在程序运行过程中所发生的不正常事件，如所需文件找不到、网络连接不通或连接中断、算术运算出错（如被零除）、数组下标越界、装载一个不存在的类、对null对象操作、类型转换异常等。异常会中段断正在运行的程序。 生活中的异常：正常情况下，小王每天开车去上班，耗时大约30钟 异常情况：上班路上会发生：堵车、车子故障等事故，会影响小王的上班时间 下面看一个程序中的异常：">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img13.360buyimg.com/ddimg/jfs/t1/196986/12/1936/20605/610cd871E919798c6/827ba5954b9b8427.png">
 <meta property="article:published_time" content="2021-09-10T06:41:30.410Z">
@@ -11,43 +29,223 @@
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Java基础">
 <meta property="article:tag" content="异常">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img13.360buyimg.com/ddimg/jfs/t1/196986/12/1936/20605/610cd871E919798c6/827ba5954b9b8427.png"><title>异常 | Hexo</title><link ref="canonical" href="http://example.com/2021/09/10/Java-%E5%BC%82%E5%B8%B8/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
-var CONFIG = {
-  root: '/',
-  algolia: undefined,
-  assistSearch: undefined,
-  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
-  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
-  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
-  postWidget: {"endText":true},
-  nightMode: {"enable":true},
-  back2top: {"enable":true},
-  codeblock: {"style":"default","highlight":"drak","wordWrap":false},
-  reward: false,
-  fancybox: false,
-  zoomImage: {"gapAside":"20px"},
-  galleryWaterfall: undefined,
-  lazyload: false,
-  pjax: undefined,
-  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
-  shortcuts: undefined,
-  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
-  sourcePath: {"js":"js","css":"css","images":"images"},
-};
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img13.360buyimg.com/ddimg/jfs/t1/196986/12/1936/20605/610cd871E919798c6/827ba5954b9b8427.png">
+  
+  <title>异常 - Hexo</title>
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hexo</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">异常</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-08-09</span></span></div></header><div class="post-body">
-        <h3 id="Java-异常"   >
-          <a href="#Java-异常" class="heading-link"><i class="fas fa-link"></i></a><a href="#Java-异常" class="headerlink" title="Java-异常"></a>Java-异常</h3>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
       
-        <h4 id="1-什么是异常？"   >
-          <a href="#1-什么是异常？" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-什么是异常？" class="headerlink" title="1.什么是异常？"></a>1.什么是异常？</h4>
-      <p>异常是指在程序运行过程中所发生的不正常事件，如所需文件找不到、网络连接不通或连接中断、算术运算出错（如被零除）、数组下标越界、装载一个不存在的类、对null对象操作、类型转换异常等。异常会中段断正在运行的程序。</p>
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="异常">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-09-10 14:41" pubdate>
+        2021年9月10日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      7.8k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      24 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">异常</h1>
+            
+            <div class="markdown-body">
+              <h3 id="Java-异常"><a href="#Java-异常" class="headerlink" title="Java-异常"></a>Java-异常</h3><h4 id="1-什么是异常？"><a href="#1-什么是异常？" class="headerlink" title="1.什么是异常？"></a>1.什么是异常？</h4><p>异常是指在程序运行过程中所发生的不正常事件，如所需文件找不到、网络连接不通或连接中断、算术运算出错（如被零除）、数组下标越界、装载一个不存在的类、对null对象操作、类型转换异常等。异常会中段断正在运行的程序。</p>
 <p><strong>生活中的异常：</strong><br>正常情况下，小王每天开车去上班，耗时大约30钟</p>
 <p><strong>异常情况：</strong><br>上班路上会发生：堵车、车子故障等事故，会影响小王的上班时间</p>
 <p>下面看一个程序中的异常：</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Scanner sc = new Scanner(System.in);</span><br><span class="line">System.out.print(&quot;请输入被除数：&quot;);</span><br><span class="line">int num1 = sc.nextInt();</span><br><span class="line">System.out.print(&quot;请输入除数：&quot;);</span><br><span class="line">int num2 = sc.nextInt();</span><br><span class="line">System.out.print(num1+&quot;/&quot;+num2+&quot;=&quot;+(num1/num2));</span><br><span class="line">System.out.print(&quot;感谢使用本程序！&quot;);</span><br></pre></td></tr></table></div></figure>
-<p>这个程序正常来说执行是不会报错的，但是一但出现异常程序将会立刻结束，不仅计算和输出商的语句不会执行，就连输出“感谢本程序！”的语句也不会执行,如下图所示：<br><img src="https://img13.360buyimg.com/ddimg/jfs/t1/196986/12/1936/20605/610cd871E919798c6/827ba5954b9b8427.png" alt="20210806143606.png"></p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">Scanner sc = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Scanner(System.<span class="hljs-params">in</span>)</span>;<br><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>out.print(<span class="hljs-string">&quot;请输入被除数：&quot;</span>);<br><span class="hljs-built_in">int</span> num1 = sc.next<span class="hljs-constructor">Int()</span>;<br><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>out.print(<span class="hljs-string">&quot;请输入除数：&quot;</span>);<br><span class="hljs-built_in">int</span> num2 = sc.next<span class="hljs-constructor">Int()</span>;<br><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>out.print(num1+<span class="hljs-string">&quot;/&quot;</span>+num2+<span class="hljs-string">&quot;=&quot;</span>+(num1/num2));<br><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>out.print(<span class="hljs-string">&quot;感谢使用本程序！&quot;</span>);<br></code></pre></td></tr></table></figure>
+<p>这个程序正常来说执行是不会报错的，但是一但出现异常程序将会立刻结束，不仅计算和输出商的语句不会执行，就连输出“感谢本程序！”的语句也不会执行,如下图所示：<br><img src="https://img13.360buyimg.com/ddimg/jfs/t1/196986/12/1936/20605/610cd871E919798c6/827ba5954b9b8427.png" srcset="/img/loading.gif" lazyload alt="20210806143606.png"></p>
 <p>或者用户输入跟数字无关的字母、下划线等，也会出现异常</p>
 <p>总结下来：异常就是指在程序运行过程中所发生的不正常事件，它会中断正在运行的程序</p>
 <blockquote>
@@ -65,42 +263,30 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <p>Java异常处理机制</p>
 </blockquote>
 <p>异常<br>1.在程序的运行过程中所发生的不正常的事件，它会中断中断正在运行的程序<br>异常处理<br>1.根据不同的异常进行相应的处理，而不会就此中断程序运行<br>2.Java使用异常处理机制为程序提供了错误处理的能力</p>
-
-        <h4 id="2-异常处理机制"   >
-          <a href="#2-异常处理机制" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-异常处理机制" class="headerlink" title="2.异常处理机制"></a>2.异常处理机制</h4>
-      <p>Java 编程语言使用异常处理机制为程序提供了错误处理的能力</p>
+<h4 id="2-异常处理机制"><a href="#2-异常处理机制" class="headerlink" title="2.异常处理机制"></a>2.异常处理机制</h4><p>Java 编程语言使用异常处理机制为程序提供了错误处理的能力</p>
 <p>程序中预先设置号对付异常的处理办法—&gt;程序运行—&gt;异常<br>对异常进行处理—&gt;处理完毕，程序继续运行</p>
 <p>例：处理除数为0的传统方法<br>在用户录入之前做判断，排除一些用户的非法操作</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner sc = new Scanner(System.in);</span><br><span class="line">        System.out.print(&quot;请输入被除数：&quot;);</span><br><span class="line">        int num1 = sc.nextInt();</span><br><span class="line">        System.out.print(&quot;请输入除数：&quot;);</span><br><span class="line">        int num2 = 0;</span><br><span class="line">        //在接收用户录入之前做判断，排除一些用户的非法操作</span><br><span class="line">        //hasNextInt():用户输入的必须是int类型的数据</span><br><span class="line">        if(sc.hasNextInt())&#123;</span><br><span class="line">            num2=sc.nextInt();</span><br><span class="line">            //用户录入整数</span><br><span class="line">            if(0==num2)&#123;</span><br><span class="line">                //用户录入的是0</span><br><span class="line">                System.out.println(&quot;输入的除数不能为0，程序退出！&quot;);</span><br><span class="line">                //退出JVM，非0代表异常终止</span><br><span class="line">                System.exit(1);</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                System.out.println(num1+&quot;/&quot;+num2+&quot;=&quot;+(num1/num2));</span><br><span class="line">                System.out.print(&quot;感谢使用本程序！&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            //用户录入的是非整数</span><br><span class="line">            System.out.println(&quot;输入的除数不是整数，程序退出！&quot;);</span><br><span class="line">            //退出JVM，非0代表异常终止</span><br><span class="line">            System.exit(1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs awk">public class Test &#123;<br>    public static void main(String[] args) &#123;<br>        Scanner sc = new Scanner(System.<span class="hljs-keyword">in</span>);<br>        System.out.print(<span class="hljs-string">&quot;请输入被除数：&quot;</span>);<br>        int num1 = sc.nextInt();<br>        System.out.print(<span class="hljs-string">&quot;请输入除数：&quot;</span>);<br>        int num2 = <span class="hljs-number">0</span>;<br>        <span class="hljs-regexp">//</span>在接收用户录入之前做判断，排除一些用户的非法操作<br>        <span class="hljs-regexp">//</span>hasNextInt():用户输入的必须是int类型的数据<br>        <span class="hljs-keyword">if</span>(sc.hasNextInt())&#123;<br>            num2=sc.nextInt();<br>            <span class="hljs-regexp">//</span>用户录入整数<br>            <span class="hljs-keyword">if</span>(<span class="hljs-number">0</span>==num2)&#123;<br>                <span class="hljs-regexp">//</span>用户录入的是<span class="hljs-number">0</span><br>                System.out.println(<span class="hljs-string">&quot;输入的除数不能为0，程序退出！&quot;</span>);<br>                <span class="hljs-regexp">//</span>退出JVM，非<span class="hljs-number">0</span>代表异常终止<br>                System.<span class="hljs-keyword">exit</span>(<span class="hljs-number">1</span>);<br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                System.out.println(num1+<span class="hljs-string">&quot;/&quot;</span>+num2+<span class="hljs-string">&quot;=&quot;</span>+(num1/num2));<br>                System.out.print(<span class="hljs-string">&quot;感谢使用本程序！&quot;</span>);<br>            &#125;<br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-regexp">//</span>用户录入的是非整数<br>            System.out.println(<span class="hljs-string">&quot;输入的除数不是整数，程序退出！&quot;</span>);<br>            <span class="hljs-regexp">//</span>退出JVM，非<span class="hljs-number">0</span>代表异常终止<br>            System.<span class="hljs-keyword">exit</span>(<span class="hljs-number">1</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p><strong>弊端：</strong><br>1.代码臃肿<br>2.程序员要花很大精力 “堵漏洞”<br>3.程序员很难堵住所有 “漏洞”<br>4.异常处理代码和业务代码交织在一起，影响了代码的可读性，加大日后程序的维护难度。</p>
-
-        <h5 id="接下来介绍Java的异常处理机制"   >
-          <a href="#接下来介绍Java的异常处理机制" class="heading-link"><i class="fas fa-link"></i></a><a href="#接下来介绍Java的异常处理机制" class="headerlink" title="接下来介绍Java的异常处理机制"></a>接下来介绍Java的异常处理机制</h5>
-      <p>Java提供了异常处理机制，可以由系统来处理程序在运行过程中可能出现的异常事件，使程序员又更多精力关注于业务代码编写。</p>
+<h5 id="接下来介绍Java的异常处理机制"><a href="#接下来介绍Java的异常处理机制" class="headerlink" title="接下来介绍Java的异常处理机制"></a>接下来介绍Java的异常处理机制</h5><p>Java提供了异常处理机制，可以由系统来处理程序在运行过程中可能出现的异常事件，使程序员又更多精力关注于业务代码编写。</p>
 <p>有五个关键字：try、catch、finally、throw、throws</p>
 <blockquote>
 <p>1.try:执行可能产生异常的代码（捕获异常）<br>2.catch：捕获异常<br>3.finally：无论是否发生异常，代码总能执行<br>4.throws：声明方法可能要抛出的各种异常<br>5.throw：手动抛出异常</p>
 </blockquote>
 <p><strong>例：</strong></p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class Test1 &#123;</span><br><span class="line">    //简单的try-catch处理异常</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner sc = new Scanner(System.in);</span><br><span class="line">        try&#123;</span><br><span class="line">            System.out.print(&quot;请输入被除数：&quot;);</span><br><span class="line">            int num1 = sc.nextInt();</span><br><span class="line">            System.out.print(&quot;请输入除数：&quot;);</span><br><span class="line">            int num2 = sc.nextInt();</span><br><span class="line">            System.out.print(num1+&quot;/&quot;+num2+&quot;=&quot;+(num1/num2));</span><br><span class="line">            System.out.print(&quot;感谢使用本程序！&quot;);</span><br><span class="line">        &#125;catch (Exception e)&#123;</span><br><span class="line">            //捕获异常，对异常做处理</span><br><span class="line">            System.err.println(&quot;出现错误:被除数和除数必须为整数，且不能为零!&quot;);</span><br><span class="line">            System.exit(1);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">public <span class="hljs-keyword">class</span> Test1 &#123;<br>    <span class="hljs-comment">//简单的try-catch处理异常</span><br>    public static void main(String<span class="hljs-literal">[]</span> args) &#123;<br>        Scanner sc = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Scanner(System.<span class="hljs-params">in</span>)</span>;<br>        <span class="hljs-keyword">try</span>&#123;<br>            <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>out.print(<span class="hljs-string">&quot;请输入被除数：&quot;</span>);<br>            <span class="hljs-built_in">int</span> num1 = sc.next<span class="hljs-constructor">Int()</span>;<br>            <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>out.print(<span class="hljs-string">&quot;请输入除数：&quot;</span>);<br>            <span class="hljs-built_in">int</span> num2 = sc.next<span class="hljs-constructor">Int()</span>;<br>            <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>out.print(num1+<span class="hljs-string">&quot;/&quot;</span>+num2+<span class="hljs-string">&quot;=&quot;</span>+(num1/num2));<br>            <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>out.print(<span class="hljs-string">&quot;感谢使用本程序！&quot;</span>);<br>        &#125;catch (Exception e)&#123;<br>            <span class="hljs-comment">//捕获异常，对异常做处理</span><br>            <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>err.println(<span class="hljs-string">&quot;出现错误:被除数和除数必须为整数，且不能为零!&quot;</span>);<br>            <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>exit(<span class="hljs-number">1</span>);<br>        &#125;;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>比起传统处理异常，try-catch更节省代码</p>
-
-        <h4 id="3-try-catch"   >
-          <a href="#3-try-catch" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-try-catch" class="headerlink" title="3.try-catch"></a>3.try-catch</h4>
-      <p><strong>掌握使用 try-catch异常处理的三种</strong> </p>
+<h4 id="3-try-catch"><a href="#3-try-catch" class="headerlink" title="3.try-catch"></a>3.try-catch</h4><p><strong>掌握使用 try-catch异常处理的三种</strong> </p>
 <p>第一种：正常执行，可能出现异常</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public void method()&#123;</span><br><span class="line">	try&#123;</span><br><span class="line">		//代码段(此处不会产生异常)</span><br><span class="line">	&#125;catch(异常类型 e)&#123;</span><br><span class="line">		//对异常进行处理的代码段</span><br><span class="line">	&#125;</span><br><span class="line">	//代码段</span><br><span class="line">&#125;</span><br><span class="line">//try里面没有异常的话，不会执行carch会继续执行后面的代码段</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs oxygene"><span class="hljs-keyword">public</span> void <span class="hljs-function"><span class="hljs-keyword">method</span><span class="hljs-params">()</span><span class="hljs-comment">&#123;</span></span><br><span class="hljs-comment"><span class="hljs-function">	try&#123;</span></span><br><span class="hljs-comment"><span class="hljs-function">		//代码段(此处不会产生异常)</span></span><br><span class="hljs-comment"><span class="hljs-function">	&#125;</span><span class="hljs-title">catch</span><span class="hljs-params">(异常类型 e)</span><span class="hljs-comment">&#123;</span></span><br><span class="hljs-comment"><span class="hljs-function">		//对异常进行处理的代码段</span></span><br><span class="hljs-comment"><span class="hljs-function">	&#125;</span></span><br><span class="hljs-function">	//代码段</span><br><span class="hljs-function">&#125;</span><br><span class="hljs-function">//<span class="hljs-title">try</span>里面没有异常的话，不会执行<span class="hljs-title">carch</span>会继续执行后面的代码段</span><br></code></pre></td></tr></table></figure>
 <p><strong>第二种：出现异常</strong></p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public void method()&#123;</span><br><span class="line">	try&#123;</span><br><span class="line">		//代码段1</span><br><span class="line">		//产生异常的代码段2</span><br><span class="line">		//代码段3</span><br><span class="line">	&#125;catch(异常类型 e)&#123;</span><br><span class="line">		//对异常进行处理的代码段4</span><br><span class="line">	&#125;</span><br><span class="line">	//代码段5</span><br><span class="line">	//有异常进入catch之后还会执行代码段5</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs oxygene"><span class="hljs-keyword">public</span> void <span class="hljs-function"><span class="hljs-keyword">method</span><span class="hljs-params">()</span><span class="hljs-comment">&#123;</span></span><br><span class="hljs-comment"><span class="hljs-function">	try&#123;</span></span><br><span class="hljs-comment"><span class="hljs-function">		//代码段1</span></span><br><span class="hljs-comment"><span class="hljs-function">		//产生异常的代码段2</span></span><br><span class="hljs-comment"><span class="hljs-function">		//代码段3</span></span><br><span class="hljs-comment"><span class="hljs-function">	&#125;</span><span class="hljs-title">catch</span><span class="hljs-params">(异常类型 e)</span><span class="hljs-comment">&#123;</span></span><br><span class="hljs-comment"><span class="hljs-function">		//对异常进行处理的代码段4</span></span><br><span class="hljs-comment"><span class="hljs-function">	&#125;</span></span><br><span class="hljs-function">	//代码段5</span><br><span class="hljs-function">	//有异常进入<span class="hljs-title">catch</span>之后还会执行代码段5</span><br><span class="hljs-function">&#125;</span><br></code></pre></td></tr></table></figure>
 
 <p><strong>第二种：异常类型不匹配</strong></p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public void method()&#123;</span><br><span class="line">	try&#123;</span><br><span class="line">		//代码段1</span><br><span class="line">		//产生异常的代码段2</span><br><span class="line">		//代码段3</span><br><span class="line">	&#125;catch(异常类型 e)&#123;</span><br><span class="line">		//对异常进行处理的代码段4</span><br><span class="line">	&#125;</span><br><span class="line">	//代码段5</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs oxygene"><span class="hljs-keyword">public</span> void <span class="hljs-function"><span class="hljs-keyword">method</span><span class="hljs-params">()</span><span class="hljs-comment">&#123;</span></span><br><span class="hljs-comment"><span class="hljs-function">	try&#123;</span></span><br><span class="hljs-comment"><span class="hljs-function">		//代码段1</span></span><br><span class="hljs-comment"><span class="hljs-function">		//产生异常的代码段2</span></span><br><span class="hljs-comment"><span class="hljs-function">		//代码段3</span></span><br><span class="hljs-comment"><span class="hljs-function">	&#125;</span><span class="hljs-title">catch</span><span class="hljs-params">(异常类型 e)</span><span class="hljs-comment">&#123;</span></span><br><span class="hljs-comment"><span class="hljs-function">		//对异常进行处理的代码段4</span></span><br><span class="hljs-comment"><span class="hljs-function">	&#125;</span></span><br><span class="hljs-function">	//代码段5</span><br><span class="hljs-function">&#125;</span><br></code></pre></td></tr></table></figure>
 <p><strong>异常类型不匹配的话，不会进入到catch里面，也不会继续执行后面的代码</strong></p>
-
-        <h4 id="4-异常对象处理"   >
-          <a href="#4-异常对象处理" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-异常对象处理" class="headerlink" title="4.异常对象处理"></a>4.异常对象处理</h4>
-      <p>在catch块中处理异常<br> 加入用户自定义处理信息</p>
+<h4 id="4-异常对象处理"><a href="#4-异常对象处理" class="headerlink" title="4.异常对象处理"></a>4.异常对象处理</h4><p>在catch块中处理异常<br> 加入用户自定义处理信息</p>
 <blockquote>
 <p>System.err.println(“出现错误:被除数和除数必须是整数”);</p>
 </blockquote>
@@ -108,9 +294,9 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <blockquote>
 <p>e.printStackTrace( );//输出异常的堆栈信息</p>
 </blockquote>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">catch (Exception e)&#123;</span><br><span class="line">  //捕获异常，对异常做处理</span><br><span class="line"> System.err.println(&quot;出现错误:被除数和除数必须为整数，且不能为零!&quot;);</span><br><span class="line">  //System.exit(1);</span><br><span class="line">  //输出异常堆栈信息</span><br><span class="line">  e.printStackTrace();</span><br><span class="line">&#125;;</span><br><span class="line">//printStackTrace()的堆栈跟踪功能显示出程序运行到当前类的执行流程</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs awk">catch (Exception e)&#123;<br>  <span class="hljs-regexp">//</span>捕获异常，对异常做处理<br> System.err.println(<span class="hljs-string">&quot;出现错误:被除数和除数必须为整数，且不能为零!&quot;</span>);<br>  <span class="hljs-regexp">//</span>System.<span class="hljs-keyword">exit</span>(<span class="hljs-number">1</span>);<br>  <span class="hljs-regexp">//</span>输出异常堆栈信息<br>  e.printStackTrace();<br>&#125;;<br><span class="hljs-regexp">//</span>printStackTrace()的堆栈跟踪功能显示出程序运行到当前类的执行流程<br></code></pre></td></tr></table></figure>
 <p>异常对象常用的方法</p>
-<div class="table-container"><table>
+<table>
 <thead>
 <tr>
 <th align="center">方法</th>
@@ -125,10 +311,10 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <td align="center">String getMessage()</td>
 <td>是printStackTrace()输出信息的一部分</td>
 </tr>
-</tbody></table></div>
+</tbody></table>
 <p>getMessage( )：返回报错信息的字符串</p>
 <p><strong>常见的异常类型</strong></p>
-<div class="table-container"><table>
+<table>
 <thead>
 <tr>
 <th align="center">异常类型</th>
@@ -171,30 +357,21 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <td align="center">ArithmeticException</td>
 <td align="center">数字格式转换异常，如把”abc”转换成数字</td>
 </tr>
-</tbody></table></div>
-
-        <h4 id="5-try-catch-finally"   >
-          <a href="#5-try-catch-finally" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-try-catch-finally" class="headerlink" title="5.try-catch-finally"></a>5.try-catch-finally</h4>
-      <p><strong>在try-catch块后加入finally ，finally不管前面是否发生异常都会被执行</strong></p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">public class Test1 &#123;</span><br><span class="line">    //简单的try-catch处理异常</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner sc = new Scanner(System.in);</span><br><span class="line">        try&#123;</span><br><span class="line">            System.out.print(&quot;请输入被除数：&quot;);</span><br><span class="line">            int num1 = sc.nextInt();</span><br><span class="line">            System.out.print(&quot;请输入除数：&quot;);</span><br><span class="line">            int num2 = sc.nextInt();</span><br><span class="line">            System.out.print(num1+&quot;/&quot;+num2+&quot;=&quot;+(num1/num2));</span><br><span class="line"></span><br><span class="line">        &#125;catch (Exception e)&#123;</span><br><span class="line">            //捕获异常，对异常做处理</span><br><span class="line">            System.err.println(&quot;出现错误:被除数和除数必须为整数，且不能为零!&quot;);</span><br><span class="line">           </span><br><span class="line">            //System.exit(1);</span><br><span class="line">            //输出异常堆栈信息</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;finally &#123;</span><br><span class="line">            System.out.print(&quot;感谢使用本程序！&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//唯一不执行的情况是写了</span><br><span class="line">//System.exit(1);</span><br><span class="line">如果catch里面有return的话，是先执行finally，再执行return</span><br></pre></td></tr></table></div></figure>
+</tbody></table>
+<h4 id="5-try-catch-finally"><a href="#5-try-catch-finally" class="headerlink" title="5.try-catch-finally"></a>5.try-catch-finally</h4><p><strong>在try-catch块后加入finally ，finally不管前面是否发生异常都会被执行</strong></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs awk">public class Test1 &#123;<br>    <span class="hljs-regexp">//</span>简单的try-catch处理异常<br>    public static void main(String[] args) &#123;<br>        Scanner sc = new Scanner(System.<span class="hljs-keyword">in</span>);<br>        try&#123;<br>            System.out.print(<span class="hljs-string">&quot;请输入被除数：&quot;</span>);<br>            int num1 = sc.nextInt();<br>            System.out.print(<span class="hljs-string">&quot;请输入除数：&quot;</span>);<br>            int num2 = sc.nextInt();<br>            System.out.print(num1+<span class="hljs-string">&quot;/&quot;</span>+num2+<span class="hljs-string">&quot;=&quot;</span>+(num1/num2));<br><br>        &#125;catch (Exception e)&#123;<br>            <span class="hljs-regexp">//</span>捕获异常，对异常做处理<br>            System.err.println(<span class="hljs-string">&quot;出现错误:被除数和除数必须为整数，且不能为零!&quot;</span>);<br>           <br>            <span class="hljs-regexp">//</span>System.<span class="hljs-keyword">exit</span>(<span class="hljs-number">1</span>);<br>            <span class="hljs-regexp">//</span>输出异常堆栈信息<br>            e.printStackTrace();<br>        &#125;finally &#123;<br>            System.out.print(<span class="hljs-string">&quot;感谢使用本程序！&quot;</span>);<br>        &#125;<br>    &#125;<br>&#125;<br><span class="hljs-regexp">//</span>唯一不执行的情况是写了<br><span class="hljs-regexp">//</span>System.<span class="hljs-keyword">exit</span>(<span class="hljs-number">1</span>);<br>如果catch里面有return的话，是先执行finally，再执行return<br></code></pre></td></tr></table></figure>
 <p><strong>面试题：</strong><br>1.try-catch块中存在return语句，是否还执行finally块？如果执行，说出执行循序</p>
 <p>答：执行finally，不管有没有异常，finally始终是执行的，finally的执行循序在 return 之前</p>
 <p>2.try-catch- finally块中，finally块唯一不执行的情况是什么?</p>
 <p>答：在catch里面加入了System.exit(1);此时进入到catch里面会终止JVM的进程</p>
-
-        <h4 id="6-多重catch"   >
-          <a href="#6-多重catch" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-多重catch" class="headerlink" title="6. 多重catch"></a>6. 多重catch</h4>
-      <p><strong>引发多种类型的异常</strong></p>
+<h4 id="6-多重catch"><a href="#6-多重catch" class="headerlink" title="6. 多重catch"></a>6. 多重catch</h4><p><strong>引发多种类型的异常</strong></p>
 <p>1.排列catch语句的顺序∶先子类后父类<br>2.发生异常时按顺序逐个匹配<br>3.只执行第一个与异常类型匹配的catch语句</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">public class Test1 &#123;</span><br><span class="line">    //简单的try-catch处理异常</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner sc = new Scanner(System.in);</span><br><span class="line">        try&#123;</span><br><span class="line">            System.out.print(&quot;请输入被除数：&quot;);</span><br><span class="line">            int num1 = sc.nextInt();</span><br><span class="line">            System.out.print(&quot;请输入除数：&quot;);</span><br><span class="line">            int num2 = sc.nextInt();</span><br><span class="line">            System.out.print(num1+&quot;/&quot;+num2+&quot;=&quot;+(num1/num2));</span><br><span class="line"></span><br><span class="line">        &#125;catch (InputMismatchException e)&#123;</span><br><span class="line">            //捕获异常，对异常做处理</span><br><span class="line">            System.err.println(&quot;出现错误:被除数和除数必须为整数!&quot;);</span><br><span class="line">//            e.printStackTrace();</span><br><span class="line">        &#125;catch (ArithmeticException e)&#123;</span><br><span class="line">            //捕获异常，对异常做处理</span><br><span class="line">            System.err.println(&quot;出现错误:除数不能为零!&quot;);</span><br><span class="line">//            e.printStackTrace();</span><br><span class="line">        &#125;catch (Exception e)&#123;</span><br><span class="line">            //捕获异常，对异常做处理</span><br><span class="line">            System.err.println(&quot;出现错误:非法操作!&quot;);</span><br><span class="line">            //System.exit(1);</span><br><span class="line">            //输出异常堆栈信息</span><br><span class="line">//            e.printStackTrace();</span><br><span class="line">        &#125;finally &#123;</span><br><span class="line">            System.out.println(&quot;感谢使用本程序！&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">public <span class="hljs-keyword">class</span> Test1 &#123;<br>    <span class="hljs-comment">//简单的try-catch处理异常</span><br>    public static void main(String<span class="hljs-literal">[]</span> args) &#123;<br>        Scanner sc = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Scanner(System.<span class="hljs-params">in</span>)</span>;<br>        <span class="hljs-keyword">try</span>&#123;<br>            <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>out.print(<span class="hljs-string">&quot;请输入被除数：&quot;</span>);<br>            <span class="hljs-built_in">int</span> num1 = sc.next<span class="hljs-constructor">Int()</span>;<br>            <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>out.print(<span class="hljs-string">&quot;请输入除数：&quot;</span>);<br>            <span class="hljs-built_in">int</span> num2 = sc.next<span class="hljs-constructor">Int()</span>;<br>            <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>out.print(num1+<span class="hljs-string">&quot;/&quot;</span>+num2+<span class="hljs-string">&quot;=&quot;</span>+(num1/num2));<br><br>        &#125;catch (InputMismatchException e)&#123;<br>            <span class="hljs-comment">//捕获异常，对异常做处理</span><br>            <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>err.println(<span class="hljs-string">&quot;出现错误:被除数和除数必须为整数!&quot;</span>);<br><span class="hljs-comment">//            e.printStackTrace();</span><br>        &#125;catch (ArithmeticException e)&#123;<br>            <span class="hljs-comment">//捕获异常，对异常做处理</span><br>            <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>err.println(<span class="hljs-string">&quot;出现错误:除数不能为零!&quot;</span>);<br><span class="hljs-comment">//            e.printStackTrace();</span><br>        &#125;catch (Exception e)&#123;<br>            <span class="hljs-comment">//捕获异常，对异常做处理</span><br>            <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>err.println(<span class="hljs-string">&quot;出现错误:非法操作!&quot;</span>);<br>            <span class="hljs-comment">//System.exit(1);</span><br>            <span class="hljs-comment">//输出异常堆栈信息</span><br><span class="hljs-comment">//            e.printStackTrace();</span><br>        &#125;finally &#123;<br>            <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>out.println(<span class="hljs-string">&quot;感谢使用本程序！&quot;</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p><strong>多重catch的执行顺序：先执行小的异常，把大的异常放到最后</strong></p>
-
-        <h4 id="7-throws声明异常"   >
-          <a href="#7-throws声明异常" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-throws声明异常" class="headerlink" title="7. throws声明异常"></a>7. throws声明异常</h4>
-      <p>thriws声明某个方法可能抛出的各种异常，多个异常用逗号隔开</p>
+<h4 id="7-throws声明异常"><a href="#7-throws声明异常" class="headerlink" title="7. throws声明异常"></a>7. throws声明异常</h4><p>thriws声明某个方法可能抛出的各种异常，多个异常用逗号隔开</p>
 <p>方法1：调用者处理异常<br>方法2：调用者继续声明异常   ，main()方法声明的异常有Java虚拟机处理</p>
 <p>示例：</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">	public static void main(String[] args) throws Exception&#123;</span><br><span class="line">		Scanner sc = new Scanner(System.in);</span><br><span class="line">		System.out.println(&quot;请输入被除数&quot;);</span><br><span class="line">		int bei=sc.nextInt();</span><br><span class="line">		System.out.println(&quot;请输入除数&quot;);</span><br><span class="line">		int chuShu = sc.nextInt();</span><br><span class="line">		</span><br><span class="line">		int sum=bei/chuShu;</span><br><span class="line">		System.out.println(bei+&quot;/&quot;+chuShu+&quot;=&quot;+sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">```				</span><br><span class="line"></span><br><span class="line">除了系统自动抛出异常外，有些问题需要程序员自行抛出和异常</span><br><span class="line">如：我声明了一个人类，但是男女在意义上只能是男或者是女，在OOP阶段可以使用异常来进行处理</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">	<span class="hljs-built_in">public</span> static <span class="hljs-type">void</span> main(String[] args) throws <span class="hljs-keyword">Exception</span>&#123;<br>		Scanner sc = <span class="hljs-built_in">new</span> Scanner(<span class="hljs-keyword">System</span>.<span class="hljs-keyword">in</span>);<br>		<span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(&quot;请输入被除数&quot;);<br>		<span class="hljs-type">int</span> bei=sc.nextInt();<br>		<span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(&quot;请输入除数&quot;);<br>		<span class="hljs-type">int</span> chuShu = sc.nextInt();<br>		<br>		<span class="hljs-type">int</span> sum=bei/chuShu;<br>		<span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(bei+&quot;/&quot;+chuShu+&quot;=&quot;+sum);<br>	&#125;<br>&#125;<br>```				<br><br>除了系统自动抛出异常外，有些问题需要程序员自行抛出和异常<br>如：我声明了一个人类，但是男女在意义上只能是男或者是女，在OOP阶段可以使用异常来进行处理<br><br></code></pre></td></tr></table></figure>
 <p>public class Person {<br>    private String name;<br>    private String sex;<br>    private String age;<br>    public String getName() {<br>        return name;<br>    }<br>    public void setName(String name) {<br>        this.name = name;<br>    }<br>    public String getSex() {<br>        return sex;<br>    }<br>    //性别只能是男和女，其他字符串报异常<br>    public void setSex(String sex) throws Exception {<br>        if(“男”.equals(sex) ||”女”.equals(sex)){<br>            this.sex=sex;<br>        }else{<br>            //当使用 throw显式抛出异常，必须对异常处理，或throws声明异常<br>            throw new Exception(“性别只能为男女”);<br>        }<br>    }<br>    public String getAge() {<br>        return age;<br>    }</p>
 <pre><code>public void setAge(String age) &#123;
     this.age = age;
@@ -216,7 +393,7 @@ public static void main(String[] args)&#123;
 &#125;
 </code></pre>
 <p>}</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">| throw | throws | </span><br><span class="line">| :-----: | :----: |</span><br><span class="line">| 生成并抛出异常| 声明方法内抛出了异常 | </span><br><span class="line">| 位于方法体内部，可作为单独语句使用 | 必须跟在方法参数列表后面，不能单独使用 | </span><br><span class="line">| 抛出一个异常对象，且只能是一个 | 声明抛出异常类型，可以跟多个异常 | </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### 8. throws自定义异常</span><br><span class="line">定义一个自定义异常：创建一个普通类，继承Exception使用super调用父类的方法</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">|<span class="hljs-string"> throw </span>|<span class="hljs-string"> throws </span>|<span class="hljs-string"> </span><br><span class="hljs-string"></span>|<span class="hljs-string"> :-----: </span>|<span class="hljs-string"> :----: </span>|<br>|<span class="hljs-string"> 生成并抛出异常</span>|<span class="hljs-string"> 声明方法内抛出了异常 </span>|<span class="hljs-string"> </span><br><span class="hljs-string"></span>|<span class="hljs-string"> 位于方法体内部，可作为单独语句使用 </span>|<span class="hljs-string"> 必须跟在方法参数列表后面，不能单独使用 </span>|<span class="hljs-string"> </span><br><span class="hljs-string"></span>|<span class="hljs-string"> 抛出一个异常对象，且只能是一个 </span>|<span class="hljs-string"> 声明抛出异常类型，可以跟多个异常 </span>|<span class="hljs-string"> </span><br><span class="hljs-string"></span><br><span class="hljs-string"></span><br><span class="hljs-string">#### 8. throws自定义异常</span><br><span class="hljs-string">定义一个自定义异常：创建一个普通类，继承Exception使用super调用父类的方法</span><br></code></pre></td></tr></table></figure>
 <p>//自定义异常类（Person类性别赋值异常）<br>public class SexException extends Exception{</p>
 <pre><code>public SexException()&#123;&#125;
 //由特定异常信息构建异常对象
@@ -225,32 +402,223 @@ public SexException(String message)&#123;
 &#125;
 </code></pre>
 <p>}</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在setSex里面修改抛出的异常为SexException</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">在<span class="hljs-keyword">set</span>Sex里面修改抛出的异常为SexException<br></code></pre></td></tr></table></figure>
 <p>//性别只能是男和女，其他字符串报异常<br>    public void setSex(String sex) throws SexException {<br>        if(“男”.equals(sex) ||”女”.equals(sex)){<br>            this.sex=sex;<br>        }else{<br>            //当使用 throw显式抛出异常，必须对异常处理，或throws声明异常<br>            throw new SexException(“性别只能为男女”);<br>        }<br>    }</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">最后调用setSex方法来try-catch自定义异常</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs actionscript">最后调用setSex方法来<span class="hljs-keyword">try</span>-<span class="hljs-keyword">catch</span>自定义异常<br></code></pre></td></tr></table></figure>
 <p>public static void main(String[] args){<br>        Person p = new Person();<br>        try {<br>            p.setSex(“sc”);<br>        } catch (SexException e) {<br>            e.printStackTrace();<br>        }<br>        p.print();<br>    }</p>
 <p>```</p>
-
-        <h4 id="9-异常链和异常处理原则"   >
-          <a href="#9-异常链和异常处理原则" class="heading-link"><i class="fas fa-link"></i></a><a href="#9-异常链和异常处理原则" class="headerlink" title="9. 异常链和异常处理原则"></a>9. 异常链和异常处理原则</h4>
-      <p>问题：<br>A方法调用B方法时，B方法却抛出了异常。那A方法继续抛出原有的异常还是抛出一个新的异常呢？</p>
+<h4 id="9-异常链和异常处理原则"><a href="#9-异常链和异常处理原则" class="headerlink" title="9. 异常链和异常处理原则"></a>9. 异常链和异常处理原则</h4><p>问题：<br>A方法调用B方法时，B方法却抛出了异常。那A方法继续抛出原有的异常还是抛出一个新的异常呢？</p>
 <p>1.抛出原有的异常 ：A方法与B方法进行了关联 ，不便于代码的修改和扩展<br>2.抛出新的异常：会丢失原有的异常信息</p>
 <p>异常链是JDK1.4推出的创建了新的异常但却保留了原有异常的信息</p>
-
-        <h4 id="10-异常处理原则"   >
-          <a href="#10-异常处理原则" class="heading-link"><i class="fas fa-link"></i></a><a href="#10-异常处理原则" class="headerlink" title="10.异常处理原则"></a>10.异常处理原则</h4>
-      <blockquote>
+<h4 id="10-异常处理原则"><a href="#10-异常处理原则" class="headerlink" title="10.异常处理原则"></a>10.异常处理原则</h4><blockquote>
 <p>异常处理与性能<br>异常只能用于非正常情况<br>需要对捕获的异常做处理<br>不要将过于庞大的代码块放在try中<br>在catch中指定具体的异常类型</p>
 </blockquote>
-</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">John Doe</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2021/09/10/Java-%E5%BC%82%E5%B8%B8/">http://example.com/2021/09/10/Java-%E5%BC%82%E5%B8%B8/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/Java%E5%9F%BA%E7%A1%80/">Java基础</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/%E5%BC%82%E5%B8%B8/">异常</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2021/09/10/Java-%E6%8A%BD%E8%B1%A1%E7%B1%BB/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">抽象类</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2021/09/10/Java-%E5%A4%9A%E6%80%81(2)/"><span class="paginator-prev__text">Java-多态性(2)</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-%E5%BC%82%E5%B8%B8"><span class="toc-number">1.</span> <span class="toc-text">
-          Java-异常</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%82%E5%B8%B8%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">
-          1.什么是异常？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.</span> <span class="toc-text">
-          2.异常处理机制</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8E%A5%E4%B8%8B%E6%9D%A5%E4%BB%8B%E7%BB%8DJava%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.1.</span> <span class="toc-text">
-          接下来介绍Java的异常处理机制</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-try-catch"><span class="toc-number">1.3.</span> <span class="toc-text">
-          3.try-catch</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%BC%82%E5%B8%B8%E5%AF%B9%E8%B1%A1%E5%A4%84%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">
-          4.异常对象处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-try-catch-finally"><span class="toc-number">1.5.</span> <span class="toc-text">
-          5.try-catch-finally</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E5%A4%9A%E9%87%8Dcatch"><span class="toc-number">1.6.</span> <span class="toc-text">
-          6. 多重catch</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-throws%E5%A3%B0%E6%98%8E%E5%BC%82%E5%B8%B8"><span class="toc-number">1.7.</span> <span class="toc-text">
-          7. throws声明异常</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-%E5%BC%82%E5%B8%B8%E9%93%BE%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E5%8E%9F%E5%88%99"><span class="toc-number">1.8.</span> <span class="toc-text">
-          9. 异常链和异常处理原则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E5%8E%9F%E5%88%99"><span class="toc-number">1.9.</span> <span class="toc-text">
-          10.异常处理原则</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://img10.360buyimg.com/ddimg/jfs/t1/210672/22/780/14721/614304cbE6ed71481/b30794e20af29208.png" alt="avatar"></div><p class="sidebar-ov-author__text">生活如此美好</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">31</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">3</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">29</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>John Doe</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Java/">Java</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%BC%82%E5%B8%B8/">异常</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/09/10/Java-%E6%8A%BD%E8%B1%A1%E7%B1%BB/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">抽象类</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/09/10/Java-%E5%A4%9A%E6%80%81(2)/">
+                        <span class="hidden-mobile">Java-多态性(2)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

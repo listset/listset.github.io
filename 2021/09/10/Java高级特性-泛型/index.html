@@ -1,52 +1,247 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="https://img10.360buyimg.com/ddimg/jfs/t1/210672/22/780/14721/614304cbE6ed71481/b30794e20af29208.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="泛型                           认识泛型       泛型是 JDK1.5 的新特性，泛型的本质是参数化类型，也就是说操作的数据类型被指定为一个参数，使代码可以应用于多种类型。 简单来说，Java语言引入泛型的好处是安全简单，且所有强制类型转换都是自动和隐式进行的，提高了代码的重用率。 安全指的是加入泛型之后只能存储指定的类型，例如">
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <meta name="description" content="泛型认识泛型泛型是 JDK1.5 的新特性，泛型的本质是参数化类型，也就是说操作的数据类型被指定为一个参数，使代码可以应用于多种类型。 简单来说，Java语言引入泛型的好处是安全简单，且所有强制类型转换都是自动和隐式进行的，提高了代码的重用率。 安全指的是加入泛型之后只能存储指定的类型，例如存储一个Student类型的泛型，那么Teacher类型就存不进去。 泛型的定义将对象的类型作为参数，指定到">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java高级特性-泛型">
 <meta property="og:url" content="http://example.com/2021/09/10/Java%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7-%E6%B3%9B%E5%9E%8B/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="泛型                           认识泛型       泛型是 JDK1.5 的新特性，泛型的本质是参数化类型，也就是说操作的数据类型被指定为一个参数，使代码可以应用于多种类型。 简单来说，Java语言引入泛型的好处是安全简单，且所有强制类型转换都是自动和隐式进行的，提高了代码的重用率。 安全指的是加入泛型之后只能存储指定的类型，例如">
+<meta property="og:description" content="泛型认识泛型泛型是 JDK1.5 的新特性，泛型的本质是参数化类型，也就是说操作的数据类型被指定为一个参数，使代码可以应用于多种类型。 简单来说，Java语言引入泛型的好处是安全简单，且所有强制类型转换都是自动和隐式进行的，提高了代码的重用率。 安全指的是加入泛型之后只能存储指定的类型，例如存储一个Student类型的泛型，那么Teacher类型就存不进去。 泛型的定义将对象的类型作为参数，指定到">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-10T06:41:30.435Z">
 <meta property="article:modified_time" content="2021-08-13T02:42:40.000Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Java高级特性">
 <meta property="article:tag" content="泛型">
-<meta name="twitter:card" content="summary"><title>Java高级特性-泛型 | Hexo</title><link ref="canonical" href="http://example.com/2021/09/10/Java%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7-%E6%B3%9B%E5%9E%8B/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
-var CONFIG = {
-  root: '/',
-  algolia: undefined,
-  assistSearch: undefined,
-  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
-  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
-  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
-  postWidget: {"endText":true},
-  nightMode: {"enable":true},
-  back2top: {"enable":true},
-  codeblock: {"style":"default","highlight":"drak","wordWrap":false},
-  reward: false,
-  fancybox: false,
-  zoomImage: {"gapAside":"20px"},
-  galleryWaterfall: undefined,
-  lazyload: false,
-  pjax: undefined,
-  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
-  shortcuts: undefined,
-  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
-  sourcePath: {"js":"js","css":"css","images":"images"},
-};
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>Java高级特性-泛型 - Hexo</title>
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hexo</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Java高级特性-泛型</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-08-13</span></span></div></header><div class="post-body">
-        <h3 id="泛型"   >
-          <a href="#泛型" class="heading-link"><i class="fas fa-link"></i></a><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h3>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
       
-        <h4 id="认识泛型"   >
-          <a href="#认识泛型" class="heading-link"><i class="fas fa-link"></i></a><a href="#认识泛型" class="headerlink" title="认识泛型"></a>认识泛型</h4>
-      <p>泛型是<font color="red"> JDK1.5 </font>的新特性，泛型的本质是参数化类型，也就是说操作的数据类型被指定为一个参数，使代码可以应用于多种类型。</p>
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Java高级特性-泛型">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-09-10 14:41" pubdate>
+        2021年9月10日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.3k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      13 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Java高级特性-泛型</h1>
+            
+            <div class="markdown-body">
+              <h3 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h3><h4 id="认识泛型"><a href="#认识泛型" class="headerlink" title="认识泛型"></a>认识泛型</h4><p>泛型是<font color="red"> JDK1.5 </font>的新特性，泛型的本质是参数化类型，也就是说操作的数据类型被指定为一个参数，使代码可以应用于多种类型。</p>
 <p>简单来说，Java语言引入泛型的好处是安全简单，且所有强制类型转换都是自动和隐式进行的，提高了代码的重用率。</p>
 <p>安全指的是加入泛型之后只能存储指定的类型，例如存储一个Student类型的泛型，那么Teacher类型就存不进去。</p>
-
-        <h4 id="泛型的定义"   >
-          <a href="#泛型的定义" class="heading-link"><i class="fas fa-link"></i></a><a href="#泛型的定义" class="headerlink" title="泛型的定义"></a>泛型的定义</h4>
-      <p>将对象的类型作为参数，指定到其他类或者方法上，从而保证类型转换的安全性和稳定性，这就是泛型。泛型的本质就是参数化类型。</p>
+<h4 id="泛型的定义"><a href="#泛型的定义" class="headerlink" title="泛型的定义"></a>泛型的定义</h4><p>将对象的类型作为参数，指定到其他类或者方法上，从而保证类型转换的安全性和稳定性，这就是泛型。泛型的本质就是参数化类型。</p>
 <p><strong>参数化类型</strong>：将类型由原来的具体的类型参数化，就像方法中的变量参数，此时类型也定义成参数形式（可以称之为类型形参），然后在使用或调用时传入具体的类型（类型实参）。</p>
 <p>泛型的定义语法如下:</p>
 <blockquote>
@@ -56,27 +251,24 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <blockquote>
 <p>首先，类2 可以是 类1 本身，可以是 类1 的子类，还可以是接口的实现类；<br>其次，类2 的类型实参必须与 类1 的类型实参相同</p>
 </blockquote>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">例如：ArrayList &lt;String&gt;  List= new ArrayLIst&lt;String&gt;( );</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs haxe">例如：ArrayList &lt;<span class="hljs-keyword">String</span>&gt;  List= <span class="hljs-keyword">new</span> <span class="hljs-type">ArrayLIst</span>&lt;<span class="hljs-keyword">String</span>&gt;( );<br></code></pre></td></tr></table></figure>
 
-
-        <h4 id="泛型在集合中的应用"   >
-          <a href="#泛型在集合中的应用" class="heading-link"><i class="fas fa-link"></i></a><a href="#泛型在集合中的应用" class="headerlink" title="泛型在集合中的应用"></a>泛型在集合中的应用</h4>
-      <p>List接口中的 add( )方法参数是Object类型，不管把什么对象放入List接口及其子接口或实现类中，都会被转换为Object类型。在通过get( )方法取出集合中元素时必须进行强制类型转换，不仅繁琐而且容易出现ClassCastException异常。</p>
+<h4 id="泛型在集合中的应用"><a href="#泛型在集合中的应用" class="headerlink" title="泛型在集合中的应用"></a>泛型在集合中的应用</h4><p>List接口中的 add( )方法参数是Object类型，不管把什么对象放入List接口及其子接口或实现类中，都会被转换为Object类型。在通过get( )方法取出集合中元素时必须进行强制类型转换，不仅繁琐而且容易出现ClassCastException异常。</p>
 <p>Map接口中使用put( )方法和get( )方法存取对象时，以及使用Iterator的next( )方法获取元素时存在同样问题。</p>
 <p>JDK1.5中通过引入泛型有效地解决了这个问题。JDK1.5中已经改写了集合框架中的所有接口和类，增加了对泛型的支持，也就是泛型集合。</p>
 <p>使用泛型集合在创建集合对象时指定集合中元素的类型，从集合中取出元素时无需进行强制类型转换，并且如果把非指定类型对象放入集合，会出现编译错误。</p>
 <p>List和ArrayList的泛型形式是</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;E&gt;和ArrayList&lt;E&gt;</span><br><span class="line">ArrayList&lt;E&gt;与ArrayList类的常用方法基本一样</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mathematica"><span class="hljs-built_in">List</span><span class="hljs-operator">&lt;</span><span class="hljs-built_in">E</span><span class="hljs-operator">&gt;</span>和<span class="hljs-variable">ArrayList</span><span class="hljs-operator">&lt;</span><span class="hljs-built_in">E</span><span class="hljs-operator">&gt;</span><br><span class="hljs-variable">ArrayList</span><span class="hljs-operator">&lt;</span><span class="hljs-built_in">E</span><span class="hljs-operator">&gt;</span>与<span class="hljs-variable">ArrayList</span>类的常用方法基本一样<br></code></pre></td></tr></table></figure>
 
 
 <p><strong>使用案例来认识泛型</strong></p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">public class NewsMgr &#123;</span><br><span class="line">//对新闻标题的存储即操作（ArrayList）</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//创建新闻标题对象</span><br><span class="line">		NewsTitle title1 = new NewsTitle(1,&quot;故宫&quot;,&quot;管理员&quot;);</span><br><span class="line">		NewsTitle title2 = new NewsTitle(1,&quot;长城&quot;,&quot;管理员&quot;);</span><br><span class="line">		NewsTitle title3 = new NewsTitle(1,&quot;颐和园&quot;,&quot;管理员&quot;);</span><br><span class="line">		NewsTitle title4 = new NewsTitle(1,&quot;北海&quot;,&quot;管理员&quot;);</span><br><span class="line">		NewsTitle title5 = new NewsTitle(1,&quot;天安门&quot;,&quot;管理员&quot;);</span><br><span class="line">		</span><br><span class="line">		//创建集合对象,并且将新闻标题加入到集合中</span><br><span class="line">		ArrayList&lt;NewsTitle&gt;  list = new ArrayList&lt;NewsTitle&gt;();</span><br><span class="line">		//等同于数组中的list[0] = title1;</span><br><span class="line">		list.add(title1);</span><br><span class="line">		list.add(title2);</span><br><span class="line">		list.add(title3);</span><br><span class="line">		list.add(title4);</span><br><span class="line">		list.add(title5);</span><br><span class="line"></span><br><span class="line">		//获取新闻标题的总数</span><br><span class="line">		//ArrayList的size()方法等同于数组的length属性的作用</span><br><span class="line">		System.out.println(&quot;新闻标题一共有&quot;+list.size()+&quot;条。&quot;);</span><br><span class="line">		//逐条打印新闻标题名称</span><br><span class="line">		//方法一：遍历ArrayList元素的位置(下标)</span><br><span class="line">		for(int i=0;i&lt;list.size();i++)&#123;</span><br><span class="line">			NewsTitle title = list.get(i);</span><br><span class="line">			System.out.println(title.getTitle());</span><br><span class="line">		&#125;</span><br><span class="line">		//方法二:增强型for</span><br><span class="line">		System.out.println(&quot;#############################&quot;);</span><br><span class="line">		for (NewsTitle titles : list) &#123;</span><br><span class="line">			NewsTitle title = titles;</span><br><span class="line">			System.out.println(title.getTitle());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs processing"><span class="hljs-keyword">import</span> java.util.ArrayList;<br><span class="hljs-keyword">import</span> java.util.List;<br><br><span class="hljs-keyword">public</span> class NewsMgr &#123;<br><span class="hljs-comment">//对新闻标题的存储即操作（ArrayList）</span><br>	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> main(<span class="hljs-keyword">String</span>[] args) &#123;<br>		<span class="hljs-comment">//创建新闻标题对象</span><br>		NewsTitle title1 = <span class="hljs-keyword">new</span> NewsTitle(<span class="hljs-number">1</span>,<span class="hljs-string">&quot;故宫&quot;</span>,<span class="hljs-string">&quot;管理员&quot;</span>);<br>		NewsTitle title2 = <span class="hljs-keyword">new</span> NewsTitle(<span class="hljs-number">1</span>,<span class="hljs-string">&quot;长城&quot;</span>,<span class="hljs-string">&quot;管理员&quot;</span>);<br>		NewsTitle title3 = <span class="hljs-keyword">new</span> NewsTitle(<span class="hljs-number">1</span>,<span class="hljs-string">&quot;颐和园&quot;</span>,<span class="hljs-string">&quot;管理员&quot;</span>);<br>		NewsTitle title4 = <span class="hljs-keyword">new</span> NewsTitle(<span class="hljs-number">1</span>,<span class="hljs-string">&quot;北海&quot;</span>,<span class="hljs-string">&quot;管理员&quot;</span>);<br>		NewsTitle title5 = <span class="hljs-keyword">new</span> NewsTitle(<span class="hljs-number">1</span>,<span class="hljs-string">&quot;天安门&quot;</span>,<span class="hljs-string">&quot;管理员&quot;</span>);<br>		<br>		<span class="hljs-comment">//创建集合对象,并且将新闻标题加入到集合中</span><br>		ArrayList&lt;NewsTitle&gt;  list = <span class="hljs-keyword">new</span> ArrayList&lt;NewsTitle&gt;();<br>		<span class="hljs-comment">//等同于数组中的list[0] = title1;</span><br>		list.<span class="hljs-built_in">add</span>(title1);<br>		list.<span class="hljs-built_in">add</span>(title2);<br>		list.<span class="hljs-built_in">add</span>(title3);<br>		list.<span class="hljs-built_in">add</span>(title4);<br>		list.<span class="hljs-built_in">add</span>(title5);<br><br>		<span class="hljs-comment">//获取新闻标题的总数</span><br>		<span class="hljs-comment">//ArrayList的size()方法等同于数组的length属性的作用</span><br>		System.out.<span class="hljs-built_in">println</span>(<span class="hljs-string">&quot;新闻标题一共有&quot;</span>+list.<span class="hljs-built_in">size</span>()+<span class="hljs-string">&quot;条。&quot;</span>);<br>		<span class="hljs-comment">//逐条打印新闻标题名称</span><br>		<span class="hljs-comment">//方法一：遍历ArrayList元素的位置(下标)</span><br>		<span class="hljs-keyword">for</span>(<span class="hljs-built_in">int</span> i=<span class="hljs-number">0</span>;i&lt;list.<span class="hljs-built_in">size</span>();i++)&#123;<br>			NewsTitle title = list.<span class="hljs-built_in">get</span>(i);<br>			System.out.<span class="hljs-built_in">println</span>(title.getTitle());<br>		&#125;<br>		<span class="hljs-comment">//方法二:增强型for</span><br>		System.out.<span class="hljs-built_in">println</span>(<span class="hljs-string">&quot;#############################&quot;</span>);<br>		<span class="hljs-keyword">for</span> (NewsTitle titles : list) &#123;<br>			NewsTitle title = titles;<br>			System.out.<span class="hljs-built_in">println</span>(title.getTitle());<br>		&#125;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p> 上面例子通过泛型指定了ArrayList中元素的类型，代码中指定了ArrayList中只能添加 NewsTitle 类型的数据，如果添加了其他类型的数据就会编译错误，这在一定程度上保证了代码的安全性，并且数据添加到集合后不再转换为Object类型，保存的是指定的数据类型，所以在集合中获取数据时也不在需要进型强制类型转换。</p>
 <p>同样，Map与HashMap也有他们的泛型形式，即key&lt;K,V&gt;和HashMap&lt;K,V&gt;。</p>
 <p>因为他们的每一个元素都包含两个部分，即key和value，所以，在应用泛型时，要同时指定key的类型和value的类型，K表示key的类型也就是键，V表示value的类型也就是值</p>
 <p>HashMap&lt;K,V&gt;与HashMap操作数据的方法基本一样，下面来演示一下</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">import java.util.HashMap;</span><br><span class="line">import java.util.Map;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line">import java.util.Set;</span><br><span class="line"></span><br><span class="line">public class DemoMap &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		</span><br><span class="line">		//创建实体类对象</span><br><span class="line">		Student stu1= new Student(&quot;王五&quot;,&quot;男&quot;);</span><br><span class="line">		Student stu2 = new Student(&quot;王加萨达&quot;,&quot;男&quot;);</span><br><span class="line">		Student stu3= new Student(&quot;李洒我&quot;,&quot;女&quot;);</span><br><span class="line">		Student stu4 = new Student(&quot;李静佳&quot;,&quot;女&quot;);</span><br><span class="line">		</span><br><span class="line">		//声明Map 对象</span><br><span class="line">		Map&lt;String,Student&gt; map = new HashMap&lt;String,Student&gt;();</span><br><span class="line">		//把实体类对象加入到Map中去</span><br><span class="line">		map.put(&quot;Jack&quot;, stu1);</span><br><span class="line">		map.put(&quot;Tom&quot;, stu2);</span><br><span class="line">		map.put(&quot;luxi&quot;, stu3);</span><br><span class="line">		map.put(&quot;Rose&quot;, stu4);</span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">		//输出英文名</span><br><span class="line">		System.out.println(&quot;学生英文名&quot;);</span><br><span class="line">		for (String key : map.keySet()) &#123;</span><br><span class="line">			System.out.println(key);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;---------------------------------------------------&quot;);</span><br><span class="line">		//输出学生详细信息</span><br><span class="line">		for (Student value : map.values()) &#123;</span><br><span class="line">			System.out.println(&quot;姓名:&quot;+value.getName()+&quot; 性别:&quot;+value.getSex());</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;---------------------------------------------------&quot;);</span><br><span class="line">		//实现获取特定英文名称对应的学生信息</span><br><span class="line">		Scanner sc = new Scanner(System.in);</span><br><span class="line">		System.out.print(&quot;请输入某位学员的英文名称:&quot;);</span><br><span class="line">		String name = sc.next();</span><br><span class="line">		if(map.containsKey(name))&#123;</span><br><span class="line">			Student student = map.get(name);</span><br><span class="line">			System.out.println(&quot;😢😎😉😉😉😉😉😉😗😍🙄👩🏻&quot;);</span><br><span class="line">			System.out.println(name+&quot;-&quot;+student.getName()+&quot;-&quot;+student.getSex());</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			System.out.println(&quot;没有此学生！&quot;);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-keyword">import</span> java.util.HashMap;<br><span class="hljs-keyword">import</span> java.util.Map;<br><span class="hljs-keyword">import</span> java.util.Scanner;<br><span class="hljs-keyword">import</span> java.util.Set;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DemoMap</span> &#123;</span><br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">String</span>[] args)</span> </span>&#123;<br>		<br>		<span class="hljs-comment">//创建实体类对象</span><br>		Student stu1= <span class="hljs-keyword">new</span> <span class="hljs-built_in">Student</span>(<span class="hljs-string">&quot;王五&quot;</span>,<span class="hljs-string">&quot;男&quot;</span>);<br>		Student stu2 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Student</span>(<span class="hljs-string">&quot;王加萨达&quot;</span>,<span class="hljs-string">&quot;男&quot;</span>);<br>		Student stu3= <span class="hljs-keyword">new</span> <span class="hljs-built_in">Student</span>(<span class="hljs-string">&quot;李洒我&quot;</span>,<span class="hljs-string">&quot;女&quot;</span>);<br>		Student stu4 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Student</span>(<span class="hljs-string">&quot;李静佳&quot;</span>,<span class="hljs-string">&quot;女&quot;</span>);<br>		<br>		<span class="hljs-comment">//声明Map 对象</span><br>		Map&lt;<span class="hljs-keyword">String</span>,Student&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;<span class="hljs-keyword">String</span>,Student&gt;();<br>		<span class="hljs-comment">//把实体类对象加入到Map中去</span><br>		map.<span class="hljs-built_in">put</span>(<span class="hljs-string">&quot;Jack&quot;</span>, stu1);<br>		map.<span class="hljs-built_in">put</span>(<span class="hljs-string">&quot;Tom&quot;</span>, stu2);<br>		map.<span class="hljs-built_in">put</span>(<span class="hljs-string">&quot;luxi&quot;</span>, stu3);<br>		map.<span class="hljs-built_in">put</span>(<span class="hljs-string">&quot;Rose&quot;</span>, stu4);<br>		<br><br>		<span class="hljs-comment">//输出英文名</span><br>		System.out.<span class="hljs-built_in">println</span>(<span class="hljs-string">&quot;学生英文名&quot;</span>);<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">String</span> key : map.<span class="hljs-built_in">keySet</span>()) &#123;<br>			System.out.<span class="hljs-built_in">println</span>(key);<br>		&#125;<br>		System.out.<span class="hljs-built_in">println</span>(<span class="hljs-string">&quot;---------------------------------------------------&quot;</span>);<br>		<span class="hljs-comment">//输出学生详细信息</span><br>		<span class="hljs-keyword">for</span> (Student value : map.<span class="hljs-built_in">values</span>()) &#123;<br>			System.out.<span class="hljs-built_in">println</span>(<span class="hljs-string">&quot;姓名:&quot;</span>+value.<span class="hljs-built_in">getName</span>()+<span class="hljs-string">&quot; 性别:&quot;</span>+value.<span class="hljs-built_in">getSex</span>());<br>		&#125;<br>		System.out.<span class="hljs-built_in">println</span>(<span class="hljs-string">&quot;---------------------------------------------------&quot;</span>);<br>		<span class="hljs-comment">//实现获取特定英文名称对应的学生信息</span><br>		Scanner sc = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Scanner</span>(System.in);<br>		System.out.<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;请输入某位学员的英文名称:&quot;</span>);<br>		<span class="hljs-keyword">String</span> name = sc.<span class="hljs-built_in">next</span>();<br>		<span class="hljs-keyword">if</span>(map.<span class="hljs-built_in">containsKey</span>(name))&#123;<br>			Student student = map.<span class="hljs-built_in">get</span>(name);<br>			System.out.<span class="hljs-built_in">println</span>(<span class="hljs-string">&quot;😢😎😉😉😉😉😉😉😗😍🙄👩🏻&quot;</span>);<br>			System.out.<span class="hljs-built_in">println</span>(name+<span class="hljs-string">&quot;-&quot;</span>+student.<span class="hljs-built_in">getName</span>()+<span class="hljs-string">&quot;-&quot;</span>+student.<span class="hljs-built_in">getSex</span>());<br>		&#125;<span class="hljs-keyword">else</span>&#123;<br>			System.out.<span class="hljs-built_in">println</span>(<span class="hljs-string">&quot;没有此学生！&quot;</span>);<br>		&#125;<br><br>	&#125;<br><br>&#125;<br><br></code></pre></td></tr></table></figure>
 <p>通过&lt;String,Student&gt;指定了Map集合的数据类型，在使用put( )方法存储数据时，Map集合的key必须为String类型，value必须为Student类型的数据</p>
 <p>而在遍历键集的for循环中，变量的key不再是Object</p>
 <p>而是String,在遍历值集的for循环中，变量value的类型不再是Object，而是Student</p>
@@ -86,8 +278,212 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <blockquote>
 <p>存储数据时进型严格的类型检查，确保只有合适类型的对象才能存储到集合中<br>从集合中检索对象时，减少了强制类型转换。</p>
 </blockquote>
-</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">John Doe</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2021/09/10/Java%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7-%E6%B3%9B%E5%9E%8B/">http://example.com/2021/09/10/Java%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7-%E6%B3%9B%E5%9E%8B/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/Java%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7/">Java高级特性</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/%E6%B3%9B%E5%9E%8B/">泛型</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2021/09/10/Java%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7-%E9%9B%86%E5%90%88/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">Java高级特性-集合介绍</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2021/09/10/Java%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7-%E6%9E%9A%E4%B8%BE/"><span class="paginator-prev__text">Java高级特性-枚举</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">
-          泛型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E6%B3%9B%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">
-          认识泛型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.2.</span> <span class="toc-text">
-          泛型的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E5%9C%A8%E9%9B%86%E5%90%88%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.3.</span> <span class="toc-text">
-          泛型在集合中的应用</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://img10.360buyimg.com/ddimg/jfs/t1/210672/22/780/14721/614304cbE6ed71481/b30794e20af29208.png" alt="avatar"></div><p class="sidebar-ov-author__text">生活如此美好</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">31</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">3</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">29</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>John Doe</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Java/">Java</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7/">Java高级特性</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%B3%9B%E5%9E%8B/">泛型</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/09/10/Java%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7-%E9%9B%86%E5%90%88/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Java高级特性-集合介绍</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/09/10/Java%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7-%E6%9E%9A%E4%B8%BE/">
+                        <span class="hidden-mobile">Java高级特性-枚举</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

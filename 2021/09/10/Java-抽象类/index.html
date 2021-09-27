@@ -1,49 +1,244 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="https://img10.360buyimg.com/ddimg/jfs/t1/210672/22/780/14721/614304cbE6ed71481/b30794e20af29208.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="抽象类                           1.初识抽象类和抽象方法                           1.1区分普通方法和抽象方法         在Java中，当一个类的方法被 abstract 关键字修饰时，该方法为抽象方法。   抽象方法所在的类必须定义为抽象类 当一个方法被定义为抽象方法之后，意味着该方法不会有具体">
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <meta name="description" content="抽象类1.初识抽象类和抽象方法1.1区分普通方法和抽象方法  在Java中，当一个类的方法被 abstract 关键字修饰时，该方法为抽象方法。   抽象方法所在的类必须定义为抽象类 当一个方法被定义为抽象方法之后，意味着该方法不会有具体实现，而是在抽象类的子类中通过重写进行实现。定义抽象方法的语法格式如下：  [访问修饰符] abstract &lt;返回类型&gt; &lt;方法名&gt; (">
 <meta property="og:type" content="article">
 <meta property="og:title" content="抽象类">
 <meta property="og:url" content="http://example.com/2021/09/10/Java-%E6%8A%BD%E8%B1%A1%E7%B1%BB/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="抽象类                           1.初识抽象类和抽象方法                           1.1区分普通方法和抽象方法         在Java中，当一个类的方法被 abstract 关键字修饰时，该方法为抽象方法。   抽象方法所在的类必须定义为抽象类 当一个方法被定义为抽象方法之后，意味着该方法不会有具体">
+<meta property="og:description" content="抽象类1.初识抽象类和抽象方法1.1区分普通方法和抽象方法  在Java中，当一个类的方法被 abstract 关键字修饰时，该方法为抽象方法。   抽象方法所在的类必须定义为抽象类 当一个方法被定义为抽象方法之后，意味着该方法不会有具体实现，而是在抽象类的子类中通过重写进行实现。定义抽象方法的语法格式如下：  [访问修饰符] abstract &lt;返回类型&gt; &lt;方法名&gt; (">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-10T06:41:30.412Z">
 <meta property="article:modified_time" content="2021-08-05T08:21:44.000Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Java基础">
 <meta property="article:tag" content="多态">
-<meta name="twitter:card" content="summary"><title>抽象类 | Hexo</title><link ref="canonical" href="http://example.com/2021/09/10/Java-%E6%8A%BD%E8%B1%A1%E7%B1%BB/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
-var CONFIG = {
-  root: '/',
-  algolia: undefined,
-  assistSearch: undefined,
-  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
-  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
-  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
-  postWidget: {"endText":true},
-  nightMode: {"enable":true},
-  back2top: {"enable":true},
-  codeblock: {"style":"default","highlight":"drak","wordWrap":false},
-  reward: false,
-  fancybox: false,
-  zoomImage: {"gapAside":"20px"},
-  galleryWaterfall: undefined,
-  lazyload: false,
-  pjax: undefined,
-  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
-  shortcuts: undefined,
-  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
-  sourcePath: {"js":"js","css":"css","images":"images"},
-};
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>抽象类 - Hexo</title>
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hexo</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">抽象类</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-08-05</span></span></div></header><div class="post-body">
-        <h2 id="抽象类"   >
-          <a href="#抽象类" class="heading-link"><i class="fas fa-link"></i></a><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
       
-        <h3 id="1-初识抽象类和抽象方法"   >
-          <a href="#1-初识抽象类和抽象方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-初识抽象类和抽象方法" class="headerlink" title="1.初识抽象类和抽象方法"></a>1.初识抽象类和抽象方法</h3>
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="抽象类">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-09-10 14:41" pubdate>
+        2021年9月10日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.6k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
       
-        <h4 id="1-1区分普通方法和抽象方法"   >
-          <a href="#1-1区分普通方法和抽象方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-1区分普通方法和抽象方法" class="headerlink" title="1.1区分普通方法和抽象方法"></a>1.1区分普通方法和抽象方法</h4>
-      <p>  在<strong>Java</strong>中，当一个类的方法被<font color="blue"> abstract </font>关键字修饰时，该方法为抽象方法。</p>
+      
+      8 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">抽象类</h1>
+            
+            <div class="markdown-body">
+              <h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><h3 id="1-初识抽象类和抽象方法"><a href="#1-初识抽象类和抽象方法" class="headerlink" title="1.初识抽象类和抽象方法"></a>1.初识抽象类和抽象方法</h3><h4 id="1-1区分普通方法和抽象方法"><a href="#1-1区分普通方法和抽象方法" class="headerlink" title="1.1区分普通方法和抽象方法"></a>1.1区分普通方法和抽象方法</h4><p>  在<strong>Java</strong>中，当一个类的方法被<font color="blue"> abstract </font>关键字修饰时，该方法为抽象方法。</p>
 <p>  <strong>抽象方法所在的类必须定义为抽象类</strong></p>
 <p>当一个方法被定义为抽象方法之后，意味着该方法不会有具体实现，而是在抽象类的子类中通过重写进行实现。定义抽象方法的语法格式如下：</p>
 <blockquote>
@@ -56,28 +251,19 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <li> 抽象方法没有方法体，普通方法有方法体</li>
 </ol>
 </blockquote>
-
-        <h4 id="1-2区分普通类和抽象类"   >
-          <a href="#1-2区分普通类和抽象类" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-2区分普通类和抽象类" class="headerlink" title="1.2区分普通类和抽象类"></a>1.2区分普通类和抽象类</h4>
-      <p>  在Java中，当一个类被<font color="blue"> abstract </font>关键字修饰时，该类为抽象类。</p>
+<h4 id="1-2区分普通类和抽象类"><a href="#1-2区分普通类和抽象类" class="headerlink" title="1.2区分普通类和抽象类"></a>1.2区分普通类和抽象类</h4><p>  在Java中，当一个类被<font color="blue"> abstract </font>关键字修饰时，该类为抽象类。</p>
 <p>  <strong>定义抽象类的语法格式如下：</strong></p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abstract class&lt;类名&gt;&#123;</span><br><span class="line">         </span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs crystal"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span>&lt;类名&gt;&#123;</span><br>         <br>&#125;<br></code></pre></td></tr></table></figure>
 <p><font color="blue"> abstract </font> 关键字表示该类被定义为抽象类。<br>  普通类和抽象类的区别：<br>   1.抽象类需要用<font color="blue"> abstract </font> 修饰符修饰，普通类不用<br>    2.抽象类不能被实例化 ，普通类可以。<br>   Dog dog = new Dog();这就是实例化</p>
-
-        <h4 id="1-3定义一个抽象类"   >
-          <a href="#1-3定义一个抽象类" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-3定义一个抽象类" class="headerlink" title="1.3定义一个抽象类"></a>1.3定义一个抽象类</h4>
-      <p>   当一个类被定义为抽象类时，它可以包含各种类型的成员，包括属性、方法等，其中方法又可以分为普通方法和抽象方法，<strong>也就是说抽象类里可以有非抽象的方法</strong><br>   如抽象类结构图：</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public abstract class 类名称&#123;</span><br><span class="line">	修饰符 abstract 返回类型 方法名(); &lt;------ 抽象方法</span><br><span class="line">	修饰符 返回类型 方法名()&#123;</span><br><span class="line">		普通方法</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<h4 id="1-3定义一个抽象类"><a href="#1-3定义一个抽象类" class="headerlink" title="1.3定义一个抽象类"></a>1.3定义一个抽象类</h4><p>   当一个类被定义为抽象类时，它可以包含各种类型的成员，包括属性、方法等，其中方法又可以分为普通方法和抽象方法，<strong>也就是说抽象类里可以有非抽象的方法</strong><br>   如抽象类结构图：</p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs haxe"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">abstract</span> <span class="hljs-title">class</span> 类名称&#123;</span><br>	修饰符 <span class="hljs-class"><span class="hljs-keyword">abstract</span> 返回类型 方法名(<span class="hljs-type"></span>); &lt;------ 抽象方法</span><br><span class="hljs-class">	修饰符 返回类型 方法名(<span class="hljs-type"></span>)&#123;</span><br>		普通方法<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p><strong>注意：</strong>抽象方法只能定义在抽象类中。但是抽象类中可以包含抽象方法，也可以包含普通方法，还可以包含普通类包含的一切成员</p>
-
-        <h3 id="2-使用抽象类描述抽象事物"   >
-          <a href="#2-使用抽象类描述抽象事物" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-使用抽象类描述抽象事物" class="headerlink" title="2.使用抽象类描述抽象事物"></a>2.使用抽象类描述抽象事物</h3>
-      <p><strong>下面通过一个示例简单的认识抽象类和抽象方法的用法：</strong></p>
+<h3 id="2-使用抽象类描述抽象事物"><a href="#2-使用抽象类描述抽象事物" class="headerlink" title="2.使用抽象类描述抽象事物"></a>2.使用抽象类描述抽象事物</h3><p><strong>下面通过一个示例简单的认识抽象类和抽象方法的用法：</strong></p>
 <p>有一个宠物类，宠物具体分为狗狗、企鹅等，实例化一个狗狗类、企鹅类是有意义的，而实例化一个宠物类则是不合理的，这里可以把宠物类定义为抽象类，避免宠物类被实例化</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//宠物抽象类 ，即狗狗和企鹅的父类</span><br><span class="line">public abstract class Pet &#123;</span><br><span class="line">	//属性  ： 昵称 健康度  亲密度</span><br><span class="line">	private String name =&quot;无名氏&quot;;//昵称</span><br><span class="line">	private int health = 100;//健康值</span><br><span class="line">	private int love = 0;//亲密度</span><br><span class="line">	</span><br><span class="line">	//无参构造</span><br><span class="line">	public Pet() &#123;&#125;</span><br><span class="line">	//有参构造</span><br><span class="line">	public Pet(String name, int health, int love) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">		this.health = health;</span><br><span class="line">		this.love = love;</span><br><span class="line">	&#125;</span><br><span class="line">	//输出宠物信息</span><br><span class="line">	public void print()&#123;</span><br><span class="line">		System.out.println(&quot;宠物的自白:\n我的名字叫&quot;+this.name+&quot;,健康值是&quot;+this.health+&quot;,和主人的亲密度是:&quot;+this.love+&quot;。&quot;);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-comment">//宠物抽象类 ，即狗狗和企鹅的父类</span><br><span class="hljs-keyword">public</span> abstract <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Pet</span> &#123;</span><br>	<span class="hljs-comment">//属性  ： 昵称 健康度  亲密度</span><br>	<span class="hljs-keyword">private</span> <span class="hljs-keyword">String</span> name =<span class="hljs-string">&quot;无名氏&quot;</span>;<span class="hljs-comment">//昵称</span><br>	<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> health = <span class="hljs-number">100</span>;<span class="hljs-comment">//健康值</span><br>	<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> love = <span class="hljs-number">0</span>;<span class="hljs-comment">//亲密度</span><br>	<br>	<span class="hljs-comment">//无参构造</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Pet</span><span class="hljs-params">()</span> </span>&#123;&#125;<br>	<span class="hljs-comment">//有参构造</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Pet</span><span class="hljs-params">(<span class="hljs-keyword">String</span> name, <span class="hljs-keyword">int</span> health, <span class="hljs-keyword">int</span> love)</span> </span>&#123;<br>		<span class="hljs-keyword">this</span>.name = name;<br>		<span class="hljs-keyword">this</span>.health = health;<br>		<span class="hljs-keyword">this</span>.love = love;<br>	&#125;<br>	<span class="hljs-comment">//输出宠物信息</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span></span>&#123;<br>		System.out.<span class="hljs-built_in">println</span>(<span class="hljs-string">&quot;宠物的自白:\n我的名字叫&quot;</span>+<span class="hljs-keyword">this</span>.name+<span class="hljs-string">&quot;,健康值是&quot;</span>+<span class="hljs-keyword">this</span>.health+<span class="hljs-string">&quot;,和主人的亲密度是:&quot;</span>+<span class="hljs-keyword">this</span>.love+<span class="hljs-string">&quot;。&quot;</span>);<br>		<br>	&#125;<br></code></pre></td></tr></table></figure>
 
 <p><strong>注意抽象类是不能被实例化的，下面是个错误示例:</strong></p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class Test&#123;</span><br><span class="line">	public static viod main(Stirng[] args)&#123;</span><br><span class="line">		Pet pet = new Pet(&quot;贝贝&quot;);</span><br><span class="line">		pet.print();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span>&#123;</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> viod <span class="hljs-title">main</span><span class="hljs-params">(Stirng[] args)</span></span>&#123;<br>		Pet pet = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Pet</span>(<span class="hljs-string">&quot;贝贝&quot;</span>);<br>		pet.<span class="hljs-built_in">print</span>();<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p><strong>抽象类实例化会报个错：</strong></p>
 <blockquote>
 <p><strong>java.long.Error: Unresolved compilation problem: Cannot instantiate the type Pet</strong> </p>
@@ -85,26 +271,224 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <p>抽象类不能直接实例化，但它的子类是可以实例化的，如果子类中没有重写print( )方法，子类将继承Pet类的该方法，但无法正确输出子类信息。在Java中可以将print( )方法定义为抽象方法，让子类重写该方法，下面展示此部分代码：</p>
 <p><strong>在抽象的宠物类中定义抽象方法</strong></p>
 <p><strong>具体代码如上面所示，这里只展示部分</strong></p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//把上面代码</span><br><span class="line">	public void print()&#123;</span><br><span class="line">		System.out.println(&quot;宠物的自白:\n我的名字叫&quot;+this.name+&quot;,健康值是&quot;+this.health+&quot;,和主人的亲密度是:&quot;+this.love+&quot;。&quot;);</span><br><span class="line">//替换为</span><br><span class="line">public abstract void print();</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-comment">//把上面代码</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span>(<span class="hljs-params"></span>)</span>&#123;<br>		System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">&quot;宠物的自白:\n我的名字叫&quot;</span>+<span class="hljs-keyword">this</span>.name+<span class="hljs-string">&quot;,健康值是&quot;</span>+<span class="hljs-keyword">this</span>.health+<span class="hljs-string">&quot;,和主人的亲密度是:&quot;</span>+<span class="hljs-keyword">this</span>.love+<span class="hljs-string">&quot;。&quot;</span>);<br><span class="hljs-comment">//替换为</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span>(<span class="hljs-params"></span>)</span>;<br></code></pre></td></tr></table></figure>
 
 <p><strong>抽象宠物类子类：狗狗类</strong></p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//子类 狗狗类</span><br><span class="line">public class Dog extends Pet &#123;</span><br><span class="line">	//狗狗的属性 品种</span><br><span class="line">	private String strain;//品种</span><br><span class="line">	private String name;//姓名</span><br><span class="line">	</span><br><span class="line">	//有参构造</span><br><span class="line">	public Dog(String strain)&#123;</span><br><span class="line">		this.strain=strain;</span><br><span class="line">	&#125;</span><br><span class="line">	//getter方法</span><br><span class="line">	public String getStrain() &#123;</span><br><span class="line">		return strain;</span><br><span class="line">	&#125;</span><br><span class="line">	//重写父类的print()方法</span><br><span class="line">	public void print() &#123;</span><br><span class="line">		System.out.println(&quot;我是一只&quot;+this.strain+&quot;。&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-comment">//子类 狗狗类</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Pet</span> </span>&#123;<br>	<span class="hljs-comment">//狗狗的属性 品种</span><br>	<span class="hljs-keyword">private</span> <span class="hljs-built_in">String</span> strain;<span class="hljs-comment">//品种</span><br>	<span class="hljs-keyword">private</span> <span class="hljs-built_in">String</span> name;<span class="hljs-comment">//姓名</span><br>	<br>	<span class="hljs-comment">//有参构造</span><br>	<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-title">Dog</span>(<span class="hljs-params"><span class="hljs-built_in">String</span> strain</span>)</span>&#123;<br>		<span class="hljs-built_in">this</span>.strain=strain;<br>	&#125;<br>	<span class="hljs-comment">//getter方法</span><br>	<span class="hljs-keyword">public</span> <span class="hljs-built_in">String</span> <span class="hljs-function"><span class="hljs-title">getStrain</span>(<span class="hljs-params"></span>)</span> &#123;<br>		<span class="hljs-keyword">return</span> strain;<br>	&#125;<br>	<span class="hljs-comment">//重写父类的print()方法</span><br>	<span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">print</span>(<span class="hljs-params"></span>)</span> &#123;<br>		System.out.println(<span class="hljs-string">&quot;我是一只&quot;</span>+<span class="hljs-built_in">this</span>.strain+<span class="hljs-string">&quot;。&quot;</span>);<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p><strong>测试类</strong></p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Pet dog = new Dog(&quot;哈士奇&quot;);</span><br><span class="line">		dog.print();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> &#123;</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">String</span>[] args)</span> </span>&#123;<br>		Pet dog = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Dog</span>(<span class="hljs-string">&quot;哈士奇&quot;</span>);<br>		dog.<span class="hljs-built_in">print</span>();<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p><strong>抽象类和抽象方法的优势</strong></p>
 <p>抽象类中已经实现的方法可以被其子类使用，使代码可以被复用；同时提供了抽象方法，保证了子类具有自身的独特性</p>
 <p><strong>抽象类的局限性</strong></p>
 <p>子类继承抽象父类之后，写出来的方法可能会出现代码重复，造成代码冗余</p>
+<h3 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h3><p><strong>抽象类与抽象方法的使用</strong><br>1.抽象类中可以没有抽象方法，但包含了抽象方法的类必须被定义为抽象类<br>2.如果子类没有实现父类的所有抽象方法，子类必须被定义为抽象类<br>3.没有抽象构造方法，也没有抽象静态方法<br>4.抽象类中可以有非抽象的构造方法，创建子类的实例时可能调用</p>
 
-        <h3 id="3-总结"   >
-          <a href="#3-总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h3>
-      <p><strong>抽象类与抽象方法的使用</strong><br>1.抽象类中可以没有抽象方法，但包含了抽象方法的类必须被定义为抽象类<br>2.如果子类没有实现父类的所有抽象方法，子类必须被定义为抽象类<br>3.没有抽象构造方法，也没有抽象静态方法<br>4.抽象类中可以有非抽象的构造方法，创建子类的实例时可能调用</p>
-</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">John Doe</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2021/09/10/Java-%E6%8A%BD%E8%B1%A1%E7%B1%BB/">http://example.com/2021/09/10/Java-%E6%8A%BD%E8%B1%A1%E7%B1%BB/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/Java%E5%9F%BA%E7%A1%80/">Java基础</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/%E5%A4%9A%E6%80%81/">多态</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2021/09/10/Java-%E6%8E%A5%E5%8F%A3/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">接口</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2021/09/10/Java-%E5%BC%82%E5%B8%B8/"><span class="paginator-prev__text">异常</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">
-          抽象类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%9D%E8%AF%86%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">
-          1.初识抽象类和抽象方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1%E5%8C%BA%E5%88%86%E6%99%AE%E9%80%9A%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.1.</span> <span class="toc-text">
-          1.1区分普通方法和抽象方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2%E5%8C%BA%E5%88%86%E6%99%AE%E9%80%9A%E7%B1%BB%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="toc-number">1.1.2.</span> <span class="toc-text">
-          1.2区分普通类和抽象类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="toc-number">1.1.3.</span> <span class="toc-text">
-          1.3定义一个抽象类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8%E6%8A%BD%E8%B1%A1%E7%B1%BB%E6%8F%8F%E8%BF%B0%E6%8A%BD%E8%B1%A1%E4%BA%8B%E7%89%A9"><span class="toc-number">1.2.</span> <span class="toc-text">
-          2.使用抽象类描述抽象事物</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%80%BB%E7%BB%93"><span class="toc-number">1.3.</span> <span class="toc-text">
-          3.总结</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://img10.360buyimg.com/ddimg/jfs/t1/210672/22/780/14721/614304cbE6ed71481/b30794e20af29208.png" alt="avatar"></div><p class="sidebar-ov-author__text">生活如此美好</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">31</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">3</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">29</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>John Doe</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Java/">Java</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%A4%9A%E6%80%81/">多态</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/09/10/Java-%E6%8E%A5%E5%8F%A3/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">接口</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/09/10/Java-%E5%BC%82%E5%B8%B8/">
+                        <span class="hidden-mobile">异常</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

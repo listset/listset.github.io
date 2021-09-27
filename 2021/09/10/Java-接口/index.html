@@ -1,9 +1,27 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="https://img10.360buyimg.com/ddimg/jfs/t1/210672/22/780/14721/614304cbE6ed71481/b30794e20af29208.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="接口       上面了解到了抽象类的局限性，解决这个问题最理想的方式就是使用接口                     1. 什么是接口？       Java中接口的作用和生活中的接口类似，它提供一种约定，使得实现接口的类（或结构）在形式上保持一致概念性的接口，指系统对外提供的所有服务 interface 定义的是实实在在的接口，即接口类型接口的存在弥">
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <meta name="description" content="接口上面了解到了抽象类的局限性，解决这个问题最理想的方式就是使用接口 1. 什么是接口？Java中接口的作用和生活中的接口类似，它提供一种约定，使得实现接口的类（或结构）在形式上保持一致概念性的接口，指系统对外提供的所有服务 interface 定义的是实实在在的接口，即接口类型接口的存在弥补了Java单根继承的缺点 123456789[访问修饰] interface 接口名称 [extends">
 <meta property="og:type" content="article">
 <meta property="og:title" content="接口">
 <meta property="og:url" content="http://example.com/2021/09/10/Java-%E6%8E%A5%E5%8F%A3/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="接口       上面了解到了抽象类的局限性，解决这个问题最理想的方式就是使用接口                     1. 什么是接口？       Java中接口的作用和生活中的接口类似，它提供一种约定，使得实现接口的类（或结构）在形式上保持一致概念性的接口，指系统对外提供的所有服务 interface 定义的是实实在在的接口，即接口类型接口的存在弥">
+<meta property="og:description" content="接口上面了解到了抽象类的局限性，解决这个问题最理想的方式就是使用接口 1. 什么是接口？Java中接口的作用和生活中的接口类似，它提供一种约定，使得实现接口的类（或结构）在形式上保持一致概念性的接口，指系统对外提供的所有服务 interface 定义的是实实在在的接口，即接口类型接口的存在弥补了Java单根继承的缺点 123456789[访问修饰] interface 接口名称 [extends">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img02.sogoucdn.com/app/a/100540022/2021080515183620645442.png">
 <meta property="article:published_time" content="2021-09-10T06:41:30.413Z">
@@ -11,86 +29,460 @@
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Java基础">
 <meta property="article:tag" content="Java-接口">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img02.sogoucdn.com/app/a/100540022/2021080515183620645442.png"><title>接口 | Hexo</title><link ref="canonical" href="http://example.com/2021/09/10/Java-%E6%8E%A5%E5%8F%A3/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
-var CONFIG = {
-  root: '/',
-  algolia: undefined,
-  assistSearch: undefined,
-  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
-  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
-  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
-  postWidget: {"endText":true},
-  nightMode: {"enable":true},
-  back2top: {"enable":true},
-  codeblock: {"style":"default","highlight":"drak","wordWrap":false},
-  reward: false,
-  fancybox: false,
-  zoomImage: {"gapAside":"20px"},
-  galleryWaterfall: undefined,
-  lazyload: false,
-  pjax: undefined,
-  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
-  shortcuts: undefined,
-  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
-  sourcePath: {"js":"js","css":"css","images":"images"},
-};
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img02.sogoucdn.com/app/a/100540022/2021080515183620645442.png">
+  
+  <title>接口 - Hexo</title>
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hexo</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">接口</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-08-05</span></span></div></header><div class="post-body">
-        <h4 id="接口"   >
-          <a href="#接口" class="heading-link"><i class="fas fa-link"></i></a><a href="#接口" class="headerlink" title="接口"></a>接口</h4>
-      <p>上面了解到了抽象类的局限性，解决这个问题最理想的方式就是使用接口</p>
-
-        <h4 id="1-什么是接口？"   >
-          <a href="#1-什么是接口？" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-什么是接口？" class="headerlink" title="1. 什么是接口？"></a>1. 什么是接口？</h4>
-      <p>Java中接口的作用和生活中的接口类似，它提供一种约定，使得实现接口的类（或结构）在形式上保持一致<br>概念性的接口，指系统对外提供的所有服务<br><font color="blue"> interface </font>定义的是实实在在的接口，即接口类型<br>接口的存在弥补了Java单根继承的缺点</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[访问修饰] interface 接口名称 [extends 其他接口名]&#123;</span><br><span class="line">	//声明变量</span><br><span class="line">	//声明方法</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public interface MyInterface&#123;</span><br><span class="line">	public void foo();</span><br><span class="line">	//其他方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
-        <h4 id="JDK8之前的接口特性"   >
-          <a href="#JDK8之前的接口特性" class="heading-link"><i class="fas fa-link"></i></a><a href="#JDK8之前的接口特性" class="headerlink" title="JDK8之前的接口特性"></a>JDK8之前的接口特性</h4>
-      <blockquote>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="接口">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-09-10 14:41" pubdate>
+        2021年9月10日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.4k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      7 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">接口</h1>
+            
+            <div class="markdown-body">
+              <h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><p>上面了解到了抽象类的局限性，解决这个问题最理想的方式就是使用接口</p>
+<h4 id="1-什么是接口？"><a href="#1-什么是接口？" class="headerlink" title="1. 什么是接口？"></a>1. 什么是接口？</h4><p>Java中接口的作用和生活中的接口类似，它提供一种约定，使得实现接口的类（或结构）在形式上保持一致<br>概念性的接口，指系统对外提供的所有服务<br><font color="blue"> interface </font>定义的是实实在在的接口，即接口类型<br>接口的存在弥补了Java单根继承的缺点</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-string">[访问修饰]</span> <span class="hljs-keyword">interface</span> 接口名称 [<span class="hljs-symbol">extends</span> 其他接口名]&#123;<br>	<span class="hljs-comment">//声明变量</span><br>	<span class="hljs-comment">//声明方法</span><br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-symbol">MyInterface</span>&#123;<br>	<span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> foo();<br>	<span class="hljs-comment">//其他方法</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="JDK8之前的接口特性"><a href="#JDK8之前的接口特性" class="headerlink" title="JDK8之前的接口特性"></a>JDK8之前的接口特性</h4><blockquote>
 <p>1.接口中的变量都是静态常量( public static final ) ，必须显式初始化<br>2.接口中所有方法默认都是public abstract<br>3.接口没有构造方法，不可以被实例化，但可以被实现(常作为类型使用)<br>4.实现类必须实现接口的所有方法<br>5.实现类可以实现多个接口 (Java中的多继承)<br>6.implements、多个接口使用逗号隔开</p>
 </blockquote>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public interface MyInterface &#123;</span><br><span class="line">	//静态常量:接口中的变量必须是publication </span><br><span class="line">	public static final double PI=3.14;</span><br><span class="line">	//等同于</span><br><span class="line">	double PI=3.14;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	int m2(); 等同于 public abstract int m2();</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-built_in">public</span> interface MyInterface &#123;<br>	//静态常量:接口中的变量必须是<span class="hljs-keyword">publication</span> <br>	<span class="hljs-built_in">public</span> static final <span class="hljs-type">double</span> PI=<span class="hljs-number">3.14</span>;<br>	//等同于<br>	<span class="hljs-type">double</span> PI=<span class="hljs-number">3.14</span>;<br>	<br>	<br>	<span class="hljs-type">int</span> m2(); 等同于 <span class="hljs-built_in">public</span> abstract <span class="hljs-type">int</span> m2();<br>	<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
-
-        <h4 id="2-接口初体验"   >
-          <a href="#2-接口初体验" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-接口初体验" class="headerlink" title="2. 接口初体验"></a>2. 接口初体验</h4>
-      <p>用程序描述接口</p>
+<h4 id="2-接口初体验"><a href="#2-接口初体验" class="headerlink" title="2. 接口初体验"></a>2. 接口初体验</h4><p>用程序描述接口</p>
 <p> 电脑主机有USB接口，鼠标和键盘需要用USB插头插到电脑上来使用<br> USB接口本市没有实现任何功能<br> USB接口规定了数据传输的要求<br> USB接口可以被多种USB设备实现</p>
 <p><strong>根据USB接口可以使用Java接口来实现</strong><br>    1.编写USB接口   根据需求设置方法<br>    2.实现USB接口   实现所有方法<br>    3.使用USB接口   用多态的方式使用</p>
 <p><strong>下面用代码来展示一下具体写法</strong></p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//USB接口：描述连接计算机和外部设备的串口总线标准</span><br><span class="line">//        定义一种输入输出接口的技术规范</span><br><span class="line">public interface USB &#123;</span><br><span class="line">	//USB接口并不实现具体功能，通过抽象方法来定义一种数据输入输出规范和标准</span><br><span class="line">	void service();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//USB接口：描述连接计算机和外部设备的串口总线标准</span><br><span class="hljs-comment">//        定义一种输入输出接口的技术规范</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">USB</span> </span>&#123;<br>	<span class="hljs-comment">//USB接口并不实现具体功能，通过抽象方法来定义一种数据输入输出规范和标准</span><br>	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">service</span><span class="hljs-params">()</span></span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//满足USB标准的U盘</span><br><span class="line">public class USBDisk implements USB&#123;</span><br><span class="line">	public void service()&#123;</span><br><span class="line">		System.out.println(&quot;U盘：连接USB接口，传输数据&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-comment">//满足USB标准的U盘</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-symbol">USBDisk</span> <span class="hljs-symbol">implements</span> <span class="hljs-symbol">USB</span>&#123;<br>	<span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> service()&#123;<br>		System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">&quot;U盘：连接USB接口，传输数据&quot;</span>);<br>	&#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//满足USB标准的风扇</span><br><span class="line">public class USBFan implements USB&#123;</span><br><span class="line">	public void service()&#123;</span><br><span class="line">		System.out.println(&quot;风扇：连接USB接口，获得电流，风扇转动&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-comment">//满足USB标准的风扇</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-symbol">USBFan</span> <span class="hljs-symbol">implements</span> <span class="hljs-symbol">USB</span>&#123;<br>	<span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> service()&#123;<br>		System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">&quot;风扇：连接USB接口，获得电流，风扇转动&quot;</span>);<br>	&#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//使用接口</span><br><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//USB风扇</span><br><span class="line">		USB uFan = new USBFan();</span><br><span class="line">		uFan.service();</span><br><span class="line">		//USB U盘</span><br><span class="line">		USB uDisk = new USBDisk();</span><br><span class="line">		uDisk.service();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs haxe"><span class="hljs-comment">//使用接口</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>&#123;<br>	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> void main(<span class="hljs-keyword">String</span>[] args) &#123;<br>		<span class="hljs-comment">//USB风扇</span><br>		USB uFan = <span class="hljs-keyword">new</span> <span class="hljs-type">USBFan</span>();<br>		uFan.service();<br>		<span class="hljs-comment">//USB U盘</span><br>		USB uDisk = <span class="hljs-keyword">new</span> <span class="hljs-type">USBDisk</span>();<br>		uDisk.service();<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>从上面例子看到了接口的简单使用可以知道：</p>
 <p>1.接口表示一种能力(体现在接口的方法上)</p>
 <p>2.面向接口编程<br>  <strong>程序设计时：</strong><br>  关心实现类有何能力，而不关心实现细节<br>  面向接口的约而不考虑接口的具体实现</p>
-
-        <h4 id="3-面向接口编程"   >
-          <a href="#3-面向接口编程" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-面向接口编程" class="headerlink" title="3. 面向接口编程"></a>3. 面向接口编程</h4>
-      <p><strong>案例：实现防盗门功能</strong><br>防盗门功能：<strong>开门、关门、开锁、关锁</strong></p>
-<p><strong>类图</strong><br><img src="https://img02.sogoucdn.com/app/a/100540022/2021080515183620645442.png" alt="20210805151759.png"></p>
+<h4 id="3-面向接口编程"><a href="#3-面向接口编程" class="headerlink" title="3. 面向接口编程"></a>3. 面向接口编程</h4><p><strong>案例：实现防盗门功能</strong><br>防盗门功能：<strong>开门、关门、开锁、关锁</strong></p>
+<p><strong>类图</strong><br><img src="https://img02.sogoucdn.com/app/a/100540022/2021080515183620645442.png" srcset="/img/loading.gif" lazyload alt="20210805151759.png"></p>
 <p>定义父类 门 ：Door</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//门 ：抽象方法 开门 关门</span><br><span class="line">public abstract class Door &#123;</span><br><span class="line">	public abstract void open();</span><br><span class="line">	public abstract void close();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//门 ：抽象方法 开门 关门</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Door</span> </span>&#123;<br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">open</span><span class="hljs-params">()</span></span>;<br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">close</span><span class="hljs-params">()</span></span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 <p>定义子类 防盗门 : TheftproofDoor </p>
 <p><strong>子类既继承门又实现锁的功能</strong></p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//防盗门：是门(is-a)，具备锁的能力(has-a)</span><br><span class="line">public class TheftproofDoor extends Door implements Lock &#123;</span><br><span class="line">	//上锁</span><br><span class="line">	public void lockUp() &#123;</span><br><span class="line">		System.out.println(&quot;锁门&quot;);	</span><br><span class="line">	&#125;</span><br><span class="line">	//开锁</span><br><span class="line">	public void openLock() &#123;</span><br><span class="line">		System.out.println(&quot;开锁&quot;);	</span><br><span class="line">	&#125;</span><br><span class="line">	//开门</span><br><span class="line">	public void open() &#123;</span><br><span class="line">		System.out.println(&quot;开门&quot;);	</span><br><span class="line">	&#125;</span><br><span class="line">	//关门</span><br><span class="line">	public void close() &#123;</span><br><span class="line">		System.out.println(&quot;关门&quot;);	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-comment">//防盗门：是门(is-a)，具备锁的能力(has-a)</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TheftproofDoor</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Door</span> <span class="hljs-title">implements</span> <span class="hljs-title">Lock</span> </span>&#123;<br>	<span class="hljs-comment">//上锁</span><br>	<span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">lockUp</span>(<span class="hljs-params"></span>)</span> &#123;<br>		System.out.println(<span class="hljs-string">&quot;锁门&quot;</span>);	<br>	&#125;<br>	<span class="hljs-comment">//开锁</span><br>	<span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">openLock</span>(<span class="hljs-params"></span>)</span> &#123;<br>		System.out.println(<span class="hljs-string">&quot;开锁&quot;</span>);	<br>	&#125;<br>	<span class="hljs-comment">//开门</span><br>	<span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">open</span>(<span class="hljs-params"></span>)</span> &#123;<br>		System.out.println(<span class="hljs-string">&quot;开门&quot;</span>);	<br>	&#125;<br>	<span class="hljs-comment">//关门</span><br>	<span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">close</span>(<span class="hljs-params"></span>)</span> &#123;<br>		System.out.println(<span class="hljs-string">&quot;关门&quot;</span>);	<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>定义接口 ：锁 ：Lock </p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//锁 ：开锁 上锁</span><br><span class="line">public interface Lock &#123;</span><br><span class="line">	void lockUp();</span><br><span class="line">	void openLock();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//锁 ：开锁 上锁</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Lock</span> </span>&#123;<br>	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">lockUp</span><span class="hljs-params">()</span></span>;<br>	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">openLock</span><span class="hljs-params">()</span></span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 <p>测试类: 测试开门、关门、锁门、开锁等功能</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//测试防盗门功能</span><br><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		TheftproofDoor d= new TheftproofDoor();		</span><br><span class="line">		//开门开锁</span><br><span class="line">		d.openLock();</span><br><span class="line">		d.open();</span><br><span class="line">		//关门上锁</span><br><span class="line">		d.close();</span><br><span class="line">		d.lockUp();	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-comment">//测试防盗门功能</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> &#123;</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">String</span>[] args)</span> </span>&#123;<br>		TheftproofDoor d= <span class="hljs-keyword">new</span> <span class="hljs-built_in">TheftproofDoor</span>();		<br>		<span class="hljs-comment">//开门开锁</span><br>		d.<span class="hljs-built_in">openLock</span>();<br>		d.<span class="hljs-built_in">open</span>();<br>		<span class="hljs-comment">//关门上锁</span><br>		d.<span class="hljs-built_in">close</span>();<br>		d.<span class="hljs-built_in">lockUp</span>();	<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>还可以加一个门拍照的功能</p>
 <p>接口表示一种能力，一个人可以有多种能力，一个类可以实现多个接口</p>
-</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">John Doe</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2021/09/10/Java-%E6%8E%A5%E5%8F%A3/">http://example.com/2021/09/10/Java-%E6%8E%A5%E5%8F%A3/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/Java%E5%9F%BA%E7%A1%80/">Java基础</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/Java-%E6%8E%A5%E5%8F%A3/">Java-接口</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2021/09/10/Java%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7-ArrayList/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">List-ArrayList</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2021/09/10/Java-%E6%8A%BD%E8%B1%A1%E7%B1%BB/"><span class="paginator-prev__text">抽象类</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.</span> <span class="toc-text">
-          接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E6%8E%A5%E5%8F%A3%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">
-          1. 什么是接口？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JDK8%E4%B9%8B%E5%89%8D%E7%9A%84%E6%8E%A5%E5%8F%A3%E7%89%B9%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">
-          JDK8之前的接口特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%8E%A5%E5%8F%A3%E5%88%9D%E4%BD%93%E9%AA%8C"><span class="toc-number">4.</span> <span class="toc-text">
-          2. 接口初体验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E9%9D%A2%E5%90%91%E6%8E%A5%E5%8F%A3%E7%BC%96%E7%A8%8B"><span class="toc-number">5.</span> <span class="toc-text">
-          3. 面向接口编程</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://img10.360buyimg.com/ddimg/jfs/t1/210672/22/780/14721/614304cbE6ed71481/b30794e20af29208.png" alt="avatar"></div><p class="sidebar-ov-author__text">生活如此美好</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">31</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">3</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">29</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>John Doe</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Java/">Java</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Java-%E6%8E%A5%E5%8F%A3/">Java-接口</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/09/10/Java%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7-ArrayList/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">List-ArrayList</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/09/10/Java-%E6%8A%BD%E8%B1%A1%E7%B1%BB/">
+                        <span class="hidden-mobile">抽象类</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

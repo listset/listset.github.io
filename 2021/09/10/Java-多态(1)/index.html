@@ -1,9 +1,27 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="https://img10.360buyimg.com/ddimg/jfs/t1/210672/22/780/14721/614304cbE6ed71481/b30794e20af29208.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="Java-多态性       多态是Java面向对象的一个重要的特性                     1.认识多态       多态一词通常含义是指能够呈现出多种不同的形式或形态，而在程序设计的术语中，它意味着一个特定类型的变量可以引用不同类型的对象，并且能自动地调用引用的对象的方法，也就是根据作用到的不同对象类型，响应不同的操作。方法重写是实现多态">
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <meta name="description" content="Java-多态性多态是Java面向对象的一个重要的特性 1.认识多态多态一词通常含义是指能够呈现出多种不同的形式或形态，而在程序设计的术语中，它意味着一个特定类型的变量可以引用不同类型的对象，并且能自动地调用引用的对象的方法，也就是根据作用到的不同对象类型，响应不同的操作。方法重写是实现多态的基础 2.为什么使用多态不使用多态会频繁修改代码,代码可扩展性、可维护性差 3.多态初体验通过下面的例子理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java-多态性(1)">
 <meta property="og:url" content="http://example.com/2021/09/10/Java-%E5%A4%9A%E6%80%81(1)/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Java-多态性       多态是Java面向对象的一个重要的特性                     1.认识多态       多态一词通常含义是指能够呈现出多种不同的形式或形态，而在程序设计的术语中，它意味着一个特定类型的变量可以引用不同类型的对象，并且能自动地调用引用的对象的方法，也就是根据作用到的不同对象类型，响应不同的操作。方法重写是实现多态">
+<meta property="og:description" content="Java-多态性多态是Java面向对象的一个重要的特性 1.认识多态多态一词通常含义是指能够呈现出多种不同的形式或形态，而在程序设计的术语中，它意味着一个特定类型的变量可以引用不同类型的对象，并且能自动地调用引用的对象的方法，也就是根据作用到的不同对象类型，响应不同的操作。方法重写是实现多态的基础 2.为什么使用多态不使用多态会频繁修改代码,代码可扩展性、可维护性差 3.多态初体验通过下面的例子理">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img03.sogoucdn.com/app/a/100540022/2021080311010588619450.png">
 <meta property="article:published_time" content="2021-09-10T06:41:30.408Z">
@@ -11,64 +29,232 @@
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Java基础">
 <meta property="article:tag" content="多态">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img03.sogoucdn.com/app/a/100540022/2021080311010588619450.png"><title>Java-多态性(1) | Hexo</title><link ref="canonical" href="http://example.com/2021/09/10/Java-%E5%A4%9A%E6%80%81(1)/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
-var CONFIG = {
-  root: '/',
-  algolia: undefined,
-  assistSearch: undefined,
-  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
-  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
-  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
-  postWidget: {"endText":true},
-  nightMode: {"enable":true},
-  back2top: {"enable":true},
-  codeblock: {"style":"default","highlight":"drak","wordWrap":false},
-  reward: false,
-  fancybox: false,
-  zoomImage: {"gapAside":"20px"},
-  galleryWaterfall: undefined,
-  lazyload: false,
-  pjax: undefined,
-  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
-  shortcuts: undefined,
-  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
-  sourcePath: {"js":"js","css":"css","images":"images"},
-};
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img03.sogoucdn.com/app/a/100540022/2021080311010588619450.png">
+  
+  <title>Java-多态性(1) - Hexo</title>
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hexo</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Java-多态性(1)</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-08-09</span></span></div></header><div class="post-body">
-        <h3 id="Java-多态性"   >
-          <a href="#Java-多态性" class="heading-link"><i class="fas fa-link"></i></a><a href="#Java-多态性" class="headerlink" title="Java-多态性"></a>Java-多态性</h3>
-      <p>多态是Java面向对象的一个重要的特性</p>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
-        <h4 id="1-认识多态"   >
-          <a href="#1-认识多态" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-认识多态" class="headerlink" title="1.认识多态"></a>1.认识多态</h4>
-      <p>多态一词通常含义是指能够呈现出多种不同的形式或形态，而在程序设计的术语中，它意味着一个特定类型的变量可以引用不同类型的对象，并且能自动地调用引用的对象的方法，也就是根据作用到的不同对象类型，响应不同的操作。方法重写是实现多态的基础<br><img src="https://img03.sogoucdn.com/app/a/100540022/2021080311010588619450.png" alt="20210803105806.png"></p>
 
-        <h4 id="2-为什么使用多态"   >
-          <a href="#2-为什么使用多态" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-为什么使用多态" class="headerlink" title="2.为什么使用多态"></a>2.为什么使用多态</h4>
-      <p>不使用多态会频繁修改代码,代码可扩展性、可维护性差</p>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
 
-        <h4 id="3-多态初体验"   >
-          <a href="#3-多态初体验" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-多态初体验" class="headerlink" title="3.多态初体验"></a>3.多态初体验</h4>
-      <p>通过下面的例子理解什么是多态</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//父类 宠物类</span><br><span class="line">public class Pet &#123;</span><br><span class="line">	public void toHospital()&#123;</span><br><span class="line">		System.out.println(&quot;宠物看病 ! ! !&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//子类 小狗类</span><br><span class="line">public class Dog extends Pet&#123;</span><br><span class="line">	public void toHospital()&#123;</span><br><span class="line">		System.out.println(&quot;小狗看病&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//子类 鸟</span><br><span class="line">public class Bird extends Pet&#123;</span><br><span class="line">	public void toHospital()&#123;</span><br><span class="line">		System.out.println(&quot;小鸟看病&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//看病测试类</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//示例一</span><br><span class="line">		Dog dog = new Dog();</span><br><span class="line">		dog.toHospital();//小狗看病</span><br><span class="line">		Bird bird = new Bird();</span><br><span class="line">		bird.toHospital();//小鸟看病</span><br><span class="line">		</span><br><span class="line">		//示例二</span><br><span class="line">		Pet pet= new Pet();</span><br><span class="line">		pet = new Dog();</span><br><span class="line">		pet.toHospital();//小狗看病</span><br><span class="line">		pet = new Bird();</span><br><span class="line">		pet.toHospital();//小鸟看病		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></div></figure>
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Java-多态性(1)">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-09-10 14:41" pubdate>
+        2021年9月10日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      9 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Java-多态性(1)</h1>
+            
+            <div class="markdown-body">
+              <h3 id="Java-多态性"><a href="#Java-多态性" class="headerlink" title="Java-多态性"></a>Java-多态性</h3><p>多态是Java面向对象的一个重要的特性</p>
+<h4 id="1-认识多态"><a href="#1-认识多态" class="headerlink" title="1.认识多态"></a>1.认识多态</h4><p>多态一词通常含义是指能够呈现出多种不同的形式或形态，而在程序设计的术语中，它意味着一个特定类型的变量可以引用不同类型的对象，并且能自动地调用引用的对象的方法，也就是根据作用到的不同对象类型，响应不同的操作。方法重写是实现多态的基础<br><img src="https://img03.sogoucdn.com/app/a/100540022/2021080311010588619450.png" srcset="/img/loading.gif" lazyload alt="20210803105806.png"></p>
+<h4 id="2-为什么使用多态"><a href="#2-为什么使用多态" class="headerlink" title="2.为什么使用多态"></a>2.为什么使用多态</h4><p>不使用多态会频繁修改代码,代码可扩展性、可维护性差</p>
+<h4 id="3-多态初体验"><a href="#3-多态初体验" class="headerlink" title="3.多态初体验"></a>3.多态初体验</h4><p>通过下面的例子理解什么是多态</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-comment">//父类 宠物类</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Pet</span> &#123;</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">toHospital</span><span class="hljs-params">()</span></span>&#123;<br>		System.out.<span class="hljs-built_in">println</span>(<span class="hljs-string">&quot;宠物看病 ! ! !&quot;</span>);<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-comment">//子类 小狗类</span><br>public <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Pet</span></span>&#123;<br>	public void toHospital()&#123;<br>		<span class="hljs-type">System</span>.out.println(<span class="hljs-string">&quot;小狗看病&quot;</span>);<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-comment">//子类 鸟</span><br>public <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bird</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Pet</span></span>&#123;<br>	public void toHospital()&#123;<br>		<span class="hljs-type">System</span>.out.println(<span class="hljs-string">&quot;小鸟看病&quot;</span>);<br>	&#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs reasonml"><span class="hljs-comment">//看病测试类</span><br>	public static void main(String<span class="hljs-literal">[]</span> args) &#123;<br>		<span class="hljs-comment">//示例一</span><br>		Dog dog = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Dog()</span>;<br>		dog.<span class="hljs-keyword">to</span><span class="hljs-constructor">Hospital()</span>;<span class="hljs-comment">//小狗看病</span><br>		Bird bird = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Bird()</span>;<br>		bird.<span class="hljs-keyword">to</span><span class="hljs-constructor">Hospital()</span>;<span class="hljs-comment">//小鸟看病</span><br>		<br>		<span class="hljs-comment">//示例二</span><br>		Pet pet= <span class="hljs-keyword">new</span> <span class="hljs-constructor">Pet()</span>;<br>		pet = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Dog()</span>;<br>		pet.<span class="hljs-keyword">to</span><span class="hljs-constructor">Hospital()</span>;<span class="hljs-comment">//小狗看病</span><br>		pet = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Bird()</span>;<br>		pet.<span class="hljs-keyword">to</span><span class="hljs-constructor">Hospital()</span>;<span class="hljs-comment">//小鸟看病		</span><br>	&#125;<br></code></pre></td></tr></table></figure>
 
 <p>前后两段代码运行效果完全一样 示例二虽然定义的是Pet类但实际执行调用的都是Pet子类的方法</p>
 <p>这就体现了多态性</p>
 <p>多态意味着在一次方法调用中根据包含的对象的实际类型(即实际的子类对象)来决定应该调用哪个方法，而不是用来储存对象引用的变量的类型来决定的。</p>
 <p>当调用一个方法时，为了实现多态操作，这个方法即是在父类中声明过，也必须是在子类中重写过的方法。</p>
 <p>从上面的代码可以得出:<font color="red">实现多态必须要在继承(extends)和重写(override)的基础上实现</font></p>
-
-        <h3 id="向上-向下-转型"   >
-          <a href="#向上-向下-转型" class="heading-link"><i class="fas fa-link"></i></a><a href="#向上-向下-转型" class="headerlink" title="向上(向下)转型"></a>向上(向下)转型</h3>
-      
-        <h4 id="1-向上转型"   >
-          <a href="#1-向上转型" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-向上转型" class="headerlink" title="1.向上转型"></a>1.向上转型</h4>
-      <p>子类向父类的转换称为向上转型</p>
+<h3 id="向上-向下-转型"><a href="#向上-向下-转型" class="headerlink" title="向上(向下)转型"></a>向上(向下)转型</h3><h4 id="1-向上转型"><a href="#1-向上转型" class="headerlink" title="1.向上转型"></a>1.向上转型</h4><p>子类向父类的转换称为向上转型</p>
 <p>向上转型的语法格式如下</p>
 <blockquote>
 <p>&lt;父类型&gt;&lt;引用变量名&gt; = new &lt;子类型&gt;( );</p>
@@ -78,9 +264,9 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <p>Pet  dog= new Dog( ); </p>
 </blockquote>
 <p>基本数据类型之间的转换和向上(向下)转型相似，举例如下:<br>( 1 ) 把<font color="blue"> int </font>型常量或变量的值赋值给<font color="blue"> double </font>型变量，可以自动进行类型转换</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int i= 5;</span><br><span class="line">double d1= i;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs abnf">int i= <span class="hljs-number">5</span><span class="hljs-comment">;</span><br>double d1= i<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure>
 <p>( 2 )  把double型常量或变量的值赋给int型变量，必须进行强制类型转换。</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">double d2= 3.14;</span><br><span class="line">int a=(int)d2;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">double</span> d<span class="hljs-number">2</span>= <span class="hljs-number">3</span>.<span class="hljs-number">14</span>;<br><span class="hljs-attribute">int</span> a=(int)d<span class="hljs-number">2</span>;<br></code></pre></td></tr></table></figure>
 <p>上面是数据类型之间的类型转换</p>
 <p>在引用数据类型的子类和父类之间也存在着类型转换的问题</p>
 <p><font color="blue"> Pet </font>为抽象父类,<font color="blue"> Dog </font>为抽象子类,<font color="blue"> Pet </font>父类中包含抽象方法<font color="blue"> toHospital( )</font></p>
@@ -93,37 +279,231 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <blockquote>
 <p>1.将一个父类的引用指向一个子类对象称为向上转型，系统会自动进行类型转换<br>2.此时通过父类引用变量调用的方法是子类覆盖或继承了父类的方法，不是父类的方法<br>3.此时通过父类引用变量无法调用子类特有的方法</p>
 </blockquote>
-
-        <h4 id="2-向下转型"   >
-          <a href="#2-向下转型" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-向下转型" class="headerlink" title="2.向下转型"></a>2.向下转型</h4>
-      <p>向上转型后，父类无法调用子类特有的方法，但是如果需要调用子类特有的方法，可以通过把父类转换为子类来实现</p>
+<h4 id="2-向下转型"><a href="#2-向下转型" class="headerlink" title="2.向下转型"></a>2.向下转型</h4><p>向上转型后，父类无法调用子类特有的方法，但是如果需要调用子类特有的方法，可以通过把父类转换为子类来实现</p>
 <p>将一个指向子类对象的父类引用赋给一个子类引用，即将父类类型转换为子类类型，称为向下转型，此时必须进行强制类型转换。</p>
 <p>在<font color="blue"> Dog </font>中声明一个特有的<strong>接飞盘</strong>方法 <strong><font color="blue">catchingFlyDisc( )</font></strong>,这个方法是子类特有的，下面的代码就会出现问题</p>
 <blockquote>
 <p>// <font color="blue"> Pet </font>为父类 ，<font color="blue"> Dog </font>为子类，<br>// Pet中包含方法<font color="blue"> toHospital()</font>,不包含<font color="blue"> catchingFlyDisc()</font>方法<br><font color="red">Pet pet = new Dog() </font> //子类到父类的转换<br>//会调用Dog类的 toHospital()方法，而不是Pet类的toHospital()方法，体现了多态<br><font color="red"> pet.toHospital(); </font>//可以调用父类和子类共有的方法<br><font color="red"> pet.catchingFlyDisc( ); </font>//无法调用子类特有的方法</p>
 </blockquote>
 <p>可以这样理解，主人可以为任何宠物看病，但只能和狗狗玩接飞盘游戏。在没有确实宠物是狗狗的情况下，主人不能与宠物玩接飞盘游戏。因为他需要的是一个宠物，但是没有明确要求是一只狗狗，所以很有可能他的宠物是一只鸟，因此就不能确实是否能玩接飞盘游戏。那么这里需要做的就是强制类型转换，将父类转换为子类，然后才能调用子类特有的方法。</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Pet pet = new Pet();//声明一个父类</span><br><span class="line">Dog dog = (Dog)pet; //将父类 pet 转换为子类 Dog 类型</span><br><span class="line">dog.catchingFlyDisc();//执行子类 Dog 特有的方法</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk">Pet pet = new Pet();<span class="hljs-regexp">//</span>声明一个父类<br>Dog dog = (Dog)pet; <span class="hljs-regexp">//</span>将父类 pet 转换为子类 Dog 类型<br>dog.catchingFlyDisc();<span class="hljs-regexp">//</span>执行子类 Dog 特有的方法<br></code></pre></td></tr></table></figure>
 
 <p>上述这种向下转型的操作对接口和抽象（普通）父类同样适用。</p>
 <p>向下转型的语法: <font color="#4169E1">&lt;子类型&gt;&lt;引用变量名&gt;=（&lt;子类型&gt;）&lt;父类的引用变量&gt;</font>；</p>
-
-        <h4 id="3-instanceof-运算符"   >
-          <a href="#3-instanceof-运算符" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-instanceof-运算符" class="headerlink" title="3.instanceof 运算符"></a>3.instanceof 运算符</h4>
-      <p>在向下转型的过程中没如果不是转换为真实的子类类型，会出现类型转换异常：<font color="#FF0000">ClassCastException</font></p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//Pet 为父类 ，Dog为子类，Bird为子类</span><br><span class="line">Pet pet = new Dog(); //子类到父类的转换</span><br><span class="line">pet.toHospital();//会调用Dog的 toHospital() 方法</span><br><span class="line">Bird bird = (Bird)pet; // 将pet转换为Bird类会出错</span><br></pre></td></tr></table></div></figure>
+<h4 id="3-instanceof-运算符"><a href="#3-instanceof-运算符" class="headerlink" title="3.instanceof 运算符"></a>3.instanceof 运算符</h4><p>在向下转型的过程中没如果不是转换为真实的子类类型，会出现类型转换异常：<font color="#FF0000">ClassCastException</font></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>Pet 为父类 ，Dog为子类，Bird为子类<br>Pet pet = new Dog(); <span class="hljs-regexp">//</span>子类到父类的转换<br>pet.toHospital();<span class="hljs-regexp">//</span>会调用Dog的 toHospital() 方法<br>Bird bird = (Bird)pet; <span class="hljs-regexp">//</span> 将pet转换为Bird类会出错<br></code></pre></td></tr></table></figure>
 <p>Java中提供了<font color="    #EEB422"> instanceof </font>运算符来进行类型的判断</p>
 <p><strong>示例如下：</strong></p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class Test&#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Pet pet = new Dog;</span><br><span class="line">		//Pet pet = new Bird;</span><br><span class="line">		pet.toHospital();</span><br><span class="line">		if(pet instanceof Dog)&#123;</span><br><span class="line">			Dog dog = (Dog)pet;</span><br><span class="line">			d.carchingFlyDisc(); //执行狗狗的特有方法，接飞盘</span><br><span class="line">		&#125;else if(pet instanceof Bird)&#123;</span><br><span class="line">			Bird bird = (Bird)pet;</span><br><span class="line">			bird.fly(); //执行小鸟的特有方法，飞翔</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span></span>&#123;<br>	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">main</span>(<span class="hljs-params"><span class="hljs-built_in">String</span>[] args</span>)</span> &#123;<br>		Pet pet = <span class="hljs-keyword">new</span> Dog;<br>		<span class="hljs-comment">//Pet pet = new Bird;</span><br>		pet.toHospital();<br>		<span class="hljs-keyword">if</span>(pet <span class="hljs-keyword">instanceof</span> Dog)&#123;<br>			Dog dog = (Dog)pet;<br>			d.carchingFlyDisc(); <span class="hljs-comment">//执行狗狗的特有方法，接飞盘</span><br>		&#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(pet <span class="hljs-keyword">instanceof</span> Bird)&#123;<br>			Bird bird = (Bird)pet;<br>			bird.fly(); <span class="hljs-comment">//执行小鸟的特有方法，飞翔</span><br>		&#125;<br>	&#125; <br>&#125;<br></code></pre></td></tr></table></figure>
 <p>使用<font color="    #EEB422"> instanceof </font>时，对象的类型必须和<font color="    #EEB422"> instanceof </font>后面的参数所指定的类有继承关系，否则会出现编译错误。</p>
 <p>例如：代码 “ pet instanceof String “ ，会出现编译错误。</p>
 <p><font color="    #EEB422"> instanceof </font> 通常和强制类型转换结合使用。</p>
-</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">John Doe</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2021/09/10/Java-%E5%A4%9A%E6%80%81(1)/">http://example.com/2021/09/10/Java-%E5%A4%9A%E6%80%81(1)/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/Java%E5%9F%BA%E7%A1%80/">Java基础</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/%E5%A4%9A%E6%80%81/">多态</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2021/09/10/Java-%E5%A4%9A%E6%80%81(2)/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">Java-多态性(2)</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2021/09/10/Java-Error%E5%92%8CException%E7%9A%84%E5%8C%BA%E5%88%AB/"><span class="paginator-prev__text">Error和Exception的区别</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-%E5%A4%9A%E6%80%81%E6%80%A7"><span class="toc-number">1.</span> <span class="toc-text">
-          Java-多态性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%AE%A4%E8%AF%86%E5%A4%9A%E6%80%81"><span class="toc-number">1.1.</span> <span class="toc-text">
-          1.认识多态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E5%A4%9A%E6%80%81"><span class="toc-number">1.2.</span> <span class="toc-text">
-          2.为什么使用多态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%A4%9A%E6%80%81%E5%88%9D%E4%BD%93%E9%AA%8C"><span class="toc-number">1.3.</span> <span class="toc-text">
-          3.多态初体验</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E4%B8%8A-%E5%90%91%E4%B8%8B-%E8%BD%AC%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">
-          向上(向下)转型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%90%91%E4%B8%8A%E8%BD%AC%E5%9E%8B"><span class="toc-number">2.1.</span> <span class="toc-text">
-          1.向上转型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%90%91%E4%B8%8B%E8%BD%AC%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">
-          2.向下转型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-instanceof-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.3.</span> <span class="toc-text">
-          3.instanceof 运算符</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://img10.360buyimg.com/ddimg/jfs/t1/210672/22/780/14721/614304cbE6ed71481/b30794e20af29208.png" alt="avatar"></div><p class="sidebar-ov-author__text">生活如此美好</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">31</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">3</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">29</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>John Doe</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Java/">Java</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%A4%9A%E6%80%81/">多态</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/09/10/Java-%E5%A4%9A%E6%80%81(2)/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Java-多态性(2)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/09/10/Java-Error%E5%92%8CException%E7%9A%84%E5%8C%BA%E5%88%AB/">
+                        <span class="hidden-mobile">Error和Exception的区别</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
