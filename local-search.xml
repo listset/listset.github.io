@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Spring简介</title>
+    <link href="/2021/10/11/Spring%E7%AE%80%E4%BB%8B/"/>
+    <url>/2021/10/11/Spring%E7%AE%80%E4%BB%8B/</url>
+    
+    <content type="html"><![CDATA[<h4 id="Spring-是什么"><a href="#Spring-是什么" class="headerlink" title="Spring 是什么"></a>Spring 是什么</h4><p>Spring是分层的JavaSE/EE应用 full-stack轻量级开源框架，以 <font color="red">Ioc</font> ( Inverse Of Control:控制反转 ) 和 <font color="red">AOP</font> ( Aspect Oriented Programming : 面向切面编程 ) 为内核 </p><p><strong>注释</strong>：full-stack :在这的意思是：<strong>各层都有解决方案</strong></p><p>提供了<font color="red">展现层 SpringMVC</font> 和<font color="red">持久层 Spring JDBCTemplate</font> 以及<font color="red">业务层事务管理</font>等众多的企业级应用技术，还能整合开源世界众多著名的第三方框架和类库，逐渐成为使用最多的Java EE 企业应用开源框架<br><font color="red"></font></p><h4 id="Spring-发展历程"><a href="#Spring-发展历程" class="headerlink" title="Spring 发展历程"></a>Spring 发展历程</h4><p>1997年，IBM提出了EJB的思想<br>1998年，SUN制定开发标准规范EJB1.0<br>1999年，EJB1.1发布<br>2001年，EJB2.0发布<br>2003年，EJB2.1发布<br>2006年，EJB3.0发布</p><p><strong>Rod Johnson ( Spring之父 )</strong></p><p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/207420/34/4736/95333/6163a676Eb8c1c504/c4b54751634a1630.jpg" alt="RodJohnson.jpg">  </p><p>Expert One-to-One J2EE Design and Development ( 2002 )<br>阐述了 J2EE 使用 EJB开发设计的优点及解决方案<br>Expert One-to-One J2EE Development without EJB ( 2002 )<br>阐述了J2EE开发不使用EJB的解决方式( Spring雏形 )  </p><p>2017年9月份发布了 Spring 的最新版本 Spring 5.0 通用版（GA）</p><h4 id="Spring的优势"><a href="#Spring的优势" class="headerlink" title="Spring的优势"></a>Spring的优势</h4><ol><li>方便解耦，简化开发<pre><code> 通过Spring提供的Ioc 容器，可以将对象间的依赖关系交由Spring进行控制，避免硬编码所造成的过度耦合 用户也不必再为单利模式类、属性文件解析等这些很底层的需求编写代码，可以更专注于上层的应用</code></pre></li><li>AOP编程的支持<br> 通过Spring的AOP功能，方便进行面向切面编程，许多不容易用传统OOP实现的功能可以通过AOP轻松实现</li><li>声明式事务的支持<br> 可以将我们从单调烦闷的事务管理代码中解脱出来，通过声明式方式灵活的进行事务管理，提高开发效率和质量</li><li>方便程序的测试<br> 可以用非容器依赖的编程方式进行几乎所有的测试工作，测试不再是昂贵的操作，而是随手可做的事情</li><li>方便集成各种优秀框架<br>  Spring 对各种优秀框架 ( Struts、Hibernate、Hessian、Quartz等 )的支持</li><li>降低 JavaEE API 的使用难度<br> Spring对 JavaEE API ( 如JDBC、JavaMail、远程调用等 ) 进行了薄薄的封装层，使这些API的使用难度大为降低</li><li>Java源码是经典学习典范<br> Spring的源码设计精妙、结构清晰、匠心独用，处处体现着大师对Java设计模式灵活运用以及对Java技术的高深造诣。它的源代码无疑是Java技术的最佳时间的范例</li></ol><h4 id="Spring体系结构"><a href="#Spring体系结构" class="headerlink" title="Spring体系结构"></a>Spring体系结构</h4><p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/201718/10/10969/21857/6163e8d0Eea659032/e21ae396f03892db.gif" alt="Spring体系结构.gif"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>SSM</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Spring</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>CSS笔记(2)</title>
     <link href="/2021/09/16/CSS(2)/"/>
     <url>/2021/09/16/CSS(2)/</url>
